@@ -1,0 +1,21 @@
+/* pages/home/home.wxss */
+.info {
+  background: #fff;
+}
+.info .basic_info {
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  background: #fff;
+  width: 100%;
+  margin: 10px;
+}
+.info .basic_info image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.info .basic_info text {
+  margin: 10px;
+}

@@ -1,0 +1,28 @@
+<!--pages/home/home.wxml-->
+<view class="info">
+
+  <block wx:if="{{canShow}}">
+    <view class='basic_info'>
+      <image class="userCover" src='{{user.cover}}'></image>
+      <text class="username">昵称:{{user.username}}</text>
+    </view>
+  </block>
+
+  <view class="list_info" wx:for="{{songs}}">
+    <view class='item_info' data-index='{{index}}' data-item='{{item}}' bindtap='itemClick'>
+      <image class='cover_info' mode='aspectFill' src="{{item.logo}}"></image>
+      <view class='text_info'>
+        <text class="name">{{item.name}}</text>
+        <text class="desc">{{item.artist_name}}</text>
+      </view>
+    </view>
+  </view>
+
+
+<button id='green' class='loginBtn' bindtap='recordStart'>开始录音</button>
+
+<button id='green' class='loginBtn' bindtap='recordStop'>停止录音</button>
+
+<button id='green' class='loginBtn' data-path='{{tempFilePath}}' bindtap='recordUpload'>识别</button>
+
+</view>
