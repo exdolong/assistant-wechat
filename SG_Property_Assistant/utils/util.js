@@ -61,10 +61,25 @@ function unique4(arr) {
   return hash;
 }
 
+function formatMapLngLatAndArray(array) {
+  let strMarkers = '';
+  for (let index in array) {
+    strMarkers += array[index].lng + ',' + array[index].lat + '|'
+  }
+  strMarkers = strMarkers.substr(0, strMarkers.length - 1);
+  return strMarkers;
+}
+
+function getAndMapLngLat(array){
+  return `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${array[0].lng},${array[0].lat}&markers=${formatMapLngLatAndArray(array)}&width=800&height=380&zoom=15&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
+}
+
 module.exports = {
   formatTime: formatTime,
   conditionScreening: conditionScreening,
   configure: configure,
   json2Form: json2Form,
-  unique4: unique4
+  unique4: unique4,
+  formatMapLngLatAndArray: formatMapLngLatAndArray,
+  getAndMapLngLat: getAndMapLngLat
 }

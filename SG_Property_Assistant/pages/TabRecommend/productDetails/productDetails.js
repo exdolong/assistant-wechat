@@ -26,26 +26,11 @@ Page({
     wx.request({
       url: util.configure.pathUrl + 'projects/' + options.id,
       success(res) {
-        let mrts = res.data.data.amenities.mrts;
-        let strMarkers = '';
-        for (let index in mrts) {
-          strMarkers += mrts[index].lng + ',' + mrts[index].lat + '|'
-        }
-        strMarkers = strMarkers.substr(0, strMarkers.length - 1);
-
-        let string = `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${mrts[0].lng},${mrts[0].lat}&markers=${strMarkers}&width=800&height=380&zoom=15&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`
         that.setData({
           ...res.data.data,
-          markersMapUrl: string
+          markersMapUrl: util.getAndMapLngLat(res.data.data.amenities.mrts)
         })
       }
-    })
-  },
-
-  showShareTap: function() {
-    console.log('eeeeeeeeee');
-    wx.showToast({
-      title: '1111',
     })
   },
 
@@ -62,9 +47,15 @@ Page({
     })
   },
 
-  jumpProjectProfileTap: () => {
+  jumpProjectProfileTap: function(event) {
+    let obj = {
+      intro: this.data.intro,
+      amenities: this.data.amenities,
+      lng: this.data.lng,
+      lat: this.data.lat
+    };
     wx.navigateTo({
-      url: '../projectProfilePage/projectProfilePage',
+      url: `../projectProfilePage/projectProfilePage?obj=${JSON.stringify(obj)}`,
     })
   },
 

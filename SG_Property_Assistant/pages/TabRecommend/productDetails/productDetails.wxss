@@ -78,7 +78,9 @@ page {
   border-top: 1px solid #e5e5e5;
   padding-bottom: 20rpx;
   padding-top: 20rpx;
-  margin-top: 40rpx;
+  margin-top: 10rpx;
+  overflow: hidden;
+  white-space: nowrap
 }
 
 .title_txt {
@@ -321,7 +323,7 @@ view.imges {
 .flow_add {
   display: flex;
   flex-direction: row;
-  padding-top: 10rpx;
+  padding-top: 20rpx;
   padding-bottom: 20rpx;
 }
 
@@ -639,7 +641,7 @@ view.imges {
   line-height: 36rpx;
 }
 
-button{
+button,button::before,button::after{
   border: 1px solid #fff;
 }
 

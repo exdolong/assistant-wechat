@@ -8,11 +8,11 @@
 
 <view class="building_introd">
   <text class="title_wenben">楼盘介绍</text>
-  <rich-text nodes="{{html}}" class="content_zhong" bindtap="tap"></rich-text>
+  <rich-text nodes="{{intro}}" class="content_zhong" bindtap="tap"></rich-text>
 
   <text class="title_wenben">项目位置</text>
   <!-- 地图 -->
-  <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location class="map"></map>
+  <image class="map" src="{{projectMapUrl}}"></image>
 
   <text class="title_wenben">新加坡地区分布</text>
   <image class="bitmap" src="/images/bitmap.jpg"></image>
@@ -24,11 +24,11 @@
     <image class="icon_mi" src="/images/traffic.png"></image>
     <text class="text_bt">交通</text>
   </view>
-  <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location class="map"></map>
+
+  <image class="map" src="{{trafficMapUrl}}"></image>
+
   <view class="north_line">
-    <text>1.Novena MRT Station (North South Line)</text>
-    <text>2.Newton MRT Station (North South Line & Down Town Line)</text>
-    <text>3.Orchard MRT Station (North South Line)</text>
+    <text wx:for="{{amenities.mrts}}" wx:key="{{key}}">{{key}}.{{item.name}}</text>
   </view>
 </view>
 
@@ -38,11 +38,9 @@
     <image class="icon_mi" src="/images/education.png"></image>
     <text class="text_bt">教育</text>
   </view>
-  <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location class="map"></map>
+  <image class="map" src="{{schoolMapUrl}}"></image>
   <view class="north_line">
-    <text>1.Novena MRT Station (North South Line)</text>
-    <text>2.Newton MRT Station (North South Line & Down Town Line)</text>
-    <text>3.Orchard MRT Station (North South Line)</text>
+    <text wx:for="{{amenities.schools}}" wx:key="{{key}}">{{key}}.{{item.name}}</text>
   </view>
 </view>
 
@@ -52,11 +50,9 @@
     <image class="icon_mi" src="/images/medical_care.png"></image>
     <text class="text_bt">医疗</text>
   </view>
-  <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location class="map"></map>
+  <image class="map" src="{{medicalMapUrl}}"></image>
   <view class="north_line">
-    <text>1.Novena MRT Station (North South Line)</text>
-    <text>2.Newton MRT Station (North South Line & Down Town Line)</text>
-    <text>3.Orchard MRT Station (North South Line)</text>
+    <text wx:for="{{amenities.hospitals}}" wx:key="{{key}}">{{key}}.{{item.name}}</text>
   </view>
 </view>
 
@@ -66,10 +62,8 @@
     <image class="icon_mi" src="/images/shopping.png"></image>
     <text class="text_bt">购物</text>
   </view>
-  <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location class="map"></map>
+  <image class="map" src="{{shoppingMapUrl}}"></image>
   <view class="north_line">
-    <text>1.Novena MRT Station (North South Line)</text>
-    <text>2.Newton MRT Station (North South Line & Down Town Line)</text>
-    <text>3.Orchard MRT Station (North South Line)</text>
+    <text wx:for="{{amenities.malls}}" wx:key="{{key}}">{{key}}.{{item.name}}</text>
   </view>
 </view>
