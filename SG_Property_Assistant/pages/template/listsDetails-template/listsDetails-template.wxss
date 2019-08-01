@@ -1,0 +1,70 @@
+@import "../../template/characterList-template/characterList-template.wxss";
+.banner-images { width: 100%; height: 560rpx; overflow: hidden;}
+.banner-images image { width: 750rpx; height: 560rpx;}
+.house_desc{ background: #fff; padding-left: 30rpx;}
+.house_title { padding-right: 30rpx; padding-top: 10px; border-bottom: 1px solid #E5E5E5; padding-bottom: 10px;}
+.house_title text.threeline{ font-size: 20px; font-weight: 800; line-height: 28px;}
+.house_title text.describe{ font-size: 15px; color: #999; padding-top: 16rpx;}
+.house_title text.time,.transactionPrice text.time{font-size: 12px;}
+.price_jiage text:first-child{ font-size: 17px; line-height: 30px;}
+.price_jiage text:last-child{ font-size: 20px; color: #FF5A5F;line-height: 30px; margin-left: 30rpx;}
+.time-view{ height: 20px; line-height: 20px;}
+.transactionPrice{ padding-top: 10px; padding-bottom: 10px;}
+.weui-cells:before { border-top: 1rpx solid #fff;}
+.weui-cells:after { border-bottom: 1rpx solid #fff;}
+.weui-cell:before { border-top: 1rpx solid #E5E5E5;}
+.weui-cell:after{ border-bottom: 1rpx solid #E5E5E5;}
+.weui-cell{ padding-left: 0px; padding-top: 15px; padding-bottom: 15px;}
+.weui-cell__bd{ color: #999;}
+.weui-cell__ft{  color: #333; font-size: 18px;}
+.mod_tit_complex{ background: #fff; margin-top: 10px; padding-left: 30rpx; padding-bottom: 30rpx;}
+.mod_sub_tit{ justify-content: space-between; line-height: 50px; padding-right: 30rpx;}
+.title_bj{ font-size: 17px; font-weight: 800;}
+.consultation{ font-size: 15px; color: #5680A6;}
+.characteristic{ padding-top: 10px;}
+.characteristic text.xuque{ font-size: 12px; color: #999; height: 24px; line-height: 24px; border: 1px solid #E5E5E5; border-radius: 5px; padding-left: 26rpx; padding-right: 26rpx; margin-right: 20px; display: inline-block; float: left;}
+.authentication{ height: 24px; font-size: 12px; line-height: 24px; border: 1px solid #008489; border-radius: 5px; padding-left: 26rpx; padding-right: 26rpx; display: inline-block; float: left;}
+.authentication image{ width: 16px; height: 16px; margin-top: 3px; float: left; margin-right: 5px;}
+.authentication text{ color: #008489; float: left;}
+.recommend_agent_info{ background: #fff; padding-left: 30rpx; margin-top: 10px;}
+.mod_sub_tit text:first-child{ font-size: 17px; font-weight: 800; margin-right: 10rpx;}
+.mod_sub_tit{ justify-content:flex-start;}
+.recommend_agent_info .recommend_agent{ padding: 10rpx 30rpx 10rpx 0px;}
+.recommend_agent_info .prtop{ display: none;}
+.recommend_agent_info .good_rate_num{ display: none;}
+.mod_sub_tit { height: 24px; line-height: 24px; padding-top: 8px; justify-content: space-between;}
+.lawyer .intermediary ,.banker .intermediary{ display: none;}
+.banker_daik { font-size: 15px; color: #5680A6;}
+.tradingState{ background: #fff; margin-top: 10px; padding: 20rpx 30rpx 30rpx 30rpx;}
+.tradingState-title{ justify-content: space-between;}
+.waitFor,.aotApplying,.orange{ height: 24px; line-height: 24px; padding-left: 30rpx; padding-right: 30rpx; font-size: 12px; color: #008489; border: 1px solid #008489; border-radius: 5px;}
+.title-txt{ font-size: 17px; font-weight: 800; margin-right: 10px;}
+.tradingState-conent{ font-size: 15px; line-height: 26px; padding-top: 12px;}
+.ht_sendBack{ text-align: right;}
+.ht_sendBack text{ height: 36px; line-height: 36px; width: 200rpx; font-size: 14px; color: #fff; display: inline-block; text-align: center; border-radius: 5px;}
+.ht_sendBack text.cyan{ background: #008489;}
+.ht_sendBack text.black{ background: #333;}
+.orange{ border: 1px solid #F2A12F; color: #F2A12F;}
+.aotApplying{ border: 1px solid #E5E5E5; color: #999;}
+.amountMoney .weui-cell__ft_in-access ,.time_select .weui-cell__ft_in-access,.moneyloan .weui-cell__ft_in-access{ margin-top: 0rpx; display: block;}
+.seeHouse{ background: #fff; margin-top: 10px; padding: 10px 0 10px 30rpx;}
+.fontSize12{ font-size: 12px;}
+.time_size{ font-size: 20px; font-weight: 800; text-align: center; padding-top: 10px; padding-bottom: 5px;}
+.time_select .weui-cell__bd{ color: #333;}
+.deal_price,.isLoan{ background: #fff; line-height: 30px; margin-top: 10px; padding: 10px 30rpx 10px 30rpx; justify-content: space-between;}
+.deal_price text:first-child,.isLoan text:first-child{ font-size: 17px; font-weight: 800;}
+.deal_price text:last-child{ font-size: 17px;}
+.moneyloan{ padding-left: 30rpx; background: #fff;}
+.gray_mod{ background: #fff; margin-top: 10px; padding: 10px 30rpx 10px 30rpx;font-size: 15px; margin-bottom: 70px;}
+.gray_mod text:first-child{ text-align: center; padding-bottom: 10px;}
+.time_select .weui-cell{ padding-bottom: 0px; padding-top: 5px;}
+.fixed_bar { position: fixed; right: 0; bottom: 0;left: 0; z-index: 90;     padding: .5rem 0;  background: #fff; text-align: center; padding-left: 10rpx; padding-right: 30rpx; box-shadow: 0 -2px 8px rgba(90, 90, 90, 0.1);}
+.icon_phone{ width: 22px; height: 22px; margin-top: 10rpx;}
+.phone_text{ color: #999; font-size: 13px;}
+.sendMessge{ height: 50px; border-radius: 5px; line-height: 50px;  background: linear-gradient(to right, rgba(255, 106, 110, 1), rgba(255, 90, 95, 1)); color: #fff;}
+.telphone{ width: 20%; text-align: center;}
+.messge_box{ width: 80%;}
+view.call_text{ line-height: 10px;}
+view.imges{ height: 30px;}
+.bar_applyDai,.bar_makeAppointment{ padding-right: 10px; padding-left: 10px;}
+.bar_modify_icon{ justify-content:space-around;}

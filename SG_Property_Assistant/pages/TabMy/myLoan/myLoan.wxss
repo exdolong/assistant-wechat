@@ -1,0 +1,43 @@
+@import "../../template/lists-template/lists-template.wxss";
+page{
+  background: #F5F5F5;
+}
+.loan_list{
+  background: #fff;
+  padding-left: 30rpx;
+  margin-bottom: 10px;
+}
+
+.loan_list .tag_box{ display: none;}
+
+.loan_list .price_total{ color: #999; font-size: 13px; font-weight: normal; margin-right: 10px;}
+.loan_list .pictext{
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+
+.amount{
+  font-size: 15px;
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 10px;
+}
+
+.pring{ padding-right: 60rpx;}
+
+.loan_examine{
+  font-size: 13px;
+  justify-content: space-between;
+  padding-right: 30rpx;
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  line-height: 30px;
+}
+.examine_btn{
+  height: 30px;
+  line-height: 30px;
+  padding-left: 14px;padding-right: 14px;
+  border: 1px solid #F2A12F;
+  color: #F2A12F;
+  border-radius: 5px;
+  display: inline-block;
+}

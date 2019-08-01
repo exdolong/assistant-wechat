@@ -1,1 +1,217 @@
-/* pages/TabRecommend/TabRecommend.wxss */
+@import "../template/lists-template/lists-template.wxss";
+page {
+  background: #f5f5f5;
+}
+
+.home_header {
+  width: 100%;
+  height: 470rpx;
+}
+
+.home_header swiper {
+  height: 470rpx;
+}
+
+.home_header image {
+  width: 750rpx;
+  height: 470rpx;
+}
+
+.channel_nav {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  padding: 40px 10px 12px 10px;
+  font-size: 30rpx;
+  justify-content: space-around;
+}
+
+.channel_nav image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.box_col {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.search_box {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  width: 80%;
+  border: 1px solid #f1f1f1;
+  background: #fff;
+  border-radius: 80rpx;
+  box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.16);
+  left: 0px;
+  top: 0px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 430rpx;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+
+.search_box image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 15px;
+  margin-top: 25rpx;
+  margin-right: 15rpx;
+}
+
+.search_box text {
+  color: #999;
+}
+
+.switch_city {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 150rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 62rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.switch_city image {
+  width: 26rpx;
+  height: 36rpx;
+  margin-left: 12rpx;
+  margin-right: 10rpx;
+  margin-top: 12rpx;
+}
+
+.switch_city text {
+  color: #fff;
+  font-size: 26rpx;
+}
+.home_header .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 40rpx;
+}
+.pictext:last-child{ border-bottom: none;}
+/*小圆点样式修改  */
+/* .home_header .wx-swiper-dot{
+    width:40rpx;
+    display: inline-flex;
+    height: 10rpx;
+    margin-left: 20rpx;
+    justify-content:space-between;
+}
+.home_header .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: rgba(255,255,255,0.8);
+    border-radius: 8rpx
+}
+.home_header .wx-swiper-dot-active::before{
+    background:rgba(244,0,0,0.8);   
+} */
+.house_lists{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin-top: 10px;
+  padding: 15px 0px 15px 15px;
+}
+.recommended_title{
+  font-size: 34rpx;
+  font-weight: 800;
+  padding-bottom: 10rpx;
+}
+
+.home_tool{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #fff;
+  margin-top: 10rpx;
+  padding: 30rpx;
+  padding-bottom: 0rpx;
+}
+
+.item_class {
+  height: 140rpx;
+  width: calc(50% - 20rpx);
+  border: 1px solid #DEDEDE;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.background {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 16rpx;
+  top: 40rpx;
+  z-index: 1;
+}
+
+.item_jsq{
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+  padding-left: 16rpx;
+  height: 30rpx;
+  margin-top: 30rpx;
+}
+
+.conmt-space {
+  color: #7A7A7A;
+  font-size: 24rpx;
+  padding-left: 16rpx;
+}
+
+.helpmefind{
+  height: auto;
+  background: #fff;
+  padding: 30rpx;
+  margin-top: 10rpx;
+} 
+
+.helo_me{
+  height: 210rpx;
+  border: 1px solid #DEDEDE;
+  position: relative;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+  margin-top: 30rpx;
+}
+
+.imgge_hmep{
+  width: 292rpx;
+  height: 180rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  position: absolute;
+}
+
+.guwen{
+  font-size: 28rpx;
+  color: #666;
+  width: calc(100% - 300rpx);
+  display: block;
+  margin-top: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+.biaoti_hmep{
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.hlep_more{
+  font-size: 28rpx;
+  color: #333;
+}

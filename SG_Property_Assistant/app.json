@@ -1,49 +1,67 @@
 {
   "pages": [
     "pages/TabRecommend/TabRecommend",
+    "pages/TabSearch/TabSearch",
+    "pages/TabSearch/searchResult/searchResult",
+    "pages/TabMy/myInfoUpdate/myInfoUpdate",
+    "pages/TabMy/loanAnswer/loanAnswer",
+    "pages/TabMy/signInPage/signInPage",
+    "pages/TabMy/myAttention/myAttention",
+    "pages/TabMy/myDeal/myDeal",
+    "pages/TabMy/myLoan/myLoan",
+    "pages/TabMy/MyAppointment/MyAppointment",
+    "pages/TabMy/intermedRecommend/intermedRecommend",
+    "pages/TabMy/roleDetails/roleDetails",
     "pages/TabMy/TabMy",
     "pages/TabNotice/TabNotice",
-    "pages/TabSearch/TabSearch"
+    "pages/TabRecommend/productDetails/productDetails",
+    "pages/TabRecommend/mapPeriphery/mapPeriphery",
+    "pages/TabMy/transactionDetails/transactionDetails",
+    "pages/TabMy/appointmentDetails/appointmentDetails",
+    "pages/TabRecommend/mapFindRoom/mapFindRoom",
+    "pages/news/news",
+    "pages/TabNotice/noticeDetails/noticeDetails",
+    "pages/TabRecommend/calculatorToolPage/calculatorToolPage",
+    "pages/TabRecommend/loanResultPage/loanResultPage",
+    "pages/TabRecommend/helpMeFindRoom/helpMeFindRoom",
+    "pages/TabRecommend/projectProfilePage/projectProfilePage",
+    "pages/TabRecommend/layoutHouseList/layoutHouseListPage",
+    "pages/TabRecommend/propertiesNewsList/propertiesNewsList"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#061626",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "房产",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "onReachBottomDistance": 50
   },
   "tabBar": {
-    "color": "#ffffff",
-    "selectedColor": "#ff0312",
-    "backgroundColor": "#061626",
-    "borderStyle": "black",
+    "color": "#666",
+    "selectedColor": "#31302F",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/TabRecommend/TabRecommend",
-        "iconPath": "res/tab_me_default.png",
-        "selectedIconPath": "res/tab_me_highlighted.png",
-        "text": "推荐"
-      },
-      {
-        "pagePath": "pages/TabSearch/TabSearch",
-        "iconPath": "res/tab_search_default.png",
-        "selectedIconPath": "res/tab_search_highlighted.png",
-        "text": "搜索"
+        "iconPath": "images/tab/fc_tabber_home_normal.png",
+        "selectedIconPath": "images/tab/fc_tabber_home_highlighted.png",
+        "text": "首页"
       },
       {
         "pagePath": "pages/TabNotice/TabNotice",
-        "iconPath": "res/tab_me_default.png",
-        "selectedIconPath": "res/tab_me_highlighted.png",
-        "text": "通知"
+        "iconPath": "images/tab/fc_tabber_message_normal.png",
+        "selectedIconPath": "images/tab/fc_tabber_message_highlighted.png",
+        "text": "消息"
       },
       {
         "pagePath": "pages/TabMy/TabMy",
-        "iconPath": "res/tab_me_default.png",
-        "selectedIconPath": "res/tab_me_highlighted.png",
+        "iconPath": "images/tab/fc_tabber_me_normal.png",
+        "selectedIconPath": "images/tab/fc_tabber_me_highlighted.png",
         "text": "我的"
       }
     ],
     "position": "bottom"
   },
-  "debug": true
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
 }

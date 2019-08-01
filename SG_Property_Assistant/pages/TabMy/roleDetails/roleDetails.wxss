@@ -1,0 +1,37 @@
+@import "../../template/characterList-template/characterList-template.wxss";
+page{background: #F5F5F5;}
+.role_info{ background: #fff; padding-left: 30rpx;}
+.role_info .contact{ display: none;}
+.scope_business ,.introduce{ background: #fff; margin-top: 10px; padding: 10rpx 30rpx;}
+.introduce{ padding-bottom: 15px;}
+.title_scope { font-size: 17px; font-weight: 800;}
+.scope_label {
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  height: 80rpx;
+  margin-top: 40rpx;
+}
+
+.scope_label text {
+  height: 28px;
+  line-height: 28px;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border: 1px solid #e4e6f0;
+  border-radius: 5rpx;
+  margin-right: 30rpx;
+  color: #999;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+.introduce_content{font-size: 15px; line-height: 20px; text-indent: 20rpx; text-align: left;}
+.fixed_bar { position: fixed; right: 0; bottom: 0;left: 0; z-index: 90;     padding: .5rem 0;  background: #fff; text-align: center; padding-left: 10rpx; padding-right: 30rpx; box-shadow: 0 -2px 8px rgba(90, 90, 90, 0.1);}
+.icon_phone{ width: 22px; height: 22px; margin-top: 10rpx;}
+.phone_text{ color: #999; font-size: 13px;}
+.sendMessge{ height: 50px; border-radius: 5px; line-height: 50px;  background: linear-gradient(to right, rgba(255, 106, 110, 1), rgba(255, 90, 95, 1)); color: #fff;}
+.telphone{ width: 20%; text-align: center;}
+.messge_box{ width: 80%;}
+view.call_text{ line-height: 10px;}
+view.imges{ height: 30px;}

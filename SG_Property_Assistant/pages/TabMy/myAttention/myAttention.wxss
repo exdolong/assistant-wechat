@@ -1,0 +1,74 @@
+@import "../../template/lists-template/lists-template.wxss";
+
+page {
+  background: #f5f5f5;
+}
+
+.house_lists, .invalid_list {
+  background: #fff;
+  padding-left: 30rpx;
+}
+
+.house_lists .pictext:last-child, .invalid_list .pictext:last-child {
+  border-bottom: none;
+}
+
+.invalid_list {
+  margin-top: 10px;
+}
+
+.invalid_title {
+  font-size: 13px;
+  color: #666;
+}
+
+.invalid_icon {
+  width: 13px;
+  height: 13px;
+}
+
+.title_top {
+  justify-content: space-between;
+  padding-right: 30rpx;
+  padding-top: 30rpx;
+}
+
+.invalid_list .tag_box {
+  display: none;
+}
+
+.invalid_list text.price_total {
+  color: #999;
+  font-weight: normal;
+}
+
+.invalid_list text.item_title {
+  color: #999;
+}
+
+.invalid_list .pictext {
+  opacity: 0.6;
+}
+
+.buy_house {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 46rpx;
+  padding-bottom: 30rpx;
+  background: #fff;
+}
+
+.buy_house text {
+  width: 30%;
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 34rpx;
+  font-weight: 500;
+}
+
+.buy_house text.selection {
+  color: #333;
+}

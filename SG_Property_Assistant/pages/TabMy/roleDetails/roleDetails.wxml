@@ -1,0 +1,39 @@
+<import src='../../template/characterList-template/characterList-template.wxml' />
+
+<!--角色信息  -->
+<view class='role_info'>
+  <template is='characterListTemplate' />
+</view>
+
+<!--业务范围  -->
+<view class='scope_business flex_col'>
+  <text class='title_scope'>业务范围</text>
+  <view class='scope_label'>
+    <text>中介</text>
+    <text>公寓</text>
+    <text>CBD</text>
+  </view>
+</view>
+
+<!--介绍  -->
+<view class='introduce'>
+  <text class='title_scope'>介绍</text>
+  <text class='introduce_content' decode="{{true}}">
+  &emsp;&emsp;  环球汇广场天誉位于攀成钢之心，东大路与东二环的交界处，项目总占地285亩，其中环球汇5号地占地29.52亩。项目楼下就是东大路a口，离牛市口也只有800米，他是由香港头牌香港置地和合景泰富联手打造，项目周边也算是大开发商，比如：乐天、仁恒、绿地、icc等，自身带有五星酒店、五甲写字楼、杜莎夫人蜡像馆、歌剧院还有恒温游泳池等等
+  </text>
+</view>
+
+<!--底部  -->
+<view class='fixed_bar flex_row'>
+  <view class='telphone'>
+    <view class='imges'>
+      <image class='icon_phone' src='/images/fc_following_buttonphonecall.png'></image>
+    </view>
+    <view class='call_text'>
+      <text class='phone_text'>电话</text>
+    </view>
+  </view>
+  <view class='messge_box flex_col'>
+    <text class='sendMessge'>微信</text>
+  </view>
+</view>

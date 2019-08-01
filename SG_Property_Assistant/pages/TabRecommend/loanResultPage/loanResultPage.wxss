@@ -1,0 +1,72 @@
+/* pages/TabRecommend/loanResultPage/loanResultPage.wxss */
+
+.result_box {
+  background: linear-gradient(to right, rgba(81, 81, 81, 1), rgba(49, 48, 47, 1));
+  height: 420rpx;
+  margin: 30rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.result_background {
+  height: auto;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 36rpx;
+  padding-right: 36rpx;
+}
+
+.result_box text {
+  color: #e7c690;
+}
+
+.totalAmount text:first-child {
+  font-size: 34rpx;
+  opacity: 0.5;
+}
+
+.totalAmount text:last-child {
+  font-size: 30rpx;
+}
+
+.image_res {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+.totalAmount text {
+  display: block;
+}
+
+.total_yuan {
+  font-size: 80rpx;
+}
+
+.zongeo, .return_monthly {
+  text-align: center;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+}
+
+.return_monthly {
+  display: block;
+  padding-top: 40rpx;
+  padding-bottom: 0rpx;
+}
+
+.daikuai_box{
+  padding: 30rpx;
+}
+
+.daikuai_item{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.daikuai_item text:first-child{
+  color: #999;
+  padding-right: 30rpx;
+}

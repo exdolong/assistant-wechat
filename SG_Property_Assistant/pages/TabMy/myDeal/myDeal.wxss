@@ -1,0 +1,38 @@
+@import "../../template/lists-template/lists-template.wxss";
+page{
+  background: #F5F5F5;
+}
+.deal_list{
+  background: #fff;
+  padding-left: 30rpx;
+  margin-bottom: 10px;
+}
+
+.deal_list .tag_box{
+  display: none;
+}
+
+.waiting_state{
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+.waiting_state text{
+  padding-top: 10px;
+}
+
+.deal_list .pictext{
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+
+.waiting_state button{ height: 30px; line-height: 30px;font-size: 12px; margin-left: 5px; }
+.waiting_state button.weui-btn{ margin-top: 5px;}
+.waiting_state button.wait_btn{
+  border: 1px solid #F2A12F; color: #F2A12F;
+}
+.waiting_state button.examine_btn{
+  border: 1px solid #008489; color: #008489;
+}
+.deal_info_time { color: #999; font-size: 13px;}
+.deal_info{ padding-top: 12px; padding-bottom: 12px;}

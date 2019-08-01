@@ -1,0 +1,154 @@
+<!--头部条件筛选  -->
+<view class="{{iscurrentShow? 'mod_box filter_box':'mod_box'}}" >
+  <!--筛选条件  -->
+  <view class='tab_bar'>
+    <block wx:for="{{screeningsArray}}" wx:key="key">
+      <view class='tab_tit' catchtap='screenRegionTap' data-index="{{index}}">
+        <text class="{{isRegionDisplay[index]? 'tit active' : 'tit'}}">{{item}}</text>
+        <image src="{{isRegionDisplay[index]? '/images/icon_triangle_down_rad.png' : '/images/icon_triangle_down.png'}}" class="icon_triangle_down"></image>
+      </view>
+    </block>
+  </view>
+
+  <!--筛选条件选择  -->
+  <view class="{{isRegionDisplay[iscurrentIdex]? 'screen_content show':'screen_content hide'}}">
+    <!--区域内容  -->
+    <view wx:if="{{iscurrentIdex == 0}}" class="isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='area_list'>
+          <text class='active'>区域</text>
+          <text>海景房</text>
+        </view>
+        <view class='guide'>
+          <text>不限</text>
+          <text>武侯区</text>
+          <text>武侯区</text>
+          <text>2</text>
+          <text>1</text>
+          <text>1</text>
+          <text>1</text>
+          <text>1</text>
+          <text>1</text>
+          <text>不限</text>
+          <text>武侯区</text>
+          <text>武侯区</text>
+          <text>2</text>
+          <text>1</text>
+          <text>1</text>
+          <text>1</text>
+          <text>1</text>
+          <text>1</text>
+        </view>
+      </view>
+    </view>
+
+    <!--售价内容  -->
+    <view wx:if="{{iscurrentIdex == 1}}" class="{{isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='price'>
+          <view class='flex_col'>
+            <text class='list'>不限</text>
+            <text class='list'>40万以下</text>
+            <text class='list'>40-60万</text>
+            <text class='list'>60-100万</text>
+            <text class='list'>100-130万</text>
+            <text class='list'>130-160万</text>
+            <text class='list'>300万以上</text>
+          </view>
+          <view class='price_other flex_row'>
+            <text class='mpr20'>自定义价格</text>
+            <input placeholder='最小'></input>
+            <text class='ceee mpr20'> - </text>
+            <input placeholder='最大'></input>
+            <text class='button'>确定</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--售价内容  -->
+    <view wx:if="{{iscurrentIdex == 2}}" class="{{isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='price'>
+          <view class='flex_col'>
+            <text class='list'>不限</text>
+            <text class='list'>一室</text>
+            <text class='list'>二室</text>
+            <text class='list'>三室</text>
+            <text class='list'>四室</text>
+            <text class='list'>四室以上</text>
+          </view>
+          <text class='apartment_button'>确定</text>
+        </view>
+      </view>
+    </view>
+
+    <!--更多内容  -->
+    <view wx:if="{{iscurrentIdex == 3}}" class="isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='panel_more flex_col'>
+          <view class='scroll_box scroll_max_height'>
+            <!--单个条件  S-->
+            <view class='dl_item'>
+              <text class='dl_title'>朝向</text>
+              <view class='dl_content'>
+                <text>朝东</text>
+                <text>朝南</text>
+                <text>朝西</text>
+                <text>朝北</text>
+                <text>西北</text>
+              </view>
+            </view>
+            <!--单个条件  E-->
+            <!--单个条件  S-->
+            <view class='dl_item'>
+              <text class='dl_title'>面积</text>
+              <view class='dl_content'>
+                <text>朝东</text>
+                <text>朝南</text>
+                <text>朝西</text>
+                <text>朝北</text>
+                <text>西北</text>
+              </view>
+            </view>
+            <!--单个条件  E-->
+            <!--单个条件  S-->
+            <view class='dl_item'>
+              <text class='dl_title'>标签</text>
+              <view class='dl_content'>
+                <text>朝东</text>
+                <text>朝南</text>
+                <text>朝西</text>
+                <text>朝北</text>
+                <text>西北</text>
+              </view>
+            </view>
+            <!--单个条件  E-->
+            <!--单个条件  S-->
+            <view class='dl_item'>
+              <text class='dl_title'>类型</text>
+              <view class='dl_content'>
+                <text>朝东</text>
+                <text>朝南</text>
+                <text>朝西</text>
+                <text>朝北</text>
+                <text>西北</text>
+              </view>
+            </view>
+            <!--单个条件  E-->
+          </view>
+          <text class='empty_button'>清空条件</text>
+          <text class='apartment_button'>确定</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map id="myMap" class='mapStyle' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location>
+    </map>
+  </view>
+</view>

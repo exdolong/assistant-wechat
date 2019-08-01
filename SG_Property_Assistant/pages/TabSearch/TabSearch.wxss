@@ -1,1 +1,115 @@
-/* pages/TabSearch/TabSearch.wxss */
+page {
+  background: #f5f5f5;
+}
+
+.search_page_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.search_top {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.input_placeholder {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.search_content {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 6rpx;
+  width: 600rpx;
+}
+
+.search_content image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 15px;
+  margin-top: 30rpx;
+  margin-right: 15rpx;
+}
+
+.search_input {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 34rpx;
+}
+
+.cancel_button{ 
+  font-size: 28rpx;
+  line-height: 80rpx;
+  padding-left: 15px;
+  text-align: center;
+}
+.hot_search{
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 15px 0px 10px 15px;
+}
+.hot_title { 
+  font-size: 13px;
+  color: #666;
+  padding-bottom: 20px;
+}
+.hot_search_text text{
+  font-size: 32rpx;
+  height: 60rpx; line-height: 60rpx;
+  padding-left: 20rpx; padding-right: 20rpx;
+  border: 1px solid #E1E1E1;
+  border-radius: 8rpx;
+  display:inline-flex;
+  margin-right: 20rpx;
+  margin-bottom: 10px;
+}
+.search_history{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.history_title{
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  padding-bottom: 0px;
+  justify-content:space-between;
+  vertical-align: middle;
+}
+
+.history_title image{
+  width: 12px;
+  height: 12px;
+  margin-top: 5rpx;
+}
+
+.search_history_list{
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+
+.history_item{
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.history_item:last-child{ border-bottom: none;}
+
+.history_item image{ 
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 30rpx;
+}

@@ -1,0 +1,5 @@
+@import "../../template/characterList-template/characterList-template.wxss";
+page{background: #F5F5F5;}
+.list_info_role{ background: #fff; padding-left: 30rpx;}
+.list_info_role .recommend_agent{ border-bottom: 1px solid #E5E5E5;}
+.list_info_role .recommend_agent:last-child{ border-bottom: none;}

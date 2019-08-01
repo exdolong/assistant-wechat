@@ -1,0 +1,18 @@
+<!--pages/TabRecommend/propertiesNewsList/propertiesNewsList.wxml-->
+<view class="news">
+  <text class="news_title">联合早报新闻</text>
+  <text class="news_content">首年利率跌破2%，银行固定房贷利率首次比浮动利率低</text>
+  <text class="news_time">2019年07月18日</text>
+</view>
+
+<view class="news">
+  <text class="news_title">联合早报新闻</text>
+  <text class="news_content">首年利率跌破2%，银行固定房贷利率首次比浮动利率低</text>
+  <text class="news_time">2019年07月18日</text>
+</view>
+
+<view class="news">
+  <text class="news_title">联合早报新闻</text>
+  <text class="news_content">首年利率跌破2%，银行固定房贷利率首次比浮动利率低</text>
+  <text class="news_time">2019年07月18日</text>
+</view>

@@ -1,0 +1,21 @@
+@import "../../template/lists-template/lists-template.wxss";
+@import "../../template/characterList-template/characterList-template.wxss";
+
+page{
+  background: #F5F5F5;
+}
+.appointment_list{
+  background: #fff;
+  padding-left: 30rpx;
+  margin-bottom: 10px;
+}
+.business_info{ justify-content: space-between; padding-right: 30rpx;}
+.appointment_list .tag_box{ display: none;}
+.appointment_list .price_total{ color: #999; font-size: 13px; font-weight: normal; margin-right: 10px;}
+ .business_info .good_rate_num,.business_info .contact,.business_info .score_stars{ display: none;} 
+.appointment_list .pictext{ padding-bottom: 5px;}
+.appointment_time{ padding-top: 40rpx;}
+.appointment_time image{ width: 13px; height: 13px; margin-top: 6rpx; margin-right: 10rpx;}
+.appointment_time text{ font-size: 13px; color: #999;}
+.business_info .recommend_agent{ padding-bottom: 10rpx;}
+.shop_name .prtop{ display: none;}

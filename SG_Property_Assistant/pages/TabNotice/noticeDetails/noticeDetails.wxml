@@ -1,0 +1,10 @@
+<view class='liet_dis flex_row'>
+  <view class='icon_left'>
+    <image src='/images/fc_message_loanremind.png'></image>
+  </view>
+  <view class='eonet flex_col'>
+  <text class='triangle_left'></text>
+    <text class='text_coler'>你需要在1天内申请贷款，否则可能导致您购房违约。</text>
+    <text class='notice_butt not_immediate'>已处理</text>
+  </view>
+</view>

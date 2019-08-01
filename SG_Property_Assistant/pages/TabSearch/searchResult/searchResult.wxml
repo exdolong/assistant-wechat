@@ -1,0 +1,121 @@
+<import src='../../template/lists-template/lists-template.wxml' />
+
+<!--搜索框  -->
+<view class='r_search_box'>
+  <image src='/images/fc_homepage_search.png'></image>
+  <input placeholder='搜索楼盘/街道/开发商' placeholder-class='input_placeholder' class='search_input'></input>
+</view>
+
+<!-- 图标筛选 -->
+<view class='channel_nav'>
+  <view class='box_col' catchtap='jumpToListsTap'>
+    <image src='/images/fc_list_recentopening.png'></image>
+    <text>最近开盘</text>
+  </view>
+  <view class='box_col' catchtap='jumpToListsTap'>
+    <image src='/images/fc_list_properties.png'></image>
+    <text>在售楼盘</text>
+  </view>
+  <view class='box_col' catchtap='jumpNewsPageTap'>
+    <image src='/images/fc_list_discount.png'></image>
+    <text>优惠好盘</text>
+  </view>
+  <view class='box_col'>
+    <image src='/images/fc_list_video.png'></image>
+    <text>视频看房</text>
+  </view>
+</view>
+
+<!--头部条件筛选  -->
+<view class="{{iscurrentShow? 'mod_box filter_box':'mod_box'}}" catchtap='cancelWindowTap'>
+  <!--筛选条件  -->
+  <view class='tab_bar'>
+
+    <block wx:for="{{screeningsArray}}" wx:key="key">
+      <view class='tab_tit' catchtap='screenRegionTap' data-index="{{index}}">
+        <text class="{{isRegionDisplay[index]? 'tit active' : 'tit'}}">{{item}}</text>
+        <image src="{{isRegionDisplay[index]? '/images/icon_triangle_down_rad.png' : '/images/icon_triangle_down.png'}}" class="icon_triangle_down"></image>
+      </view>
+    </block>
+  </view>
+
+  <!--筛选条件选择  -->
+  <view class="{{isRegionDisplay[iscurrentIdex]? 'screen_content show':'screen_content hide'}}" catchtap='preventTap'>
+    <!-- 邮区  -->
+    <view wx:if="{{iscurrentIdex == 0}}" class="isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='price'>
+          <view class='flex_col'>
+            <text class='list' data-id="-1" bindtap="districtSelect">不限</text>
+            <text class="list {{item.isSelection ?'active':''}}" wx:for="{{districtsArray}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="districtSelect">{{item.name}}</text>
+          </view>
+          <text class='apartment_button' bindtap="confirmSubm">确定</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 户型  -->
+    <view wx:if="{{iscurrentIdex == 1}}" class="{{isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='price'>
+          <view class='flex_col'>
+            <text class="list {{item.isSelection ?'active':''}}" wx:for="{{layoutsArray}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="layoutSelect" >{{item.name}}</text>
+          </view>
+          <text class='apartment_button' bindtap="confirmSubm">确定</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 价格  -->
+    <view wx:if="{{iscurrentIdex == 2}}" class="{{isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='area_list'>
+          <text class="{{isUnitPrice ? 'active' : ''}}" catchtap='qiehuanTap' data-name='单价'>单价</text>
+          <text class="{{isTotalPrice ? 'active' : ''}}" catchtap='qiehuanTap' data-name='总价'>总价</text>
+        </view>
+        <view class='guide'>
+          <text wx:for="{{priceArray}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="priceSelect" class="{{item.isSelection ?'active':''}}">{{item.name}}</text>
+          <view class='price_other flex_row'>
+            <input placeholder='最小'></input>
+            <text class='ceee mpr20'> - </text>
+            <input placeholder='最大'></input>
+            <text class='button' bindtap="confirmSubm">确定</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+    <!--更多内容  -->
+    <view wx:if="{{iscurrentIdex == 3}}" class="isRegionDisplay[iscurrentIdex]? 'show':'hide'}}">
+      <view class='filter_item'>
+        <view class='panel_more flex_col'>
+          <view class='scroll_box scroll_max_height'>
+            <!--单个条件  S-->
+            <view class='dl_item' wx:for="{{moreArray}}" wx:key="{{key}}" wx:for-item="list" wx:for-index="Gindex">
+              <text class='dl_title'>{{list.name}}</text>
+              <view class='dl_content'>
+                <text wx:for="{{list.dataArray}}" wx:key="{{key}}" data-name="{{item.name}}" data-id="{{item.id}}" data-tag="{{list.tagName}}" data-index="{{Gindex}}" bindtap="select" class="{{item.isSelection ?'alternative':''}}">{{item.name}}</text>
+              </view>
+            </view>
+          </view>
+          <text class='empty_button' bindtap="clearCondition">清空条件</text>
+          <text class='apartment_button' bindtap="confirmSubm">确定</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+<!--结果列表  -->
+<view class='result_list'>
+  <template is='listsTemplate' wx:for="{{dataArray}}" wx:key="{{index}}" data='{{...item}}' />
+</view>
+
+<!--条件排序  -->
+<view class='sort_bar' catchtap='btnSort'>
+  <image class='icon_sort' src='/images/fc_listpage_sorting.png'></image>
+  <text>排序</text>
+</view>

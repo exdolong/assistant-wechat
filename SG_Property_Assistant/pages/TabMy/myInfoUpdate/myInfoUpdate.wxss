@@ -1,0 +1,60 @@
+/* pages/TabMy/myInfoUpdate/myInfoUpdate.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.img_head {
+  width: 73px;
+  height: 73px;
+}
+
+.info_head {
+  background: #fff;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+  justify-content: center;
+}
+
+.info_title {
+  font-size: 18px;
+  margin-top: 10rpx;
+  font-weight: 800;
+}
+
+.info_input_coloer {
+  color: #b2b2b2;
+}
+
+.telephone {
+  margin-top: 10px;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.weui-cells:before {
+  border-top: 1rpx solid #fff;
+}
+
+.weui-cells:after {
+  border-bottom: 1rpx solid #fff;
+}
+
+.weui-cells__title {
+  background: #fff;
+  margin-bottom:0px;
+  color: #333;
+  font-size: 17px;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.submission{
+  background: linear-gradient(to right, rgba(81, 81, 81, 1), rgba(49, 48, 47, 1));
+  border: none;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 80rpx;
+  color: #e7c690;
+}

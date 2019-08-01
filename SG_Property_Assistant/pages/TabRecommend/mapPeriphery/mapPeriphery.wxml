@@ -1,0 +1,19 @@
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map id="myMap" class='mapStyle' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location>
+      <cover-view class="btn-area">
+          <block wx:for="{{iconWithTxt}}">
+            <cover-view class='show_type flex_col'>
+              <cover-view class='type_icons'>
+                <cover-image class='cover-image' src='{{item.iocnNormal}}'></cover-image>
+              </cover-view>
+              <cover-view class='txt_map'>
+                {{item.tiemTxt}}
+              </cover-view>
+            </cover-view>
+          </block>
+      </cover-view>
+    </map>
+  </view>
+
+</view>

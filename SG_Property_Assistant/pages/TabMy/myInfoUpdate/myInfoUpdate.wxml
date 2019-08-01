@@ -1,0 +1,52 @@
+<!--用户头像  -->
+<view class='info_head flex_col'>
+  <view>
+    <image class='img_head' src='/images/fc_boy_headdefault.png'></image>
+  </view>
+  <text class='info_title'>缺德的主</text>
+</view>
+
+<!--电话  -->
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">电话</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder-class='info_input_coloer' placeholder="13408065974" />
+    </view>
+  </view>
+</view>
+
+<!--微信号  -->
+<!-- <view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">微信</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder-class='info_input_coloer' placeholder="请输入微信号" />
+    </view>
+  </view>
+</view> -->
+
+<!--地址  -->
+<!-- <view class="weui-cells__title">地址</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" placeholder-class='info_input_coloer' placeholder="请输入地址" style="height: 3.3em" />
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">证件号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder-class='info_input_coloer' placeholder="5113031888556577575" />
+    </view>
+  </view>
+</view> -->
+
+<!--按钮  -->
+<button class="weui-btn submission" type="warn">提交</button>

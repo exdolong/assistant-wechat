@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import 'style/weui.wxss';
 .container {
   height: 100%;
   display: flex;
@@ -7,4 +8,63 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
+text {
+  color: #333;
+}
+
+text.c999 {
+  color: #999;
+}
+
+text.c666 {
+  color: #666;
+}
+
+text.ceee {
+  color: #eee;
+}
+
+.B2B2B2{
+  color: #B2B2B2;
+}
+
+.bule{ color: #5680A6;}
+
+.main_color{ color: #FF5A5F;}
+
+.mpr20 {
+  margin-right: 20rpx;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.scroll_box {
+  overflow-y: scroll;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+
+}
+
+.opacity6{
+  opacity:0.6; 
+}
+.left{float: left;}
+.right{float: right;}
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0;}
+.clearfix{zoom:1}

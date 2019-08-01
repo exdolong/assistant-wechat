@@ -1,0 +1,244 @@
+<import src='../../template/characterList-template/characterList-template.wxml' />
+<template name='listsDetailsTemplate'>
+  <!--头部 -->
+  <view class='banner-images'>
+    <image src='/temp/4.png'></image>
+  </view>
+
+  <view class='house_desc'>
+    <view class='house_title flex_col'>
+      <text class='threeline'>[青瓦]藏在市中心的老上海风情石库门洋房石库门</text>
+      <text class='describe'>2室1厅/26.07m²/东/沙湾</text>
+      <text class='c999 time'>申请时间：2018-05-19 09:09</text>
+    </view>
+
+    <view class='transactionPrice flex_col'>
+      <view class='price_jiage'>
+        <text>成交价格</text>
+        <text>298万</text>
+      </view>
+      <view class='time-view'>
+        <text class='c999 time'>申请时间：2018-05-19 09:09</text>
+      </view>
+    </view>
+
+    <view class='amountMoney'>
+      <view class="weui-cells weui-cells_after-title">
+        <picker bindchange="bindPickerChange" value="{{defaultIndex}}" range="{{amountMoneyArray}}">
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">贷款金额</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">289万</view>
+          </view>
+        </picker>
+        <picker bindchange="bindPickerChange" value="{{defaultIndex}}" range="{{amountMoneyArray}}">
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">贷款年限</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">20年</view>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 特色 -->
+  <view class='mod_tit_complex'>
+    <view class='mod_sub_tit flex_row'>
+      <text class='title_bj'>特色</text>
+    </view>
+    <view class='characteristic clearfix'>
+      <text class='xuque'>学区房</text>
+      <text class='xuque'>地铁房</text>
+      <view class='authentication'>
+        <image src='/images/fc_listpage_certification02.png'></image>
+        <text>认证</text>
+      </view>
+    </view>
+  </view>
+
+  <!--l联系人  -->
+  <view class='recommend_agent_info'>
+    <view class='mod_sub_tit flex_row'>
+      <text>中介</text>
+    </view>
+    <template is='characterListTemplate' />
+  </view>
+
+  <!--律师  -->
+  <view class='recommend_agent_info lawyer'>
+    <view class='mod_sub_tit flex_row'>
+      <text>律师</text>
+    </view>
+    <template is='characterListTemplate' />
+  </view>
+
+  <!--banker  -->
+  <view class='recommend_agent_info banker'>
+    <view class='mod_sub_tit flex_row'>
+      <text>Banker</text>
+      <text class='banker_daik'>贷款咨询？</text>
+    </view>
+    <template is='characterListTemplate' />
+  </view>
+
+  <!--交易状态  -->
+  <view class='tradingState state_01'>
+    <view class='tradingState-title flex_row'>
+      <view class='flex_row'>
+        <text class='title-txt'>交易状态</text>
+        <text class='waitFor'>等待合同</text>
+      </view>
+      <view class='banker_daik'>律师推荐</view>
+    </view>
+    <view class='tradingState-conent'>
+      您收到合同已经2天，您必须在两周内寄回合同，请安排好时间，在律师的带领下签合同并寄回给对方律师，请尽快聘请律师！
+    </view>
+    <view class='ht_sendBack'>
+      <text class='cyan'>合同已寄回</text>
+    </view>
+  </view>
+
+  <!--贷款状态  -->
+  <view class='tradingState state_02'>
+    <view class='tradingState-title flex_row'>
+      <view class='flex_row'>
+        <text class='title-txt'>贷款状态</text>
+        <text class='aotApplying'>未申请</text>
+      </view>
+      <view class='banker_daik'>去申请</view>
+    </view>
+    <view class='tradingState-conent'>
+      您必须在20天内办理贷款，如今已经过去15天，请尽快申请贷款。
+    </view>
+    <view class='ht_sendBack'>
+      <text class='black'>贷款已申请</text>
+    </view>
+  </view>
+
+  <!--银行审核中 -->
+  <view class='tradingState state_03'>
+    <view class='tradingState-title flex_row'>
+      <view class='flex_row'>
+        <text class='title-txt'>贷款状态</text>
+        <text class='orange'>银行审核中</text>
+      </view>
+      <view class='banker_daik hide'>去申请</view>
+    </view>
+    <view class='tradingState-conent'>
+      您必须在20天内办理贷款，如今已经过去15天，请尽快申请贷款。
+    </view>
+    <view class='ht_sendBack'>
+      <text class='black'>审核已通过</text>
+    </view>
+  </view>
+
+  <!--是否贷款  -->
+  <view class='box_daikuui'>
+    <view class='deal_price flex_row'>
+      <text>成交价格</text>
+      <text class='c999'>3929万</text>
+    </view>
+    <view class='isLoan flex_row'>
+      <text>是否贷款？</text>
+      <switch bindchange="switchChange" />
+    </view>
+    <view class="{{isOpen? 'moneyloan show' : 'moneyloan hide'}}">
+      <view class="weui-cells weui-cells_after-title">
+        <picker bindchange="bindPickerChange" value="{{defaultIndex}}" range="{{amountMoneyArray}}">
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">贷款金额</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">289万</view>
+          </view>
+        </picker>
+        <picker bindchange="bindPickerChange" value="{{defaultIndex}}" range="{{amountMoneyArray}}">
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">贷款年限</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">20年</view>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <!--看房时间  -->
+  <view class='seeHouse see_time'>
+    <view class='flex_col'>
+      <text class='title-txt'>看房时间</text>
+      <text class='c999 fontSize12'>请务必填写准确时间，以便系统给您提醒哦</text>
+    </view>
+    <view class='time_size'>
+      2018.05.19 09:09
+    </view>
+  </view>
+
+  <!--看房时间选择  -->
+  <view class='seeHouse seeHouse_select'>
+    <view class='flex_col'>
+      <text class='title-txt'>看房时间</text>
+      <text class='c999 fontSize12'>请务必填写准确时间，以便系统给您提醒哦</text>
+    </view>
+    <view class='time_select'>
+      <picker class="weui-btn" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">2018.05.19 09:09</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!--提示  -->
+  <view class='gray_mod flex_col'>
+    <text class='c999'>温馨提示</text>
+    <text class='c999'>本系统只提供认购流程记录与提醒，无法直接进行房产交易，请您线下发出offer（新盘为递交支票）之后，再通过系统进行认购申请操作。</text>
+  </view>
+
+  <!--按钮  -->
+  <view class='fixed_bar bar_file flex_row'>
+    <view class='telphone'>
+      <view class='imges'>
+        <image class='icon_phone' src='/images/fc_following_buttondelete.png'></image>
+      </view>
+      <view class='call_text'>
+        <text class='phone_text'>刪除</text>
+      </view>
+    </view>
+    <view class='messge_box flex_col'>
+      <text class='sendMessge'>归档</text>
+    </view>
+  </view>
+
+  <view class='fixed_bar bar_applyDai hide  flex_col'>
+    <text class='sendMessge'>申请</text>
+  </view>
+
+  <view class='fixed_bar bar_makeAppointment hide flex_col'>
+    <text class='sendMessge'>预约</text>
+  </view>
+
+  <view class='fixed_bar bar_modify hide  flex_row'>
+    <view class='telphone'>
+      <view class='imges'>
+        <image class='icon_phone' src='/images/fc_following_buttonmodify.png'></image>
+      </view>
+      <view class='call_text'>
+        <text class='phone_text'>修改</text>
+      </view>
+    </view>
+    <view class='messge_box flex_col'>
+      <text class='sendMessge'>归档</text>
+    </view>
+  </view>
+
+  <view class='fixed_bar bar_modify_icon hide flex_row'>
+    <view class='telphone'>
+      <view class='imges'>
+        <image class='icon_phone' src='/images/fc_following_buttonmodify.png'></image>
+      </view>
+      <view class='call_text'>
+        <text class='phone_text'>修改</text>
+      </view>
+    </view>
+  </view>
+
+</template>

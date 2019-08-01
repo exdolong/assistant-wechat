@@ -1,0 +1,47 @@
+<!--pages/TabRecommend/loanResultPage/loanResultPage.wxml-->
+<view class="result_box">
+  <image class="image_res" src="/images/background_bg.png"></image>
+  <text class="return_monthly">每月应还</text>
+
+  <view class="zongeo">
+    <text class="total_yuan">8901.09</text>
+    <text>元</text>
+  </view>
+
+  <view class='result_background'>
+    <view class="totalAmount">
+      <text>贷款总额</text>
+      <text>100万</text>
+    </view>
+    <view class="totalAmount">
+      <text>利息总额</text>
+      <text>100万</text>
+    </view>
+    <view class="totalAmount">
+      <text>贷款年限</text>
+      <text>30年</text>
+    </view>
+  </view>
+
+</view>
+
+<view class="daikuai_box">
+
+  <view class="daikuai_item">
+    <text>贷款净额</text>
+    <text>商业贷款</text>
+  </view>
+  <view class="daikuai_item">
+    <text>贷款金额</text>
+    <text>100万</text>
+  </view>
+  <view class="daikuai_item">
+    <text>贷款年限</text>
+    <text>30年</text>
+  </view>
+  <view class="daikuai_item">
+    <text>贷款利息</text>
+    <text>基本利息4.9%</text>
+  </view>
+
+</view>

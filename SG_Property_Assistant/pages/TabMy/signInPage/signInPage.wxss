@@ -1,0 +1,49 @@
+/* pages/TabMy/signInPage/signInPage.wxss */
+
+.login_area {
+  padding: 30rpx;
+}
+
+.input_area {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30rpx;
+  vertical-align: middle;
+  justify-content: space-between;
+}
+
+.send_verify_num {
+  font-size: 17px;
+  color: #333;
+  line-height: 2.58823529em;
+  font-weight: 800;
+  text-align: right;
+  float: right;
+}
+
+.input_faz {
+  font-size: 34rpx;
+}
+
+.input_area input {
+  height: 2.58823529em;
+  min-height: 2.58823529em;
+  line-height: 2.58823529em;
+}
+
+.post_ulog {
+  background: linear-gradient(to right, rgba(240, 216, 161, 1), rgba(222, 177, 84, 1));
+  color: #722d07;
+  margin-top: 80rpx;
+}
+
+.agree_protocol {
+  text-align: center;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 80rpx;
+  width: 100%;
+}
+
+.agree_protocol text{
+  color: #999;
+}

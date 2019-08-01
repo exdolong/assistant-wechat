@@ -1,1 +1,97 @@
 /* pages/TabMy/TabMy.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.user_comp {
+  background: #fff;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.img_head {
+  width: 146rpx;
+  height: 146rpx; border-radius: 146rpx;
+}
+
+.user_num {
+  margin-top: 24rpx;
+  margin-left: 15px;
+}
+
+.user_title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.user_iphe {
+  font-size: 15px;
+  color: #999;
+}
+
+.box_follow {
+  background: #fff;
+  margin-top: 10px;
+  justify-content: space-around;
+  padding-bottom: 40rpx;
+  padding-top: 40rpx;
+}
+
+.box_list {
+  text-align: center;
+}
+
+.box_follow image {
+  width: 27px;
+  height: 27px;
+  margin-bottom: 5px;
+}
+
+.box_list text {
+  font-size: 14px;
+  color: #666;
+}
+
+.page_list {
+  margin-top: 10px;
+}
+
+.page_list navigator {
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.page_list .list_image {
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 19px;
+  height: 19px;
+}
+
+
+button.me_outLogin[type=default] {
+  background: #fff;
+  border-radius: 0;
+  color: #333;
+  border: none;
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+.weui-cells:before {
+  border-top: 1rpx solid #fff;
+}
+.weui-cells:after {
+  border-bottom: 1rpx solid #fff;
+}
+
+.weui-cell:before {
+  border-top: 1rpx solid #E5E5E5;
+}
+
+.weui-cell:after{
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.mp10{ padding-top: 30rpx;}
+.buttonGetname{ position:absolute; left: 0; top: 0px; right: 0px; width: 750rpx; height: 100px; z-index: 999; font-size: 0px; opacity: 0; border: 1px solid #fff;}

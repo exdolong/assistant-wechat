@@ -1,0 +1,29 @@
+<import src='../../template/lists-template/lists-template.wxml' />
+<import src='../../template/characterList-template/characterList-template.wxml' />
+
+<block>
+  <!--单条数据  -->
+  <view class='appointment_list'>
+    <template is='listsTemplate' />
+    <view class='business_info flex_row'>
+      <template is='characterListTemplate' />
+       <view class='appointment_time flex_row'>
+        <image src='/images/fc_details_time.png'></image>
+        <text>2018.05.19 09:09</text>
+      </view> 
+    </view>
+  </view>
+
+  <view class='appointment_list'>
+    <template is='listsTemplate' />
+    <view class='business_info flex_row'>
+      <template is='characterListTemplate' />
+      <view class='appointment_time flex_row'>
+        <image src='/images/fc_details_time.png'></image>
+        <text>2018.05.19 09:09</text>
+      </view>
+    </view>
+  </view>
+
+
+</block>

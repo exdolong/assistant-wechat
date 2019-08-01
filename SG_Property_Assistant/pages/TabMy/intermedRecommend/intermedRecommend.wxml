@@ -1,0 +1,8 @@
+<import src='../../template/characterList-template/characterList-template.wxml' />
+
+<!--列表信息  -->
+<view class='list_info_role'>
+  <template is='characterListTemplate' />
+  <template is='characterListTemplate' />
+  <template is='characterListTemplate' />
+</view>

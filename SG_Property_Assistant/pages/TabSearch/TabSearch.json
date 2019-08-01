@@ -1,6 +1,3 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#061626",
-  "navigationBarTitleText": "Search",
-  "navigationBarTextStyle": "white"
+  "navigationBarTitleText": "搜索"
 }

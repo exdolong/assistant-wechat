@@ -1,0 +1,30 @@
+/* pages/TabRecommend/propertiesNewsList/propertiesNewsList.wxss */
+
+page{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.news {
+  height: auto;
+}
+
+.news_title {
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  margin-top: 40rpx;
+}
+
+.news_content, .news_time {
+  color: #333;
+  font-size: 30rpx;
+  display: block;
+  padding-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.news_time {
+  margin-top: 12rpx;
+}

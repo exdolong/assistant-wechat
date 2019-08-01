@@ -1,0 +1,25 @@
+<view class='content'>
+  <block>
+    <!-- 单条数据 -->
+    <view class='inner_li flex_row'>
+      <view class='list-img-loaded'>
+        <image src='../../temp/1.png'></image>
+      </view>
+      <view class='flex_col'>
+        <text class='intro_title'>俯瞰曼哈顿天际线 – Avora豪华公寓实地考察
+</text>
+        <text class='time_txt'>2018.7.5</text>
+      </view>
+    </view>
+
+    <view class='inner_li flex_row'>
+      <view class='list-img-loaded'>
+        <image src='../../temp/2.png'></image>
+      </view>
+      <view class='flex_col'>
+        <text class='intro_title'>旧金山湾区：烧毁的房子也能卖80万美金？！</text>
+        <text class='time_txt'>2018.7.5</text>
+      </view>
+    </view>
+  </block>
+</view>

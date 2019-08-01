@@ -1,0 +1,86 @@
+<!--pages/TabRecommend/helpMeFindRoom/helpMeFindRoom.wxml-->
+<view class="buy_house">
+  <text class="selection">我要买房</text>
+  <text>我要租房</text>
+</view>
+
+<view class='scroll_box scroll_max_height'>
+
+  <!--单个条件  S-->
+  <view class='dl_item'>
+    <text class='dl_title'>您的首付预算：</text>
+    <view class='dl_content'>
+      <text class="range_nbmer">20~100万</text>
+      <slider bindchange="slider4change" min="50" max="200" show-value/>
+    </view>
+  </view>
+  <!--单个条件  E-->
+
+  <!--单个条件  S-->
+  <view class='dl_item'>
+    <text class='dl_title'>您购买的偏好？</text>
+    <view class='dl_content'>
+      <text>新房</text>
+      <text>二手房</text>
+      <text>不限</text>
+    </view>
+  </view>
+  <!--单个条件  E-->
+
+  <!--单个条件  S-->
+  <view class='dl_item'>
+    <text class='dl_title'>您想买什么户型？</text>
+    <view class='dl_content'>
+      <text>一室</text>
+      <text>二室</text>
+      <text>三室</text>
+      <text>四室</text>
+      <text>五室</text>
+      <text>五室以上</text>
+    </view>
+  </view>
+  <!--单个条件  E-->
+
+  <!--单个条件  S-->
+  <view class='dl_item'>
+    <text class='dl_title'>您想买的区域是？</text>
+    <view class='dl_content'>
+      <view class="region">
+        <image class="dingwei_icon" src='/images/Location_adder.png'></image>
+        <text>不限</text>
+        <image class="triangle_down" src='/images/icon_triangle_down.png'></image>
+      </view>
+    </view>
+  </view>
+  <!--单个条件  E-->
+
+  <!--单个条件  S-->
+  <view class='dl_item'>
+    <text class='dl_title'>特殊要求？</text>
+    <view class='dl_content'>
+      <text>优质学区</text>
+      <text>离地铁近</text>
+      <text>生活便利</text>
+      <text>南北通透</text>
+      <text>优质学区</text>
+      <text>离地铁近</text>
+      <text>生活便利</text>
+      <text>南北通透</text>
+      <text>优质学区</text>
+      <text>离地铁近</text>
+      <text>生活便利</text>
+      <text>南北通透</text>
+    </view>
+  </view>
+  <!--单个条件  E-->
+
+  <!--单个条件  S-->
+  <view class='dl_item'>
+    <text class='dl_title'>您的联系方式？</text>
+    <view class='dl_content'>
+      <input class='smsCode' placeholder-class='input_faz B2B2B2' placeholder='请输入验证码'></input>
+    </view>
+  </view>
+  <!--单个条件  E-->
+  <button class="weui-btn submission" catchtap='submitAction' type="warn">提交</button>
+</view>

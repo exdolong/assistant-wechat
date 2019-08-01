@@ -1,0 +1,40 @@
+<import src='../../template/lists-template/lists-template.wxml' />
+
+<block>
+  <!--贷款单条数据  -->
+  <view class='loan_list'>
+    <template is='listsTemplate' />
+    <view class='amount'>
+      <text class='c999'>贷款金额：</text>
+      <text class='main_color pring'>140万</text>
+      <text class='c999'>贷款年限：</text>
+      <text>30年</text>
+    </view>
+    <view class='loan_examine flex_row'>
+      <view class=''>
+        <text class='c999'>贷款：</text>
+        <text class='examine_btn'>银行审核中</text>
+      </view>
+      <text class='c999'>2018-05-19 09:09</text>
+    </view>
+  </view>
+
+
+  <view class='loan_list'>
+    <template is='listsTemplate' />
+    <view class='amount'>
+      <text class='c999'>贷款金额：</text>
+      <text class='main_color pring'>140万</text>
+      <text class='c999'>贷款年限：</text>
+      <text>30年</text>
+    </view>
+    <view class='loan_examine flex_row'>
+      <view class=''>
+        <text class='c999'>贷款：</text>
+        <text class='examine_btn'>银行审核中</text>
+      </view>
+      <text class='c999'>2018-05-19 09:09</text>
+    </view>
+  </view>
+
+</block>

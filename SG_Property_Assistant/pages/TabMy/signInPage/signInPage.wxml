@@ -1,0 +1,20 @@
+<!--pages/TabMy/signInPage/signInPage.wxml-->
+
+<view class='login_area'>
+  <!--手机验证码  -->
+  <view class='input_area flex_row'>
+    <input class='short_input' placeholder-class='input_faz B2B2B2' placeholder='请输入手机号'></input>
+    <text class='send_verify_num'>发送验证码</text>
+  </view>
+
+  <!--验证码  -->
+  <view class='input_area'>
+    <input class='smsCode' placeholder-class='input_faz B2B2B2' placeholder='请输入验证码'></input>
+  </view>
+
+  <button class='post_ulog'>提交</button>
+  <view class='agree_protocol'>
+    <text>- 推荐使用微信登录 -</text>
+  </view>
+  <button class='authorized_login weui-btn' type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信授权登录</button>
+</view>

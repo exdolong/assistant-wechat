@@ -1,2 +1,33 @@
-<!--pages/TabSearch/TabSearch.wxml-->
-<text>pages/TabSearch/TabSearch.wxml</text>
+<view class='search_page_box'>
+  <view class='search_top'>
+    <view class='search_content'>
+      <image src='/images/fc_homepage_search.png'></image>
+      <form bindsubmit='searchBox'>
+        <input placeholder='搜索楼盘/街道/开发商' placeholder-class='input_placeholder' class='search_input' focus="true" name='keyWord' bindconfirm="bindconfirmTap"></input>
+      </form>
+    </view>
+    <text class='cancel_button' catchtap='backHomeTap'>取消</text>
+  </view>
+  <!--热门搜索  start-->
+  <view class='hot_search'>
+    <text class='hot_title'>热门搜索</text>
+    <view class='hot_search_text'>
+    <text wx:for="{{hotwords}}" wx:key="{{index}}" data-name="{{item}}" bindtap="districtSelect">{{item}}</text>
+    </view>
+  </view>
+  <!--热门搜索  end-->
+  <!--搜索历史  start-->
+  <view class='search_history'>
+    <view class='history_title'>
+      <text class='hot_title'>搜索历史</text>
+      <image src='/images/fc_searchpage_delete.png'></image>
+    </view>
+    <view class='search_history_list'>
+      <view class='history_item' wx:for="{{historyArray}}" wx:key="{{index}}" data-name="{{item}}" catchtap="searchResultTap">
+        <image src='/images/fc_searchpage_history.png'></image>
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <!--搜索历史  end-->
+</view>

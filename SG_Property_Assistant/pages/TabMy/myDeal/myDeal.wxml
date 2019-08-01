@@ -1,0 +1,31 @@
+<import src='../../template/lists-template/lists-template.wxml' />
+
+<block>
+<!--单条数据  -->
+  <view class='deal_list' catchtap='jumapdeTap'>
+    <template is='listsTemplate' />
+    <view class='waiting_state flex_row'>
+      <text class='c666'>状态：</text>
+      <button class='weui-btn wait_btn' type='primary' plain="true">等待合同</button>
+      <text class='c666'>贷款：</text>
+      <button class='weui-btn examine_btn' type='primary' plain="true">银行审核中</button>
+    </view>
+    <view class='deal_info flex_row'>
+      <text class='deal_info_time'>交易时间：2018-05-19 09:09</text>
+    </view>
+  </view>
+
+
+  <view class='deal_list'>
+    <template is='listsTemplate' />
+    <view class='waiting_state flex_row'>
+      <text class='c666'>状态：</text>
+      <button class='weui-btn wait_btn' type='primary' plain="true">等待合同</button>
+      <text class='c666'>贷款：</text>
+      <button class='weui-btn examine_btn' type='primary' plain="true">银行审核中</button>
+    </view>
+    <view class='deal_info flex_row'>
+      <text class='deal_info_time'>交易时间：2018-05-19 09:09</text>
+    </view>
+  </view>
+</block>

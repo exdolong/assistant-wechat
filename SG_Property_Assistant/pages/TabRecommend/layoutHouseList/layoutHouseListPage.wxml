@@ -1,0 +1,33 @@
+<!--pages/TabRecommend/layoutHouseList/layoutHouseListPage.wxml-->
+<view class="apartment_item">
+  <view class="image_box">
+    <image class="image_left" src="/temp/1-1.png"></image>
+  </view>
+  <view class="text_sqm">
+    <text class="title_bt">TYPE B1b <text class='tag_cyan'>在售</text></text>
+    <text class="sq_ft">54sqm / 581sq ft</text>
+    <text class="price">$146万新币一套</text>
+  </view>
+</view>
+
+<view class="apartment_item">
+  <view class="image_box">
+    <image class="image_left" src="/temp/1-1.png"></image>
+  </view>
+  <view class="text_sqm">
+    <text class="title_bt">TYPE B1b <text class='tag_cyan'>在售</text></text>
+    <text class="sq_ft">54sqm / 581sq ft</text>
+    <text class="price">$146万新币一套</text>
+  </view>
+</view>
+
+<view class="apartment_item">
+  <view class="image_box">
+    <image class="image_left" src="/temp/1-1.png"></image>
+  </view>
+  <view class="text_sqm">
+    <text class="title_bt">TYPE B1b <text class='tag_cyan'>在售</text></text>
+    <text class="sq_ft">54sqm / 581sq ft</text>
+    <text class="price">$146万新币一套</text>
+  </view>
+</view>

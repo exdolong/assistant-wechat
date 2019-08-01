@@ -1,0 +1,3 @@
+@import "../../template/listsDetails-template/listsDetails-template.wxss";
+page{ background: #F5F5F5;}
+.house_title .time,.amountMoney,.banker,.box_daikuui,.seeHouse,.seeHouse_select, .state_03{ display: none;}

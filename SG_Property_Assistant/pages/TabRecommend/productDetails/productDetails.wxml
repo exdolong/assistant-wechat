@@ -1,0 +1,376 @@
+<import src='../../template/characterList-template/characterList-template.wxml' />
+<view class="mr50 flex_col">
+  <!--大图  -->
+  <view class='vr_box'>
+    <swiper class='bigPic'>
+      <swiper-item wx:for="{{photos}}" wx:key="{{index}}" catchtap='jumpLinkTap'>
+        <image src="{{item.path}}"></image>
+      </swiper-item>
+    </swiper>
+    <view class='opt_bar'>
+      <text>1/{{photos.length}}</text>
+    </view>
+  </view>
+
+  <!--标题  -->
+  <view class='bg_news'>
+    <view class='title_txt'>
+      <button class="share_icon" open-type="share">
+        <image class="share_image" src='/images/share_iocn.png'></image>
+        <text class="share_text">分享</text>
+      </button>
+      <text class='threeline'>
+        {{title}}
+      </text>
+      <view class='tag_box'>
+        <text class='tag_cyan' wx:for="{{tags}}" wx:key="{{index}}">{{item}}</text>
+      </view>
+      <view class="flow_add">
+        <image class="address_image" src='/images/address_iocn.png'></image>
+        <text class="address_style">{{addr}}</text>
+      </view>
+    </view>
+
+    <view class='similar_data'>
+      <text class='gray_soujia'>{{humanAmount}}</text>
+      <text class='red_mianji'>{{humanCNYAmount}}</text>
+      <!-- <view class='follow flex_col'>
+        <image src='/images/fc_details_collection.png'></image>
+        <text>100已关注</text>
+      </view> -->
+    </view>
+  </view>
+
+  <!--基本信息  -->
+  <view class='house_description'>
+    <view class='mod_sub_tit flex_row'>
+      <text class='title_bj'>基本信息</text>
+      <!-- <text class='consultation'>贷款咨询？</text> -->
+    </view>
+    <view class='tag_group_lsit'>
+      <view class='list_box flex_row'>
+        <text class='c999'>开发商：</text>
+        <text>{{developer}}</text>
+      </view>
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>楼层：</text>
+          <text>20-30层</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>装修：</text>
+          <text>{{decorations}}</text>
+        </view>
+      </view>
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>发布：</text>
+          <text>{{pubDate}}</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>预算：</text>
+          <text>总价和贷款</text>
+        </view>
+      </view>
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>产权期限：</text>
+          <text>{{tenure}}</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>单位数量：</text>
+          <text>44</text>
+        </view>
+      </view>
+      <view class='list_box flex_row'>
+        <text class='c999'>面积：</text>
+        <text>{{avgPsf}}</text>
+      </view>
+
+      <view class='list_box flex_row'>
+        <text class='c999'>样板间开发日期：</text>
+        <text>{{showFlatOpenDate}}</text>
+      </view>
+      <!-- <view class='list_box flex_row' catchtap='jumpMapTap'>
+        <text class='c999'>地址：</text>
+        <text class='bule'>成都市武侯区888号</text>
+        <image src='/images/fc_details_positioning.png'></image>
+      </view> -->
+    </view>
+
+    <view class="mod_tit_complex" catchtap='jumpProjectProfileTap'>
+      <view class="custom_button">
+        <text class="button_text">查看项目介绍</text>
+        <image class="more_butom" src='/images/more_jiatou.png'></image>
+      </view>
+    </view>
+
+  </view>
+
+  <!--楼盘亮点  -->
+  <view class="real_estate">
+    <view class="title_div">
+      <text class='title_bj'>楼盘亮点</text>
+    </view>
+
+    <view class="content_div">
+
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>项目规模：  </text>
+          <text>{{facility.projectSize}}</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>容积率：  </text>
+          <text>{{facility.plotRatio}}</text>
+        </view>
+      </view>
+
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>邮区：  </text>
+          <text>{{facility.numOfBlocks}}</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>户数：  </text>
+          <text>{{facility.numOfHousehold}}</text>
+        </view>
+      </view>
+
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>管理费：  </text>
+          <text>{{facility.managementFee}}</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>游泳池：  </text>
+          <text>{{facility.swimmingPool}}</text>
+        </view>
+      </view>
+
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>网球场： </text>
+          <text>{{facility.tennisCourt}}</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>篮球场：  </text>
+          <text>{{facility.basketballCourt}}</text>
+        </view>
+      </view>
+
+      <view class='list_box flex_row'>
+        <view class='list_left'>
+          <text class='c999'>健身房：  </text>
+          <text>{{facility.gym}}</text>
+        </view>
+        <view class='list_right'>
+          <text class='c999'>按摩浴缸：  </text>
+          <text>{{facility.jacuzzi}}</text>
+        </view>
+      </view>
+
+      <view class="info_cont">
+        <text class="info_wenben">
+          {{intro}}
+          <text class="info_cont_more">全文</text>
+        </text>
+      </view>
+
+    </view>
+
+  </view>
+
+  <!-- 房型 -->
+  <view class="house_apartment">
+
+    <view class="title_div">
+      <text class='title_bj'>房型(4)</text>
+      <image class="item_arrow r" src="/images/item_arrow.png"></image>
+      <text class="look_all r">查看全部</text>
+    </view>
+
+    <view class="apartment_item" wx:for="{{layouts}}" wx:key="{{index}}">
+      <view class="image_box">
+        <image class="image_left" src="{{item.path}}"></image>
+      </view>
+      <view class="text_sqm">
+        <text class="title_bt">{{item.title}}<text class='tag_cyan'>{{item.saleStatus}}</text></text>
+        <text class="sq_ft">{{item.size}}</text>
+        <text class="price">{{item.amount}}</text>
+      </view>
+    </view>
+
+
+    <view class="custom_button custom_style" catchtap='jumpLayoutHouseTap'>
+      <text class="button_text">查看全部房型</text>
+      <image class="more_butom" src='/images/more_jiatou.png'></image>
+    </view>
+
+  </view>
+
+  <!-- 位置及周边配套 -->
+  <view class="house_apartment">
+
+    <view class="title_div">
+      <text class='title_bj'>位置及周边配套</text>
+    </view>
+
+    <view class="peripheral_matching">
+      <text class="selection">交通({{amenities.mrts.length}})</text>
+      <text>教育({{amenities.schools.length}})</text>
+      <text>医疗({{amenities.hospitals.length}})</text>
+      <text>购物({{amenities.malls.length}})</text>
+    </view>
+
+    <!-- 地图 -->
+    <image class="map" src="{{markersMapUrl}}"></image>
+
+    <!---->
+    <view class="north_line">
+      <text wx:for="{{amenities.mrts}}" wx:key="{{key}}">{{key}}.{{item.name}}</text>
+    </view>
+
+  </view>
+
+  <!-- 期房购买流程 -->
+  <view class="house_apartment">
+
+    <view class="title_div">
+      <text class='title_bj'>期房购买流程</text>
+    </view>
+
+    <view class="matter">
+      <view class="matter_itme">
+        <text class="time_01">时间</text>
+        <text class="shiwu_02">事项</text>
+      </view>
+      <view class="matter_itme">
+        <text class="cont_list01">———</text>
+        <text class="cont_list02">支付定金5%</text>
+      </view>
+      <view class="matter_itme">
+        <text class="cont_list01">两周内</text>
+        <text class="cont_list02">收到购房合同</text>
+      </view>
+      <view class="matter_itme">
+        <text class="cont_list01 center">五周内</text>
+        <text class="cont_list02">办理贷款
+          去律师楼签字
+          支付律师费用2500~3000新币
+        </text>
+      </view>
+      <view class="matter_itme">
+        <text class="cont_list01">七周内</text>
+        <text class="cont_list02">支付买家印花税</text>
+      </view>
+      <view class="matter_itme">
+        <text class="cont_list01 center">八周内</text>
+        <text class="cont_list02">按支付首付款剩余的15%+工程分期款项5%(在贷款75%的情况下)</text>
+      </view>
+    </view>
+
+    <view class="title_div">
+      <text class='title_bj'>首付款</text>
+      <text class="soufukuai">
+        新加坡购房最低首付总房价的20%。
+      </text>
+    </view>
+
+  </view>
+
+  <!-- 价格趋势 -->
+  <view class="house_apartment">
+
+    <view class="title_div">
+      <text class='title_bj'>价格趋势</text>
+      <text class="soufukuai">
+        提示：页面价格是最近成交价格的评价价格，具体请在线咨询置房顾问。
+      </text>
+    </view>
+
+    <view class="custom_button custom_style">
+      <text class="button_text">在线咨询价格</text>
+      <image class="more_butom" src='/images/more_jiatou.png'></image>
+    </view>
+
+  </view>
+
+  <!-- 楼盘动态(20) -->
+  <view class="house_apartment" catchtap='jumpPropertiesNewsListTap'>
+
+    <view class="title_div">
+      <text class='title_bj'>楼盘动态(20)</text>
+      <image class="item_arrow r" src="/images/item_arrow.png"></image>
+      <text class="look_all r">查看全部</text>
+    </view>
+
+    <view class="news" wx:for="{{news}}" wx:key="{{key}}">
+      <text class="news_title">{{item.title}}</text>
+      <text class="news_content">{{item.digest}}</text>
+      <text class="news_time">{{item.dateTime}}</text>
+    </view>
+
+  </view>
+
+  <!-- 类似项目 -->
+  <view class="house_apartment" id="notic">
+
+    <view class="title_div">
+      <text class='title_bj'>类似项目</text>
+    </view>
+
+    <scroll-view scroll-x="true" scroll-with-animation='true' class="scroll_view">
+      <view class="scroll_item" wx:for="{{similarProjectArray}}" wx:key="{{key}}">
+        <image class='media_image' src='{{item.photoPath}}'></image>
+        <text class="itme_title">{{item.title}}</text>
+        <text class="itme_adder">{{item.avgPsf}}</text>
+        <text class="itme_parint">{{item.maxAmount}}</text>
+      </view>
+    </scroll-view>
+
+  </view>
+
+  <!-- 评论(120) -->
+  <view class="house_apartment">
+
+    <view class="title_div">
+      <text class='title_bj'>评论(20)</text>
+    </view>
+
+    <view class="comment">
+
+    </view>
+
+    <view class="custom_button custom_style">
+      <text class="button_text">查看更多评论</text>
+      <image class="more_butom" src='/images/more_jiatou.png'></image>
+    </view>
+
+  </view>
+
+  <!-- 提示  -->
+  <view class="house_apartment">
+    <text class="tipe">温馨提示</text>
+    <text class="tipe">
+    本系统只提供认购流程记录与提醒，无法直接进行房产交易，请您线下发出offer（新盘为递交支票）之后，再通过系统进行认购申请操作。
+    </text>
+  </view>
+
+  <!--底部  -->
+  <view class='fixed_bar flex_row'>
+    <view class='telphone'>
+      <view class='imges'>
+        <image class='icon_phone' src='/images/shouc_xingx.png'></image>
+      </view>
+      <view class='call_text'>
+        <text class='phone_text'>订阅</text>
+      </view>
+    </view>
+    <view class='messge_box flex_row'>
+      <text class='seeHouse'>在线询问</text>
+      <text class='sendMessge'>打电话</text>
+    </view>
+  </view>
+
+</view>

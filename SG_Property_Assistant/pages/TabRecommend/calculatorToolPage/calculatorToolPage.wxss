@@ -1,0 +1,39 @@
+/* pages/TabRecommend/calculatorToolPage/calculatorToolPage.wxss */
+page {
+  background: #f5f5f5;
+}
+
+.telephone{
+  padding-bottom: 36rpx;
+  padding-top: 36rpx;
+}
+
+.jsq_text,.yeur_text{
+  color: #B2B2B2;
+  font-size: 34rpx;
+  float: right;
+}
+
+.yeur_text{
+  color: #333;
+}
+
+.weui-input{
+  text-align: right;
+}
+
+.weui-cells:before {
+  border-top: 1rpx solid #fff;
+}
+.weui-cells:after {
+  border-bottom: 1rpx solid #fff;
+}
+
+.submission{
+  background: linear-gradient(to right, rgba(81, 81, 81, 1), rgba(49, 48, 47, 1));
+  border: none;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 80rpx;
+  color: #e7c690;
+}

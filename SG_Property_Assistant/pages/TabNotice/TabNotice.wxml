@@ -1,2 +1,18 @@
-<!--pages/TabNotice/TabNotice.wxml-->
-<text>pages/TabNotice/TabNotice.wxml</text>
+<view class='notice_lists'>
+  <!--单条通知记录  -->
+  <block wx:for="{{noticeDataList}}" wx:key="key">
+    <view class='notice flex_row' catchtap='toNottiDetailsTap' data-title="{{noticeDataList[index].title}}">
+      <view class='img'>
+        <image src='{{noticeDataList[index].iocn}}'></image>
+      </view>
+      <view class='notice_conet flex_col'>
+        <view class='not_top flex_row'>
+          <text class='notice_title'>{{noticeDataList[index].title}}</text>
+          <text class='notice_butt {{noticeDataList[index].className}}'>{{noticeDataList[index].status}}</text>
+        </view>
+        <text class='not_describe'>{{noticeDataList[index].content}}</text>
+      </view>
+    </view>
+  </block>
+
+</view>

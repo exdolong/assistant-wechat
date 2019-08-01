@@ -1,0 +1,25 @@
+<import src='../../template/lists-template/lists-template.wxml' />
+
+
+<view class="buy_house">
+  <text class="selection">新房</text>
+  <text>二手房</text>
+  <text>租房</text>
+</view>
+
+<!--关注列表  -->
+<view class='house_lists'>
+  <template is='listsTemplate' />
+  <template is='listsTemplate' />
+  <template is='listsTemplate' />
+</view>
+
+<!--失效的产品  -->
+<view class='invalid_list flex_col'>
+  <view class='flex_row title_top'>
+    <text class='invalid_title'>已失效</text>
+    <image class='invalid_icon' src='/images/fc_following_buttondelete.png'></image>
+  </view>
+  <template is='listsTemplate' />
+  <template is='listsTemplate' />
+</view>

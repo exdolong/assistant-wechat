@@ -1,0 +1,3 @@
+<import src='../../template/listsDetails-template/listsDetails-template.wxml' />
+
+<template is='listsDetailsTemplate' data="{{amountMoneyArray,defaultIndex,isOpen}}" />

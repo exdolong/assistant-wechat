@@ -1,0 +1,24 @@
+<template name='listsTemplate'>
+  <view class='pictext'>
+    <view class='media_main'>
+      <text class="med_hud">{{saleStatus}}</text>
+      <image class='mv_iocn' src='/images/mv_iocn.png'></image>
+      <image class='media_image' src='{{photoPath}}'></image>
+    </view>
+    <view class='item_list'>
+      <text class='item_title'>{{title}}</text>
+      <text class='item_other'>{{district}}</text>
+      <view class='item_minor'>
+        <text class='price_total'>{{minAmount}}</text>
+        <text class='unit_price'>{{avgPsf}}</text>
+      </view>
+      <view class='tag_box'>
+        <text class='tag_cyan' wx:for="{{tags}}" wx:key="{{index}}">{{item}}</text>
+        <!-- <view class='tag_certified'>
+          <image src='/images/fc_listpage_certification.png'></image>
+          <text>已认证</text>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</template>

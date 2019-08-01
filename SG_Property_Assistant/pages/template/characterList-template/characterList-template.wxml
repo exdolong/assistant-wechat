@@ -1,0 +1,39 @@
+<template name='characterListTemplate'>
+  <view class='recommend_agent flex_row' catchtap='jumpRoleDetailsTap'>
+    <view class='flex_row'>
+      <!--头像  -->
+      <view class='headimg'>
+        <image src='/images/fc_girl_headdefault.png'></image>
+      </view>
+      <!--中间信息  -->
+      <view class='agent_info flex_col'>
+        <view class='item_other flex_row'>
+          <view class='flex_row'>
+            <text class='agent_name'>{{name}}王力宏</text>
+            <text class='intermediary'>中介</text>
+          </view>
+          <view class='score_stars flex_row'>
+            <image src="/images/fc_stars_lightup.png"></image>
+            <image src="/images/fc_stars_lightup.png"></image>
+            <image src="/images/fc_stars_lightup.png"></image>
+            <image src="/images/fc_stars_lightup.png"></image>
+            <image src="/images/fc_stars_gray.png"></image>
+          </view>
+        </view>
+        <view class='shop_name flex_col'>
+          <text>大唐房地产中介公司</text>
+          <text class='c666 prtop'>收费标准：%1总房价</text>
+        </view>
+        <view class='good_rate_num flex_row'>
+          <text>无中介费</text>
+          <text>诚信</text>
+        </view>
+      </view>
+    </view>
+    <!--打电话按钮  -->
+    <view class='contact'>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      <image catchtap='callPhoneTap' data-phonenum='13408065974' src='/images/fc_phonecall_button.png'></image>
+    </view>
+  </view>
+</template>
