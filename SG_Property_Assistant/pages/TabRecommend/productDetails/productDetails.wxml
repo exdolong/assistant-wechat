@@ -55,7 +55,7 @@
       <view class='list_box flex_row'>
         <view class='list_left'>
           <text class='c999'>楼层：</text>
-          <text>20-30层</text>
+          <text>{{minFloors}}-{{maxFloors}}层</text>
         </view>
         <view class='list_right'>
           <text class='c999'>装修：</text>
@@ -84,7 +84,7 @@
       </view>
       <view class='list_box flex_row'>
         <text class='c999'>面积：</text>
-        <text>{{avgPsf}}</text>
+        <text>{{minSize}} - {{maxSize}}sqft</text>
       </view>
 
       <view class='list_box flex_row'>
@@ -129,7 +129,7 @@
       <view class='list_box flex_row'>
         <view class='list_left'>
           <text class='c999'>邮区：  </text>
-          <text>{{facility.numOfBlocks}}</text>
+          <text>{{districtName}}</text>
         </view>
         <view class='list_right'>
           <text class='c999'>户数：  </text>
@@ -325,7 +325,7 @@
         <image class='media_image' src='{{item.photoPath}}'></image>
         <text class="itme_title">{{item.title}}</text>
         <text class="itme_adder">{{item.avgPsf}}</text>
-        <text class="itme_parint">{{item.maxAmount}}</text>
+        <text class="itme_parint">{{item.minAmount}}</text>
       </view>
     </scroll-view>
 
