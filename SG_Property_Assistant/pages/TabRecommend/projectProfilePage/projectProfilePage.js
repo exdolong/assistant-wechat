@@ -10,11 +10,11 @@ Page({
     html: ``,
     isfixed: 0,
     fixedTop: 0,
-    projectMapUrl:'',
-    trafficMapUrl:'',
-    schoolMapUrl:'',
-    medicalMapUrl:'',
-    shoppingMapUrl:''
+    projectMapUrl: '',
+    trafficMapUrl: '',
+    schoolMapUrl: '',
+    medicalMapUrl: '',
+    shoppingMapUrl: ''
   },
 
   /**
@@ -44,6 +44,25 @@ Page({
         fixedTop: res[0].top
       })
     })
+
+  },
+
+  showDetailsTap: function(e) {
+    const remark = e.currentTarget.dataset.remark;
+
+    if (remark) {
+      wx.showModal({
+        title: '详细内容',
+        content: remark,
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
 
   },
 

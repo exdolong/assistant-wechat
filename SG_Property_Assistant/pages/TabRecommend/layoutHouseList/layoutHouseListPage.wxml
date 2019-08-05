@@ -1,33 +1,11 @@
 <!--pages/TabRecommend/layoutHouseList/layoutHouseListPage.wxml-->
-<view class="apartment_item">
+<view class="apartment_item" wx:for="{{layouts}}" wx:key="{{index}}">
   <view class="image_box">
-    <image class="image_left" src="/temp/1-1.png"></image>
+    <image class="image_left" src="{{item.path}}"></image>
   </view>
   <view class="text_sqm">
-    <text class="title_bt">TYPE B1b <text class='tag_cyan'>在售</text></text>
-    <text class="sq_ft">54sqm / 581sq ft</text>
-    <text class="price">$146万新币一套</text>
-  </view>
-</view>
-
-<view class="apartment_item">
-  <view class="image_box">
-    <image class="image_left" src="/temp/1-1.png"></image>
-  </view>
-  <view class="text_sqm">
-    <text class="title_bt">TYPE B1b <text class='tag_cyan'>在售</text></text>
-    <text class="sq_ft">54sqm / 581sq ft</text>
-    <text class="price">$146万新币一套</text>
-  </view>
-</view>
-
-<view class="apartment_item">
-  <view class="image_box">
-    <image class="image_left" src="/temp/1-1.png"></image>
-  </view>
-  <view class="text_sqm">
-    <text class="title_bt">TYPE B1b <text class='tag_cyan'>在售</text></text>
-    <text class="sq_ft">54sqm / 581sq ft</text>
-    <text class="price">$146万新币一套</text>
+    <text class="title_bt">{{item.title}}<text class='tag_cyan'>{{item.saleStatus}}</text></text>
+    <text class="sq_ft">{{item.size}}</text>
+    <text class="price">{{item.amount}}</text>
   </view>
 </view>

@@ -1,9 +1,10 @@
 <import src='../../template/characterList-template/characterList-template.wxml' />
 <view class="mr50 flex_col">
-  <!--大图  -->
+  <!--大图  hidden="{{!hasPanorama}}"-->
   <view class='vr_box'>
     <swiper class='bigPic'>
-      <swiper-item wx:for="{{photos}}" wx:key="{{index}}" catchtap='jumpLinkTap'>
+      <swiper-item wx:for="{{photos}}" wx:key="{{index}}" catchtap='jumpLinkTap' data-link='{{item.link}}'>
+        <image hidden="{{!item.hasPanorama}}" class='mv_iocn' src='/images/mv_iocn.png'></image>
         <image src="{{item.path}}"></image>
       </swiper-item>
     </swiper>
@@ -187,7 +188,7 @@
     <view class="title_div">
       <text class='title_bj'>房型(4)</text>
       <image class="item_arrow r" src="/images/item_arrow.png"></image>
-      <text class="look_all r">查看全部</text>
+      <text class="look_all r" catchtap='jumpLayoutHouseTap'>查看全部</text>
     </view>
 
     <view class="apartment_item" wx:for="{{layouts}}" wx:key="{{index}}">
@@ -308,6 +309,7 @@
     <view class="news" wx:for="{{news}}" wx:key="{{key}}">
       <text class="news_title">{{item.title}}</text>
       <text class="news_content">{{item.digest}}</text>
+
       <text class="news_time">{{item.dateTime}}</text>
     </view>
 
@@ -359,17 +361,17 @@
 
   <!--底部  -->
   <view class='fixed_bar flex_row'>
-    <view class='telphone'>
+    <view class='telphone' catchtap="jumpSubscribeTap">
       <view class='imges'>
-        <image class='icon_phone' src='/images/shouc_xingx.png'></image>
+        <image class='icon_phone' src='{{subscribeUrl}}'></image>
       </view>
       <view class='call_text'>
-        <text class='phone_text'>订阅</text>
+        <text class='{{isFollowing? "phone_shoucOk": "phone_text"}}'>{{isFollowing? "已订阅": "订阅"}}</text>
       </view>
     </view>
     <view class='messge_box flex_row'>
-      <text class='seeHouse'>在线询问</text>
-      <text class='sendMessge'>打电话</text>
+      <button class='seeHouse' open-type="contact">在线询问</button>
+      <text class='sendMessge' catchtap='jumpSendMessageTap'>打电话</text>
     </view>
   </view>
 

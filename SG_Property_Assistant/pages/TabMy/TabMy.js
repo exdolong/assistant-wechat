@@ -1,4 +1,5 @@
 // pages/TabMy/TabMy.js
+const util = require('../../utils/util.js')
 
 Page({
 
@@ -10,7 +11,8 @@ Page({
     listOperation: [
       ['/images/fc_feedback_problem.png', '/images/fc_focus_public.png', '/images/fc_service_telephone.png', '/images/fc_about_us.png'],
       ['反馈问题', '关注公众号', '客服电话', '关于我们'],
-      ['loanAnswer/loanAnswer', '', 'intermedRecommend/intermedRecommend', 'intermedRecommend/intermedRecommend']
+      ['loanAnswer/loanAnswer', '', 'telephone', 'intermedRecommend/intermedRecommend'],
+      ['', '', '13408065974', '']
     ],
     common_operation_Array: [{
         common: ['/images/fc_mepage_focus.png', '订阅', 'myAttention/myAttention']
@@ -37,10 +39,14 @@ Page({
    * 页面常用功能跳转
    */
   myJumpTap: function(event) {
-    var currentIndex = event.currentTarget.dataset.index;
-    wx.navigateTo({
-      url: this.data.common_operation_Array[currentIndex].common[2],
-    })
+    const page = event.currentTarget.dataset.page;
+    if (page == 'telephone') {
+      util.telephone('13408065974');
+    } else {
+      wx.navigateTo({
+        url: page,
+      })
+    }
   },
 
   /**
@@ -57,16 +63,10 @@ Page({
   // 设置页面初始化
   init: function() {
     var userInfo = wx.getStorageSync('userInfo');
-    // console.log(JSON.stringify(userInfo));
+
     if (userInfo.nickName) {
-      var infoObj = {
-        nickName: userInfo.nickName,
-        avatarUrl: userInfo.avatarUrl,
-        city: userInfo.city,
-        province: userInfo.province
-      };
       this.setData({
-        currentObj: infoObj,
+        ...userInfo,
         isSignin: true,
       });
     } else {

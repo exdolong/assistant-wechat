@@ -23,38 +23,17 @@ Page({
     })
   },
 
-  jumpCalculatorToolTap: () => {
+  jumpCalculatorToolTap: function(e) {
+    const page = e.currentTarget.dataset.page;
     wx.navigateTo({
-      url: 'calculatorToolPage/calculatorToolPage',
+      url: page,
     })
   },
 
-  jumpToListsTap: function() {
-    wx.navigateTo({
-      url: '../TabSearch/searchResult/searchResult',
-    })
-  },
-
-  jumpHelpMeFindTap: () => {
-    wx.navigateTo({
-      url: 'helpMeFindRoom/helpMeFindRoom',
-    })
-  },
-
-  jumpFindRoomDetaTap: function() {
-    wx.navigateTo({
-      url: 'mapFindRoom/mapFindRoom',
-    })
-  },
   jumpSearchPageTap: function(event) {
     app.globalData.isTabActiveIndex = false;
     wx.navigateTo({
       url: '../TabSearch/TabSearch',
-    })
-  },
-  jumpNewsPageTap: function(event) {
-    wx.navigateTo({
-      url: '../news/news',
     })
   },
   /**

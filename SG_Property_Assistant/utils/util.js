@@ -70,8 +70,23 @@ function formatMapLngLatAndArray(array) {
   return strMarkers;
 }
 
-function getAndMapLngLat(array){
-  return `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${array[0].lng},${array[0].lat}&markers=${formatMapLngLatAndArray(array)}&width=800&height=380&zoom=15&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
+function getAndMapLngLat(array) {
+  console.log(formatMapLngLatAndArray(array));
+  return `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${array[0].lng},${array[0].lat}&markers=${formatMapLngLatAndArray(array)}&width=800&height=380&zoom=16&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
+}
+
+function telephone(string) {
+  wx.showActionSheet({
+    itemColor: '#333',
+    itemList: [string, '呼叫'],
+    success(res) {
+      if (res.tapIndex) {
+        wx.makePhoneCall({
+          phoneNumber: string
+        })
+      }
+    }
+  })
 }
 
 module.exports = {
@@ -81,5 +96,6 @@ module.exports = {
   json2Form: json2Form,
   unique4: unique4,
   formatMapLngLatAndArray: formatMapLngLatAndArray,
-  getAndMapLngLat: getAndMapLngLat
+  getAndMapLngLat: getAndMapLngLat,
+  telephone: telephone
 }

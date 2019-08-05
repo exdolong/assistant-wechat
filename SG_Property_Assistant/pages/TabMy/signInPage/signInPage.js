@@ -1,10 +1,78 @@
 // pages/TabMy/signInPage/signInPage.js
+// header:{
+//   Authorization: `Bearer ${ access_token }`
+// },
+const util = require('../../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+
+  },
+
+  onGotUserInfo: function(e) {
+    wx.showModal({
+      title: '提示',
+      content: '确认登录吗?',
+      success(res) {
+        if (res.confirm) {
+          wx.showLoading({
+            title: '登录中...',
+          })
+          wx.login({
+            success(res) {
+              if (res.code) {
+                //发起网络请求
+                wx.request({
+                  url: util.configure.pathUrl + 'users/login',
+                  data: {
+                    code: res.code
+                  },
+                  method: "POST",
+                  success(res) {
+                    const sessionKey = res.data.data.sessionKey;
+                    const access_token = res.data.data.auth.access_token;
+                    wx.setStorageSync('access_token', res.data.data.auth.access_token);
+                    wx.setStorageSync('refresh_token', res.data.data.auth.refresh_token);
+
+                    wx.getUserInfo({
+                      success: function(res) {
+                        wx.setStorageSync('userInfo', res.userInfo);
+
+                        wx.request({
+                          url: util.configure.pathUrl + 'users/info',
+                          header: {
+                            Authorization: `Bearer ${ access_token }`
+                          },
+                          data: {
+                            ...res,
+                            sessionKey
+                          },
+                          method: "POST",
+                          success(res) {
+                            console.log(res);
+                            wx.navigateBack();
+                          },
+                          complete(){
+                            wx.hideLoading();
+                          }
+                        })
+                      }
+                    })
+                  }
+                })
+              } else {
+                console.log('登录失败！' + res.errMsg);
+                wx.hideLoading();
+              }
+            }
+          })
+        }
+      }
+    })
 
   },
 
@@ -20,21 +88,6 @@ Page({
    */
   onReady: function() {
 
-  },
-
-  onGotUserInfo: function(e) {
-    if (e.detail.errMsg == "getUserInfo:ok") {
-      var userInfo = wx.getStorageSync('userInfo');
-      if (!userInfo) {
-        wx.setStorageSync('userInfo', e.detail.userInfo);
-      }
-      wx.navigateBack({
-        delta: 1,
-      })
-      console.log("点击确认按钮");
-    } else if (e.detail.errMsg == "getUserInfo:fail auth deny") {
-      console.log("取消按钮");
-    }
   },
 
   /**

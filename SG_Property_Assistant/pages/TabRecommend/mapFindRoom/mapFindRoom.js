@@ -7,12 +7,12 @@ Page({
    */
   data: {
     screeningsArray: ['区域', '售价', '房型', '更多'], //筛选条件数组
-    latitude: 23.099994,
-    longitude: 113.324520,
+    latitude: 1.349057, // 103.839106,1.349057
+    longitude: 103.839106,
     markers: [{
       id: 1,
-      latitude: 23.099994,
-      longitude: 113.324520,
+      latitude: 1.349057,
+      longitude: 103.839106,
       name: 'T.I.T 创意园',
       iconPath: '/images/fc_map_location.png',
       width: 28,

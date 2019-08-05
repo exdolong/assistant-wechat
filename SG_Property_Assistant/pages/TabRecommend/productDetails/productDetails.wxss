@@ -80,7 +80,7 @@ page {
   padding-top: 20rpx;
   margin-top: 10rpx;
   overflow: hidden;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .title_txt {
@@ -110,9 +110,10 @@ page {
   width: 50%;
 }
 
-.list_box .list_right text{
+.list_box .list_right text {
   overflow: hidden;
-  white-space:nowrap; text-overflow:ellipsis;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .consultation {
@@ -246,6 +247,11 @@ page {
   font-size: 13px;
 }
 
+.phone_shoucOk {
+  color: #E7C690;
+  font-size: 13px;
+}
+
 .sendMessge {
   height: 50px;
   border-radius: 5px;
@@ -276,7 +282,7 @@ view.imges {
   padding-bottom: 70px;
 }
 
-.messge_box text {
+.messge_box text,.messge_box button {
   width: 47%;
 }
 
@@ -588,6 +594,13 @@ view.imges {
   font-size: 30rpx;
   display: block;
   margin-top: 20rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .news_time {
@@ -641,7 +654,7 @@ view.imges {
   line-height: 36rpx;
 }
 
-button,button::before,button::after{
+button, button::before, button::after {
   border: 1px solid #fff;
 }
 
@@ -665,4 +678,12 @@ button,button::before,button::after{
 .share_text {
   font-size: 26rpx;
   color: #999;
+}
+
+.bigPic image.mv_iocn {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 44rpx;
+  height: 44rpx;
 }

@@ -6,7 +6,8 @@ page{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 40rpx;
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
 }
 
 .image_box {

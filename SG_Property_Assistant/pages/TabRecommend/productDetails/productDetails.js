@@ -1,6 +1,8 @@
 // pages/TabRecommend/productDetails/productDetails.js
 const util = require('../../../utils/util.js')
 
+import request from '../../../utils/request.js'
+
 Page({
 
   /**
@@ -10,7 +12,55 @@ Page({
     detailsData: null,
     fixedTop: 0,
     similarProjectArray: [], // 类似项目
-    markersMapUrl: ''
+    markersMapUrl: '',
+    subscribeUrl: '/images/shouc_xingx.png',
+    isSubscribe: false // 是否订阅
+  },
+
+  jumpLinkTap: function(e) {
+    wx.navigateTo({
+      url: `../webViewPage/webViewPage?link=${e.currentTarget.dataset.link}`,
+    })
+  },
+
+  jumpSubscribeTap: function(e) {
+    const access_token = wx.getStorageSync('access_token');
+    if (this.data.isFollowing) {
+      this.followingFunc('unFollow', 'DELETE');
+    } else {
+      this.followingFunc('follow', 'POST');
+    }
+  },
+
+  followingFunc: function(path, method) {
+    const access_token = wx.getStorageSync('access_token');
+
+    wx.request({
+      url: util.configure.pathUrl + `projects/${this.data.id}/${path}`,
+      header: {
+        Authorization: `Bearer ${access_token}`
+      },
+      method,
+      success: (res) => {
+        if (method == 'DELETE') {
+          this.setCollection(false, 'shouc_xingx');
+        } else {
+          this.setCollection(true, 'shouc_ok');
+        }
+      }
+    })
+  },
+
+  jumpSendMessageTap: function(e) {
+    util.telephone('13408065974');
+  },
+
+  // 设置订阅
+  setCollection: function(following, imagePath) {
+    this.setData({
+      subscribeUrl: `/images/${imagePath}.png`,
+      isSubscribe: following
+    })
   },
 
   /**
@@ -18,6 +68,14 @@ Page({
    */
   onLoad: function(options) {
     const that = this;
+    const access_token = wx.getStorageSync('access_token');
+    let header = null;
+    if (access_token) {
+      header = {
+        Authorization: `Bearer ${access_token}`
+      }
+    }
+
     wx.showShareMenu({
       // 要求小程序返回分享目标信息
       withShareTicket: true
@@ -25,7 +83,16 @@ Page({
 
     wx.request({
       url: util.configure.pathUrl + 'projects/' + options.id,
+      header,
       success(res) {
+        
+        if (res.data.data.isFollowing) {
+          if (method == 'DELETE') {
+            this.setCollection(false, 'shouc_xingx');
+          } else {
+            this.setCollection(true, 'shouc_ok');
+          }
+        }
         that.setData({
           ...res.data.data,
           markersMapUrl: util.getAndMapLngLat(res.data.data.amenities.mrts)
@@ -59,15 +126,18 @@ Page({
     })
   },
 
-  jumpLayoutHouseTap: (e) => {
+  jumpLayoutHouseTap: function(event) {
+    let obj = {
+      layouts: this.data.layouts
+    };
     wx.navigateTo({
-      url: '../layoutHouseList/layoutHouseListPage',
+      url: `../layoutHouseList/layoutHouseListPage?obj=${JSON.stringify(obj)}`,
     })
   },
 
-  jumpPropertiesNewsListTap: () => {
+  jumpPropertiesNewsListTap: function(event) {
     wx.navigateTo({
-      url: '../propertiesNewsList/propertiesNewsList',
+      url: `../propertiesNewsList/propertiesNewsList?obj=${JSON.stringify(this.data.news)}`,
     })
   },
 

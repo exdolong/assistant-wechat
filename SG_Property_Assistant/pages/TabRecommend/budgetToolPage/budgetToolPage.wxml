@@ -1,0 +1,104 @@
+<!--pages/TabRecommend/budgetToolPage/budgetToolPage.wxml-->
+<view class="telephone weui-cells weui-cells_after-title" catchtap='waysLoan'>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">国籍选择</view>
+    </view>
+    <view class="weui-cell__bd">
+      <text class="jsq_text">{{nationality}}</text>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title" catchtap='setNumber'>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">房屋套数</view>
+    </view>
+    <view class="weui-cell__bd">
+      <text class="jsq_text">{{fangwuNumber}}</text>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">可支配金额</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" value='{{totalNumber}}' placeholder-class='info_input_coloer' bindinput="changeInput" bindfocus='focusInput' type='digit' />
+    </view>
+    <view class="weui-cell__ft">万新币</view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">最大贷款比例</view>
+    </view>
+    <view class="weui-cell__bd">
+    </view>
+    <view class="weui-cell__ft">{{ratioloans}}%</view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">律师费用</view>
+    </view>
+    <view class="weui-cell__bd">
+    </view>
+    <view class="weui-cell__ft">3000新币</view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">印花税(BSD)</view>
+    </view>
+    <view class="weui-cell__bd">
+    </view>
+    <view class="weui-cell__ft">4%</view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">附加买方印花税(ABSD)</view>
+    </view>
+    <view class="weui-cell__bd">
+    </view>
+    <view class="weui-cell__ft">{{surchargeTax}}%</view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">预计可购买房屋总价</view>
+    </view>
+    <view class="weui-cell__bd">
+    </view>
+    <view class="weui-cell__ft">{{resultNubmer}}万新币</view>
+  </view>
+</view>
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">可支付首付</view>
+    </view>
+    <view class="weui-cell__bd">
+    </view>
+    <view class="weui-cell__ft">{{firstPayment}}万新币</view>
+  </view>
+</view>
+
+<text class="weui-btn submission" catchtap='submitAction' type="warn">本预算仅供参考，去置业</text>

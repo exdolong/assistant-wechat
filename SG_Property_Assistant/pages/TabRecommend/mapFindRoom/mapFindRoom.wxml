@@ -148,7 +148,7 @@
 
 <view class="page-body">
   <view class="page-section page-section-gap">
-    <map id="myMap" class='mapStyle' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location>
+    <map id="myMap" class='mapStyle' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" scale='12' show-location>
     </map>
   </view>
 </view>

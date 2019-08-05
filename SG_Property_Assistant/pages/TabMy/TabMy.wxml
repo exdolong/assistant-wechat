@@ -2,10 +2,10 @@
 <block wx:if="{{isSignin}}">
   <view class='weui-cell user_comp' catchtap='myModifyTap'>
     <view class='weui-cell__bd flex_row'>
-      <image class='img_head' src='{{currentObj.avatarUrl}}'></image>
+      <image class='img_head' src='{{avatarUrl}}'></image>
       <view class='user_num flex_col'>
-        <text class='user_title'>{{currentObj.nickName}}</text>
-        <text class='user_iphe'>{{currentObj.province}} {{currentObj.city}}</text>
+        <text class='user_title'>{{nickName}}</text>
+        <text class='user_iphe'>{{province}} {{city}}</text>
       </view>
     </view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
@@ -26,7 +26,7 @@
 <!--按钮操作  -->
 <view class='box_follow flex_row'>
   <block wx:for="{{common_operation_Array}}" wx:key="key">
-    <view class='box_list flex_col' data-index='{{index}}' catchtap='myJumpTap'>
+    <view class='box_list flex_col' data-index='{{index}}' data-page="{{item.common[2]}}" catchtap='myJumpTap'>
       <image src='{{item.common[0]}}'></image>
       <text>{{item.common[1]}}</text>
     </view>
@@ -34,15 +34,15 @@
 </view>
 
 
-<!--常用操作  -->
+<!--常用操作 url='{{listOperation[2][index]}}?title={{item}}' -->
 <view class="page_list weui-cells weui-cells_after-title">
   <block wx:for="{{listOperation[1]}}" wx:key="key">
-    <navigator url='{{listOperation[2][index]}}?title={{item}}' data-index='{{index}}' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator catchtap='myJumpTap' data-index='{{index}}' data-page="{{listOperation[2][index]}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
         <image class='list_image' src="{{listOperation[0][index]}}"></image>
       </view>
       <view class="weui-cell__bd">{{item}}</view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{listOperation[3][index]}}</view>
     </navigator>
   </block>
 </view>

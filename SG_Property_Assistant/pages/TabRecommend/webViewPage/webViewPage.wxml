@@ -1,0 +1,2 @@
+<!--pages/TabRecommend/webViewPage/webViewPage.wxml-->
+<web-view class="webPage" src="{{link}}" onMessage="onmessage"></web-view>

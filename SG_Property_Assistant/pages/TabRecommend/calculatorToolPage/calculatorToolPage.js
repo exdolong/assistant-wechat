@@ -5,10 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: ['30年', '29年', '28年', '27年'],
-    index: 0,
-    interestArray: ['基准利率(4.9%)', '基准利率95折(4.9%)'],
-    interestIndex: 0
+    loanTermArray: [],
+    loanTerm: 0, // 贷款年限
+    interestArray: [5.39, 5.145, 4.9, 4.655],
+    interestIndex: 0,
+    totalNumber: '请输入',
+    lendingRate: 1.98 //贷款利率
   },
 
   waysLoan: function(event) {
@@ -21,77 +23,79 @@ Page({
   },
 
   bindPickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log("年：" + e.detail.value);
     this.setData({
-      index: e.detail.value
+      loanTerm: e.detail.value
     })
   },
 
   bindInterestChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log("利率：" + e.detail.value);
     this.setData({
       interestIndex: e.detail.value
     })
   },
 
-  submitAction: (e) => {
-    wx.navigateTo({
-      url: '../loanResultPage/loanResultPage',
+  jumapDiest: function(e) {
+    console.log(e.currentTarget.dataset.lending);
+    this.setData({
+      lendingRate: e.currentTarget.dataset.lending
     })
+  },
+
+  changeInput: function(e) {
+    this.setData({
+      totalNumber: e.detail.value
+    })
+  },
+
+  changeLendInput: function(e) {
+    this.setData({
+      lendingRate: e.detail.value
+    })
+  },
+
+  focusInput: function() {
+    this.setData({
+      totalNumber: ''
+    })
+  },
+
+  focusInput02: function () {
+    this.setData({
+      lendingRate: ''
+    })
+  },
+
+  submitAction: function(e) {
+    let totalNumber = parseInt(this.data.totalNumber);
+    let obj = {
+      loanTerm: this.data.loanTermArray[this.data.loanTerm],
+      interestNuber: this.data.lendingRate,
+      totalNumber
+    }
+    if (totalNumber) {
+      wx.navigateTo({
+        url: `../loanResultPage/loanResultPage?obj=${JSON.stringify(obj)}`,
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '请输入贷款金额'
+      })
+
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let tempArray = [];
+    for (let i = 30; i > 0; i--) {
+      tempArray.push(i);
+    }
+    this.setData({
+      loanTermArray: tempArray
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  }
 })

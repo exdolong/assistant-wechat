@@ -12,18 +12,18 @@
   <image src='/images/fc_homepage_search.png'></image>
   <text>搜索楼盘/街道/开发商</text>
 </view>
-<!--定位地址  -->
-<view class='switch_city' catchtap='jumpFindRoomDetaTap'>
+<!--定位地址 catchtap='jumpCalculatorToolTap'  -->
+<view class='switch_city' data-page="mapFindRoom/mapFindRoom">
   <image src='/images/fc_homepage_positioning.png'></image>
   <text>新加坡</text>
 </view>
 <!--首页图标  -->
 <view class='channel_nav'>
-  <view class='box_col' catchtap='jumpToListsTap'>
+  <view class='box_col' data-page="../TabSearch/searchResult/searchResult" catchtap='jumpCalculatorToolTap'>
     <image src='/images/fc_homepage_bridalchamber.png'></image>
     <text>新房</text>
   </view>
-  <view class='box_col' catchtap='jumpToListsTap'>
+  <view class='box_col' data-page="../TabSearch/searchResult/searchResult" catchtap='jumpCalculatorToolTap'>
     <image src='/images/fc_homepage_secondary.png'></image>
     <text>二手房</text>
   </view>
@@ -38,29 +38,29 @@
 </view>
 <!-- 工具 -->
 <view class="home_tool">
-  <view class="item_class" catchtap='jumpCalculatorToolTap'>
+  <view class="item_class" data-page="calculatorToolPage/calculatorToolPage" catchtap='jumpCalculatorToolTap'>
     <text class="item_jsq">贷款计算器</text>
     <image class='background' src="/images/fc_calculator.png"></image>
     <text class="conmt-space">计算您每月还多少？</text>
   </view>
-  <view class="item_class">
+  <view class="item_class" data-page="budgetToolPage/budgetToolPage" catchtap='jumpCalculatorToolTap'>
     <text class="item_jsq">资格和预算估算</text>
     <image class='background' src="/images/fc_budget_estimation.png"></image>
     <text class="conmt-space">查看你的购房资格</text>
   </view>
-  <view class="item_class" catchtap='jumpNewsPageTap'>
+  <view class="item_class" data-page="../news/news" catchtap='jumpCalculatorToolTap'>
     <text class="item_jsq">知识库</text>
     <image class='background' src="/images/fc_knowledge_base.png"></image>
     <text class="conmt-space">买房租房需要注意什么</text>
   </view>
-  <view class="item_class" catchtap='jumpNewsPageTap'>
+  <view class="item_class" data-page="../news/news" catchtap='jumpCalculatorToolTap'>
     <text class="item_jsq">最新新闻</text>
     <image class='background' src="/images/fc_hmeo_new.png"></image>
     <text class="conmt-space">最新的房产资讯</text>
   </view>
 </view>
 <!-- 帮我找房 -->
-<view class="helpmefind" catchtap='jumpHelpMeFindTap'>
+<view class="helpmefind" data-page="helpMeFindRoom/helpMeFindRoom" catchtap='jumpCalculatorToolTap'>
   <text class="biaoti_hmep">帮我找房</text>
   <view class="helo_me">
     <text class="guwen">只需要简单几个选项，剩下的请交给我们专业的房产顾问</text>

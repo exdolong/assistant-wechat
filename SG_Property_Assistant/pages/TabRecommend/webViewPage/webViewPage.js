@@ -1,33 +1,21 @@
-// pages/TabRecommend/loanResultPage/loanResultPage.js
+// pages/TabRecommend/webViewPage/webViewPage.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // P=(Pv*R)/[1-(1+R)^(-n)]
-    // loanTerm,// 年限 Math.pow(1+R,-n)
-    // interestNuber, 利率
-    // totalNumber 总金额
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    const object = JSON.parse(options.obj);
-    console.log(object);
-    // 5% = 0.05
-    const R = (object.interestNuber / 100) / 12; 
-    const n = object.loanTerm * 12;
-    const p = ((object.totalNumber * 10000 * R) / (1 - Math.pow(1 + R, -n))).toFixed(2)
-
+    console.log(options)
     this.setData({
-      ...object,
-      p
+      link: options.link
     })
-
-
   },
 
   /**

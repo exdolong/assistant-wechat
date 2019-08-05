@@ -59,7 +59,7 @@
       <view class='filter_item'>
         <view class='price'>
           <view class='flex_col'>
-            <text class="list {{item.isSelection ?'active':''}}" wx:for="{{layoutsArray}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="layoutSelect" >{{item.name}}</text>
+            <text class="list {{item.isSelection ?'active':''}}" wx:for="{{layoutsArray}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="layoutSelect">{{item.name}}</text>
           </view>
           <text class='apartment_button' bindtap="confirmSubm">确定</text>
         </view>
@@ -108,10 +108,14 @@
   </view>
 </view>
 
-
 <!--结果列表  -->
 <view class='result_list'>
-  <template is='listsTemplate' wx:for="{{dataArray}}" wx:key="{{index}}" data='{{...item}}' />
+  <block wx:for="{{dataArray}}" wx:for-item="item" wx:for-index="idx" wx:key=" ">
+    <view catchtap='jumpDetailsTap' data-postid="{{item.id}}">
+      <template is="listsTemplate" data="{{...item}}" />
+    </view>
+  </block>
+  <!-- <template is='listsTemplate' wx:for="{{dataArray}}" wx:key="{{index}}" data='{{...item}}' /> -->
 </view>
 
 <!--条件排序  -->

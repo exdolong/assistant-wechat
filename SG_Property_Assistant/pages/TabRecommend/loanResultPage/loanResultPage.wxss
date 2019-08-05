@@ -10,7 +10,7 @@
 
 .result_background {
   height: auto;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -1,5 +1,5 @@
 <!--pages/TabRecommend/calculatorToolPage/calculatorToolPage.wxml-->
-<view class="telephone weui-cells weui-cells_after-title" catchtap='waysLoan'>
+<!-- <view class="telephone weui-cells weui-cells_after-title" catchtap='waysLoan'>
   <view class="weui-cell weui-cell_input">
     <view class="weui-cell__hd">
       <view class="weui-label">贷款方式</view>
@@ -9,7 +9,7 @@
     </view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </view>
-</view>
+</view> -->
 
 <view class="telephone weui-cells weui-cells_after-title">
   <view class="weui-cell weui-cell_input">
@@ -17,38 +17,44 @@
       <view class="weui-label">贷款净额</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder-class='info_input_coloer' placeholder="请输入" />
+      <input class="weui-input" value='{{totalNumber}}' placeholder-class='info_input_coloer' bindinput="changeInput" bindfocus='focusInput' type='digit' />
     </view>
-    <view class="weui-cell__ft">万</view>
+    <view class="weui-cell__ft">万新币</view>
   </view>
 </view>
 
-<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{loanTermArray}}">
   <view class="telephone weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
         <view class="weui-label">贷款年限</view>
       </view>
       <view class="weui-cell__bd">
-        <text class="yeur_text">{{array[index]}}</text>
+        <text class="yeur_text">{{loanTermArray[loanTerm]}}年</text>
       </view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </view>
   </view>
 </picker>
 
-<picker bindchange="bindInterestChange" value="{{interestIndex}}" range="{{interestArray}}">
-  <view class="telephone weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_input">
-      <view class="weui-cell__hd">
-        <view class="weui-label">贷款利率</view>
-      </view>
-      <view class="weui-cell__bd">
-        <text class="jsq_text">{{interestArray[interestIndex]}}</text>
-      </view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+<!-- <picker bindchange="bindInterestChange" value="{{interestIndex}}" range="{{interestArray}}">
+  
+</picker> -->
+
+<view class="telephone weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">贷款利率</view>
     </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" value='{{lendingRate}}' placeholder-class='info_input_coloer' bindinput="changeLendInput" bindfocus='focusInput02' type='digit' />
+    </view>
+    <view class="weui-cell__ft">%</view>
   </view>
-</picker>
+</view>
+
+<view class="lendingRateSytle">
+  <text wx:for="{{interestArray}}"  wx:key="{{index}}" catchtap='jumapDiest' data-lending="{{item}}" class="lending_item">{{item}}%</text>
+</view>
 
 <button class="weui-btn submission" catchtap='submitAction' type="warn">提交</button>

@@ -37,3 +37,17 @@ page {
   margin-top: 80rpx;
   color: #e7c690;
 }
+
+.lendingRateSytle{
+  background: #fff;
+  padding: 30rpx;
+}
+
+.lending_item {
+  color: #666;
+  padding: 10rpx;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}

@@ -7,6 +7,7 @@ page{
 
 .news {
   height: auto;
+  margin-right: 30rpx;
 }
 
 .news_title {
@@ -21,8 +22,8 @@ page{
   color: #333;
   font-size: 30rpx;
   display: block;
-  padding-right: 20rpx;
   margin-top: 20rpx;
+  padding-right: 30rpx;
 }
 
 .news_time {

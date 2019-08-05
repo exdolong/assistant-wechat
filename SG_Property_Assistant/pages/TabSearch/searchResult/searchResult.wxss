@@ -178,7 +178,7 @@ page {
 
 .tab_bar .tab_tit text.active,.price text.active,.guide text.active  {
   color: #a45c24;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .price {

@@ -69,6 +69,14 @@ Page({
     });
   },
 
+  // 跳转到产品详情
+  jumpDetailsTap: function(event) {
+    const id = event.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url: `../../TabRecommend/productDetails/productDetails?id=${id}`,
+    })
+  },
+
   screenRegionTap: function(event) {
     var curr_index = event.currentTarget.dataset.index;
     var that = this;
@@ -205,8 +213,8 @@ Page({
     let propertyTypeId = this.getIdFunc(this.data.moreArray[1].dataArray)[0];
     let tagId = this.getIdFunc(this.data.moreArray[2].dataArray)[0];
     let saleStatusId = this.getIdFunc(this.data.moreArray[3].dataArray)[0];
-    let topYear = this.getIdFunc(this.data.moreArray[4].dataArray,'name')[0];
-    
+    let topYear = this.getIdFunc(this.data.moreArray[4].dataArray, 'name')[0];
+
     this.loadData({
       pageNumber: pageNumber,
       keyword: this.data.keyword,
