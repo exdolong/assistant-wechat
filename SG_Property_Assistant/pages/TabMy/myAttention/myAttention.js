@@ -1,5 +1,6 @@
 // pages/TabMy/myAttention/myAttention.js
 const util = require('../../../utils/util.js')
+import request from '../../../utils/request.js'
 
 Page({
 
@@ -14,20 +15,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    const access_token = wx.getStorageSync('access_token');
-
-    wx.request({
+    const that = this;
+    request({
       url: util.configure.pathUrl + 'users/following',
-      header: {
-        Authorization: `Bearer ${access_token}`
-      },
       data: {
         pageNumber: 1,
         pageSize: 20
       },
       success(res) {
-        console.log(res);
+        that.setData({
+          projects: res.data.data.projects.content
+        })
       }
+    })
+  },
+
+  // 跳转到产品详情
+  jumpDetailsTap: function(event) {
+    const id = event.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url: `../../TabRecommend/productDetails/productDetails?id=${id}`,
     })
   },
 

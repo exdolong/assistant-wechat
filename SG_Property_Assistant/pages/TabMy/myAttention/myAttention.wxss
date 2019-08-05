@@ -15,6 +15,7 @@ page {
 
 .invalid_list {
   margin-top: 10px;
+  padding-bottom: 40rpx;
 }
 
 .invalid_title {

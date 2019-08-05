@@ -12,7 +12,8 @@ page {
 
 .img_head {
   width: 146rpx;
-  height: 146rpx; border-radius: 146rpx;
+  height: 146rpx;
+  border-radius: 146rpx;
 }
 
 .user_num {
@@ -69,29 +70,49 @@ page {
   height: 19px;
 }
 
-
 button.me_outLogin[type=default] {
   background: #fff;
   border-radius: 0;
   color: #333;
   border: none;
   margin-top: 30px;
-  font-weight: 500;
+  padding: 10rpx;
+}
+
+.weui-cell {
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
 }
 
 .weui-cells:before {
   border-top: 1rpx solid #fff;
 }
+
 .weui-cells:after {
   border-bottom: 1rpx solid #fff;
 }
 
 .weui-cell:before {
-  border-top: 1rpx solid #E5E5E5;
+  border-top: 1rpx solid #e5e5e5;
 }
 
-.weui-cell:after{
-  border-bottom: 1rpx solid #E5E5E5;
+.weui-cell:after {
+  border-bottom: 1rpx solid #e5e5e5;
 }
-.mp10{ padding-top: 30rpx;}
-.buttonGetname{ position:absolute; left: 0; top: 0px; right: 0px; width: 750rpx; height: 100px; z-index: 999; font-size: 0px; opacity: 0; border: 1px solid #fff;}
+
+.mp10 {
+  padding-top: 30rpx;
+}
+
+.buttonGetname {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  right: 0px;
+  width: 750rpx;
+  height: 100px;
+  z-index: 999;
+  font-size: 0px;
+  opacity: 0;
+  border: 1px solid #fff;
+}

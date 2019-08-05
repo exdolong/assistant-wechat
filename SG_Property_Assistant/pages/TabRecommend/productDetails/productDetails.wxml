@@ -323,7 +323,7 @@
     </view>
 
     <scroll-view scroll-x="true" scroll-with-animation='true' class="scroll_view">
-      <view class="scroll_item" wx:for="{{similarProjectArray}}" wx:key="{{key}}">
+      <view class="scroll_item" wx:for="{{similarProjectArray}}" wx:key="{{key}}" catchtap="jumpDetailsTap" data-postid="{{item.id}}">
         <image class='media_image' src='{{item.photoPath}}'></image>
         <text class="itme_title">{{item.title}}</text>
         <text class="itme_adder">{{item.avgPsf}}</text>
@@ -366,7 +366,7 @@
         <image class='icon_phone' src='{{subscribeUrl}}'></image>
       </view>
       <view class='call_text'>
-        <text class='{{isFollowing? "phone_shoucOk": "phone_text"}}'>{{isFollowing? "已订阅": "订阅"}}</text>
+        <text class='{{isSubscribe? "phone_shoucOk": "phone_text"}}'>{{isSubscribe? "已订阅": "订阅"}}</text>
       </view>
     </view>
     <view class='messge_box flex_row'>

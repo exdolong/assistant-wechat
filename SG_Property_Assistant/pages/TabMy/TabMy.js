@@ -11,7 +11,7 @@ Page({
     listOperation: [
       ['/images/fc_feedback_problem.png', '/images/fc_focus_public.png', '/images/fc_service_telephone.png', '/images/fc_about_us.png'],
       ['反馈问题', '关注公众号', '客服电话', '关于我们'],
-      ['loanAnswer/loanAnswer', '', 'telephone', 'intermedRecommend/intermedRecommend'],
+      ['loanAnswer/loanAnswer', 'focusPublicNumberPage/focusPublicNumberPage', 'telephone', 'aboutUsPage/aboutUsPage'],
       ['', '', '13408065974', '']
     ],
     common_operation_Array: [{

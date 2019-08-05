@@ -1,0 +1,10 @@
+<!--pages/TabMy/aboutUsPage/aboutUsPage.wxml-->
+<view class="images_icon">
+  <image src="/images/fc_homepage_rental.png"></image>
+</view>
+<view>
+  <text class="fangweizai">威威找房</text>
+</view>
+<view>
+  <text class="pingtai">海外找房大平台</text>
+</view>

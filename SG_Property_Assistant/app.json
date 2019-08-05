@@ -28,7 +28,9 @@
     "pages/TabRecommend/layoutHouseList/layoutHouseListPage",
     "pages/TabRecommend/propertiesNewsList/propertiesNewsList",
     "pages/TabRecommend/webViewPage/webViewPage",
-    "pages/TabRecommend/budgetToolPage/budgetToolPage"
+    "pages/TabRecommend/budgetToolPage/budgetToolPage",
+    "pages/TabMy/aboutUsPage/aboutUsPage",
+    "pages/TabMy/focusPublicNumberPage/focusPublicNumberPage"
   ],
   "window": {
     "backgroundTextStyle": "light",

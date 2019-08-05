@@ -1,0 +1,22 @@
+/* pages/TabMy/aboutUsPage/aboutUsPage.wxss */
+
+.fangweizai ,.pingtai{
+  font-size: 48rpx;
+  text-align: center;
+  display: block;
+}
+
+.pingtai{
+  font-size: 30rpx;
+  color: #999;
+}
+
+.images_icon{
+  text-align: center;
+  padding-top: 240rpx;
+}
+
+.images_icon image{
+  width: 90rpx;
+  height: 90rpx;
+}

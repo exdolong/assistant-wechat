@@ -9,9 +9,11 @@
 
 <!--关注列表  -->
 <view class='house_lists'>
-  <template is='listsTemplate' />
-  <template is='listsTemplate' />
-  <template is='listsTemplate' />
+  <block wx:for="{{projects}}" wx:for-item="item" wx:for-index="idx" wx:key=" ">
+    <view catchtap='jumpDetailsTap' data-postid="{{item.id}}">
+      <template is="listsTemplate" data="{{...item}}" />
+    </view>
+  </block>
 </view>
 
 <!--失效的产品  -->
@@ -20,6 +22,6 @@
     <text class='invalid_title'>已失效</text>
     <image class='invalid_icon' src='/images/fc_following_buttondelete.png'></image>
   </view>
-  <template is='listsTemplate' />
-  <template is='listsTemplate' />
+  <!-- <template is='listsTemplate' />
+  <template is='listsTemplate' /> -->
 </view>

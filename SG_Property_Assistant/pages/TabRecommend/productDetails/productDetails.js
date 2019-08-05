@@ -1,6 +1,5 @@
 // pages/TabRecommend/productDetails/productDetails.js
 const util = require('../../../utils/util.js')
-
 import request from '../../../utils/request.js'
 
 Page({
@@ -25,21 +24,31 @@ Page({
 
   jumpSubscribeTap: function(e) {
     const access_token = wx.getStorageSync('access_token');
-    if (this.data.isFollowing) {
-      this.followingFunc('unFollow', 'DELETE');
+    if (access_token) {
+      if (this.data.isSubscribe) {
+        this.followingFunc('unFollow', 'DELETE');
+      } else {
+        this.followingFunc('follow', 'POST');
+      }
     } else {
-      this.followingFunc('follow', 'POST');
+      wx.showModal({
+        title: '提示',
+        content: '你还没有登录,赶快去登录吧~~',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
     }
   },
 
+  // 订阅设置
   followingFunc: function(path, method) {
-    const access_token = wx.getStorageSync('access_token');
-
-    wx.request({
+    request({
       url: util.configure.pathUrl + `projects/${this.data.id}/${path}`,
-      header: {
-        Authorization: `Bearer ${access_token}`
-      },
       method,
       success: (res) => {
         if (method == 'DELETE') {
@@ -55,6 +64,14 @@ Page({
     util.telephone('13408065974');
   },
 
+  // 跳转到产品详情
+  jumpDetailsTap: function(event) {
+    const id = event.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url: `productDetails?id=${id}`,
+    })
+  },
+
   // 设置订阅
   setCollection: function(following, imagePath) {
     this.setData({
@@ -68,35 +85,28 @@ Page({
    */
   onLoad: function(options) {
     const that = this;
-    const access_token = wx.getStorageSync('access_token');
-    let header = null;
-    if (access_token) {
-      header = {
-        Authorization: `Bearer ${access_token}`
-      }
-    }
-
     wx.showShareMenu({
       // 要求小程序返回分享目标信息
       withShareTicket: true
     });
-
-    wx.request({
+    wx.showLoading({
+      title: '加载中...',
+    })
+    request({
       url: util.configure.pathUrl + 'projects/' + options.id,
-      header,
       success(res) {
-        
         if (res.data.data.isFollowing) {
-          if (method == 'DELETE') {
-            this.setCollection(false, 'shouc_xingx');
-          } else {
-            this.setCollection(true, 'shouc_ok');
-          }
+          that.setCollection(true, 'shouc_ok');
+        } else {
+          that.setCollection(false, 'shouc_xingx');
         }
         that.setData({
           ...res.data.data,
           markersMapUrl: util.getAndMapLngLat(res.data.data.amenities.mrts)
         })
+      },
+      complete() {
+        wx.hideLoading()
       }
     })
   },
@@ -166,7 +176,7 @@ Page({
       title: '加载中',
     })
     const that = this;
-    wx.request({
+    request({
       url: util.configure.pathUrl + 'projects',
       method: "POST",
       data: param,
