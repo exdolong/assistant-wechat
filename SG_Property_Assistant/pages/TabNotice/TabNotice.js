@@ -1,67 +1,52 @@
 // pages/TabNotice/TabNotice.js
+const util = require('../../utils/util.js');
+import request from '../../utils/request.js'
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    noticeDataList: [{
-        iocn: "/images/fc_message_loanremind.png",
-        title: "贷款提醒",
-        content: "你需要在1天内申请贷款，否则可能导致您购房违约。",
-        status: "已处理"
-      },
-      {
-        iocn: "/images/fc_message_loanremind.png",
-        title: "贷款提醒",
-        content: "你需要在1天内申请贷款，否则可能导致您购房违约。",
-        status: "立即申请"
-      },
-      {
-        iocn: "/images/fc_message_contract.png",
-        title: "合同接收提醒",
-        content: "你需要在1天内申请贷款，否则可能导致您购房违约。",
-        status: "已接收"
-      },
-      {
-        iocn: "/images/fc_message_data.png",
-        title: "资料提交提醒",
-        content: "你需要在1天内申请贷款，否则可能导致您购房违约。",
-        status: "已处理"
-      }
-    ]
+    content: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // 判断按钮状态
-    this.isButtonStatus();
+    const that = this;
+    wx.showLoading({
+      title: '加载中...',
+    })
+    request({
+      url: util.configure.pathUrl + 'notifications',
+      data: {
+        pageNumber: 1,
+        pageSize: 20
+      },
+      success(res) {
+        that.setData({
+          content: res.data.data.content,
+        })
+      },
+      complete() {
+        wx.hideLoading()
+      },
+    })
   },
 
-  isButtonStatus: function() {
-    let obj = {},newArray = [];
-    for (let i = 0; i < this.data.noticeDataList.length; i++) {
-      obj = this.data.noticeDataList[i]
-      if (obj.status === "已处理") {
-        obj.className = "butt_already";
-      } else if (obj.status === "立即申请") {
-        obj.className = "not_immediate";
-      } else {
-        obj.className = "not_accepted";
+  toNottiDetailsTap: function(event) {
+    let id = event.currentTarget.dataset.poid;
+    let obj = null;
+    for (let index in this.data.content) {
+      if (id == this.data.content[index].id) {
+        obj = this.data.content[index];
       }
-      newArray.push(obj);
     }
-    this.setData({
-      noticeDataList: newArray,
-    });
-  },
-
-  toNottiDetailsTap:function(event){
-    console.log(event.currentTarget.dataset.title);
     wx.navigateTo({
-      url: `noticeDetails/noticeDetails?title=${event.currentTarget.dataset.title}`,
+      url: `noticeDetails/noticeDetails?title=${JSON.stringify(obj)}`,
     })
   },
 

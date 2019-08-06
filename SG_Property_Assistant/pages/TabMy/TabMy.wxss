@@ -70,13 +70,23 @@ page {
   height: 19px;
 }
 
+button{
+  text-align: left;
+  line-height: normal;
+}
+
+.button-hover{
+  background-color: #fff;
+}
+
 button.me_outLogin[type=default] {
   background: #fff;
   border-radius: 0;
   color: #333;
   border: none;
   margin-top: 30px;
-  padding: 10rpx;
+  padding: 30rpx;
+  text-align: center;
 }
 
 .weui-cell {
@@ -116,3 +126,4 @@ button.me_outLogin[type=default] {
   opacity: 0;
   border: 1px solid #fff;
 }
+

@@ -7,14 +7,17 @@ page {
   padding-bottom: 30rpx;
   padding-top: 30rpx;
 }
-.notice:last-child{ border-bottom: none;}
+
+.notice:last-child {
+  border-bottom: none;
+}
 
 .notice .img {
   width: 120rpx;
   margin-right: 20rpx;
 }
 
-.notice .img image{
+.notice .img image {
   width: 90rpx;
   height: 90rpx;
 }
@@ -22,6 +25,10 @@ page {
 .notice_title {
   font-size: 17px;
   font-weight: 700;
+  margin-right: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .notice_butt {
@@ -38,6 +45,7 @@ page {
 .not_top {
   vertical-align: middle;
   padding-bottom: 10rpx;
+  margin-right: 20rpx;
 }
 
 .butt_already {
@@ -55,16 +63,18 @@ page {
   background: #fff;
 }
 
-.notice_conet{
-  padding-right: 20rpx;
+.notice_conet {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  overflow:hidden;
 }
 
-.not_immediate{
+.not_immediate {
   background: #008489;
   color: #fff;
 }
 
-.not_accepted{
+.not_accepted {
   background: #333;
   color: #fff;
 }

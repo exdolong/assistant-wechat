@@ -1,16 +1,17 @@
 <view class='notice_lists'>
   <!--单条通知记录  -->
-  <block wx:for="{{noticeDataList}}" wx:key="key">
-    <view class='notice flex_row' catchtap='toNottiDetailsTap' data-title="{{noticeDataList[index].title}}">
+  <block wx:for="{{content}}" wx:key="key">
+    <view class='notice flex_row' catchtap='toNottiDetailsTap' data-poid="{{item.id}}">
       <view class='img'>
-        <image src='{{noticeDataList[index].iocn}}'></image>
+        <image src='/images/fc_message_contract.png'></image>
       </view>
       <view class='notice_conet flex_col'>
         <view class='not_top flex_row'>
-          <text class='notice_title'>{{noticeDataList[index].title}}</text>
-          <text class='notice_butt {{noticeDataList[index].className}}'>{{noticeDataList[index].status}}</text>
+          <text class='notice_title'>{{item.title}}</text>
+          <!-- <text class='notice_butt {{item.className}}'>{{item.status}}</text> -->
         </view>
-        <text class='not_describe'>{{noticeDataList[index].content}}</text>
+        <text class='not_describe'>{{item.content}}</text>
+        <text class='not_describe'>{{item.sendTime}}</text>
       </view>
     </view>
   </block>

@@ -1,9 +1,9 @@
 <!--pages/TabMy/focusPublicNumberPage/focusPublicNumberPage.wxml-->
 
-<canvas hidden="{{canvasHidden}}" canvas-id='testCanvas'class='imageCanvas' 
+<!-- <canvas hidden="{{canvasHidden}}" canvas-id='testCanvas'class='imageCanvas' 
 style='width:{{canvasWidth}}px; height:{{canvasHeight}}px'  disable-scroll='true'>
-</canvas>
+</canvas> -->
 
-  <view catchtap='erWeiMaTap'>
-    <image src="/images/erweima.jpg"></image>
+  <view catchtap='erWeiMaTap' class="iamge_div">
+    <image class="erWeiMaTap" src="/images/erweima.jpg"></image>
   </view>

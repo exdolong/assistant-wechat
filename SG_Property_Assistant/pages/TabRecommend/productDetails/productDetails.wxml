@@ -352,12 +352,12 @@
   </view>
 
   <!-- 提示  -->
-  <view class="house_apartment">
+  <!-- <view class="house_apartment">
     <text class="tipe">温馨提示</text>
     <text class="tipe">
     本系统只提供认购流程记录与提醒，无法直接进行房产交易，请您线下发出offer（新盘为递交支票）之后，再通过系统进行认购申请操作。
     </text>
-  </view>
+  </view> -->
 
   <!--底部  -->
   <view class='fixed_bar flex_row'>

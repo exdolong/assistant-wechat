@@ -30,6 +30,12 @@ Page({
     })
   },
 
+  jumpLinkTap: function(e) {
+    wx.navigateTo({
+      url: `webViewPage/webViewPage?link=${e.currentTarget.dataset.link}`,
+    })
+  },
+
   jumpSearchPageTap: function(event) {
     app.globalData.isTabActiveIndex = false;
     wx.navigateTo({

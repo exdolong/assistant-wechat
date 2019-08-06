@@ -4,7 +4,7 @@
   </view>
   <view class='eonet flex_col'>
   <text class='triangle_left'></text>
-    <text class='text_coler'>你需要在1天内申请贷款，否则可能导致您购房违约。</text>
-    <text class='notice_butt not_immediate'>已处理</text>
+    <text class='text_coler'>{{content}}</text>
+    <text class='notice_butt not_immediate'>{{sendTime}}</text>
   </view>
 </view>

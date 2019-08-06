@@ -1,4 +1,7 @@
 // pages/TabMy/MyAppointment/MyAppointment.js
+const util = require('../../../utils/util.js')
+import request from '../../../utils/request.js'
+
 Page({
 
   /**
@@ -12,7 +15,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    const that = this;
+    request({
+      url: util.configure.pathUrl + 'users/histories',
+      data: {
+        pageNumber: 1,
+        pageSize: 20
+      },
+      success(res) {
+        that.setData({
+          content: res.data.data.content
+        })
+      }
+    })
   },
 
   jumpDetailsTap: function() {

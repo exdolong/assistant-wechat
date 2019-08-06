@@ -36,6 +36,15 @@
 
 <!--常用操作 url='{{listOperation[2][index]}}?title={{item}}' -->
 <view class="page_list weui-cells weui-cells_after-title">
+
+  <button class="weui-cell weui-cell_access " open-type='feedback'>
+    <view class="weui-cell__hd">
+      <image class='list_image' src="/images/fc_feedback_problem.png"></image>
+    </view>
+    <view class="weui-cell__bd">反馈问题</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">{{listOperation[3][index]}}</view>
+  </button>
+
   <block wx:for="{{listOperation[1]}}" wx:key="key">
     <view catchtap='myJumpTap' data-index='{{index}}' data-page="{{listOperation[2][index]}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
@@ -45,6 +54,7 @@
       <view class="weui-cell__ft weui-cell__ft_in-access">{{listOperation[3][index]}}</view>
     </view>
   </block>
+
 </view>
 
 <!--退出按钮  -->

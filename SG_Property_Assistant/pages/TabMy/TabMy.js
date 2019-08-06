@@ -9,10 +9,10 @@ Page({
   data: {
     isSignin: false,
     listOperation: [
-      ['/images/fc_feedback_problem.png', '/images/fc_focus_public.png', '/images/fc_service_telephone.png', '/images/fc_about_us.png'],
-      ['反馈问题', '关注公众号', '客服电话', '关于我们'],
-      ['loanAnswer/loanAnswer', 'focusPublicNumberPage/focusPublicNumberPage', 'telephone', 'aboutUsPage/aboutUsPage'],
-      ['', '', '13408065974', '']
+      ['/images/fc_focus_public.png', '/images/fc_service_telephone.png', '/images/fc_about_us.png'],
+      ['关注公众号', '客服电话', '关于我们'],
+      ['focusPublicNumberPage/focusPublicNumberPage', 'telephone', '../TabRecommend/webViewPage/webViewPage?link=https://mp.weixin.qq.com/s/3MXQEiWrQmz1kCEJWwM89Q'],
+      ['', '13408065974', '']
     ],
     common_operation_Array: [{
         common: ['/images/fc_mepage_focus.png', '订阅', 'myAttention/myAttention']
@@ -40,12 +40,20 @@ Page({
    */
   myJumpTap: function(event) {
     const page = event.currentTarget.dataset.page;
+    const access_token = wx.getStorageSync('access_token');
+
     if (page == 'telephone') {
       util.telephone('13408065974');
     } else {
-      wx.navigateTo({
-        url: page,
-      })
+      if (access_token) {
+        wx.navigateTo({
+          url: page,
+        })
+      } else {
+        wx.navigateTo({
+          url: `signInPage/signInPage`,
+        })
+      }
     }
   },
 

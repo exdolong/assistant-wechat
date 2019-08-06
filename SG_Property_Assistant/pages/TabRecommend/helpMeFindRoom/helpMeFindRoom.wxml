@@ -1,7 +1,7 @@
 <!--pages/TabRecommend/helpMeFindRoom/helpMeFindRoom.wxml-->
 <view class="buy_house">
-  <text class="selection">我要买房</text>
-  <text>我要租房</text>
+  <text class="selection" data-tabName="我要买房" bindtap="tabSelect">我要买房</text>
+  <text data-tabName="我要租房" bindtap="tabSelect">我要租房</text>
 </view>
 
 <view class='scroll_box scroll_max_height'>
@@ -10,8 +10,19 @@
   <view class='dl_item'>
     <text class='dl_title'>您的首付预算：</text>
     <view class='dl_content'>
-      <text class="range_nbmer">20~100万</text>
-      <slider bindchange="slider4change" min="50" max="200" show-value/>
+      <text class="range_nbmer">{{minPrice}}~{{maxPrice}}万</text>
+      <movable-area>
+        <movable-view x="{{startPoint.x}}" y="{{startPoint.y}}" animation='true' direction="{{huadongLeft}}" data-dataNumber="left" bindchange='movableBindChange' class="movable_view">||</movable-view>
+
+        <movable-view x="{{sliderPointX}}" animation='true' direction="none" data-dataNumber="slider" class="slider" style="width:{{sliderWidth}}rpx; left:{{sliderPointX}}rpx"></movable-view>
+
+        <movable-view x="{{endPoint.x}}" y="{{endPoint.y}}" animation='true' direction="{{huadongRight}}" data-dataNumber="right" bindchange='movableBindChange' class="movable_view">||</movable-view>
+      </movable-area>
+      <view class="huanwei">
+        <text class="jiage">20万</text>
+        <text class="jiage">500万</text>
+      </view>
+
     </view>
   </view>
   <!--单个条件  E-->
@@ -20,9 +31,7 @@
   <view class='dl_item'>
     <text class='dl_title'>您购买的偏好？</text>
     <view class='dl_content'>
-      <text>新房</text>
-      <text>二手房</text>
-      <text>不限</text>
+      <text wx:for="{{preferenceArray}}" wx:key="{{key}}" data-name="{{item.name}}" data-id="{{item.id}}" data-tag="preferenceArray" data-index="{{Gindex}}" bindtap="select" class="{{item.isSelection ?'alternative':''}}">{{item.name}}</text>
     </view>
   </view>
   <!--单个条件  E-->
@@ -31,25 +40,23 @@
   <view class='dl_item'>
     <text class='dl_title'>您想买什么户型？</text>
     <view class='dl_content'>
-      <text>一室</text>
-      <text>二室</text>
-      <text>三室</text>
-      <text>四室</text>
-      <text>五室</text>
-      <text>五室以上</text>
+      <text wx:for="{{layoutsArray}}" wx:key="{{key}}" data-name="{{item.name}}" data-id="{{item.id}}" data-tag="layoutsArray" data-index="{{Gindex}}" bindtap="select" class="{{item.isSelection ?'alternative':''}}">{{item.name}}</text>
     </view>
   </view>
   <!--单个条件  E-->
 
   <!--单个条件  S-->
-  <view class='dl_item'>
+  <view class='dl_item' data-page="../TabSearch/searchResult/searchResult" catchtap='jumpRegionToolTap'>
     <text class='dl_title'>您想买的区域是？</text>
     <view class='dl_content'>
-      <view class="region">
-        <image class="dingwei_icon" src='/images/Location_adder.png'></image>
-        <text>不限</text>
-        <image class="triangle_down" src='/images/icon_triangle_down.png'></image>
-      </view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="region">
+          <image class="dingwei_icon" src='/images/Location_adder.png'></image>
+          <text>{{array[index]}}</text>
+          <image class="triangle_down" src='/images/icon_triangle_down.png'></image>
+        </view>
+      </picker>
+
     </view>
   </view>
   <!--单个条件  E-->
@@ -58,18 +65,7 @@
   <view class='dl_item'>
     <text class='dl_title'>特殊要求？</text>
     <view class='dl_content'>
-      <text>优质学区</text>
-      <text>离地铁近</text>
-      <text>生活便利</text>
-      <text>南北通透</text>
-      <text>优质学区</text>
-      <text>离地铁近</text>
-      <text>生活便利</text>
-      <text>南北通透</text>
-      <text>优质学区</text>
-      <text>离地铁近</text>
-      <text>生活便利</text>
-      <text>南北通透</text>
+      <text wx:for="{{tagsArray}}" wx:key="{{key}}" data-name="{{item.name}}" data-id="{{item.id}}" data-tag="tagsArray" data-index="{{Gindex}}" bindtap="select" class="{{item.isSelection ?'alternative':''}}">{{item.name}}</text>
     </view>
   </view>
   <!--单个条件  E-->
@@ -78,7 +74,7 @@
   <view class='dl_item'>
     <text class='dl_title'>您的联系方式？</text>
     <view class='dl_content'>
-      <input class='smsCode' placeholder-class='input_faz B2B2B2' placeholder='请输入验证码'></input>
+      <input class='smsCode' value="{{telephone}}" bindinput='bindinputValue' placeholder-class='input_faz B2B2B2' placeholder='请输入手机号码'></input>
     </view>
   </view>
   <!--单个条件  E-->
