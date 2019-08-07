@@ -71,6 +71,9 @@ function formatMapLngLatAndArray(array) {
 }
 
 function getAndMapLngLat(array) {
+  if (array.length === 0) {
+    return '';
+  }
   console.log(formatMapLngLatAndArray(array));
   return `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${array[0].lng},${array[0].lat}&markers=${formatMapLngLatAndArray(array)}&width=800&height=380&zoom=16&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
 }

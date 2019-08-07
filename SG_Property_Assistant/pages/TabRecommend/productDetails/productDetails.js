@@ -9,6 +9,7 @@ Page({
    */
   data: {
     detailsData: null,
+    projectId: null,
     fixedTop: 0,
     similarProjectArray: [], // 类似项目
     markersMapUrl: '',
@@ -101,6 +102,7 @@ Page({
         } else {
           that.setCollection(false, 'shouc_xingx');
         }
+        that.data.projectId = res.data.data.id
         that.setData({
           ...res.data.data,
           markersMapUrl: util.getAndMapLngLat(res.data.data.amenities.mrts)
@@ -167,7 +169,8 @@ Page({
   onPageScroll: function(e) {
     if (parseInt(e.scrollTop) > this.data.fixedTop && !this.data.similarProjectArray.length) {
       this.loadData({
-        districtIds: [this.data.districtId]
+        districtIds: [this.data.districtId],
+        excludeProjectId: this.data.projectId
       });
     }
   },

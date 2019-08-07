@@ -90,7 +90,7 @@
 
       <view class='list_box flex_row'>
         <text class='c999'>样板间开发日期：</text>
-        <text>{{showFlatOpenDate}}</text>
+        <text>{{showFlatOpenDate === null ? '-' : showFlatOpenDate}}</text>
       </view>
       <!-- <view class='list_box flex_row' catchtap='jumpMapTap'>
         <text class='c999'>地址：</text>
@@ -186,7 +186,7 @@
   <view class="house_apartment">
 
     <view class="title_div">
-      <text class='title_bj'>房型(4)</text>
+      <text class='title_bj'>房型</text>
       <image class="item_arrow r" src="/images/item_arrow.png"></image>
       <text class="look_all r" catchtap='jumpLayoutHouseTap'>查看全部</text>
     </view>
@@ -301,7 +301,7 @@
   <view class="house_apartment" catchtap='jumpPropertiesNewsListTap'>
 
     <view class="title_div">
-      <text class='title_bj'>楼盘动态(20)</text>
+      <text class='title_bj'>楼盘动态</text>
       <image class="item_arrow r" src="/images/item_arrow.png"></image>
       <text class="look_all r">查看全部</text>
     </view>
@@ -337,7 +337,7 @@
   <view class="house_apartment">
 
     <view class="title_div">
-      <text class='title_bj'>评论(20)</text>
+      <text class='title_bj'>评论</text>
     </view>
 
     <view class="comment">
