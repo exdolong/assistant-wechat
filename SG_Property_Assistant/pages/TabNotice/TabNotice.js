@@ -16,25 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    const that = this;
-    wx.showLoading({
-      title: '加载中...',
-    })
-    request({
-      url: util.configure.pathUrl + 'notifications',
-      data: {
-        pageNumber: 1,
-        pageSize: 20
-      },
-      success(res) {
-        that.setData({
-          content: res.data.data.content,
-        })
-      },
-      complete() {
-        wx.hideLoading()
-      },
-    })
+    
   },
 
   toNottiDetailsTap: function(event) {
@@ -61,7 +43,43 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    if (!util.isLogin()) {
+      wx.showModal({
+        title: '提示',
+        content: '你还没有登录,赶快去登录吧~~',
+        success(res) {
+          if (res.confirm) {
+            util.gotoLoginIfAnonymous()
+          } else if (res.cancel) {
+            wx.switchTab({
+              url: '/pages/TabRecommend/TabRecommend'
+            })
+          }
+        }
+      })
 
+      return
+    }
+
+    const that = this;
+    wx.showLoading({
+      title: '加载中...',
+    })
+    request({
+      url: util.configure.pathUrl + 'notifications',
+      data: {
+        pageNumber: 1,
+        pageSize: 20
+      },
+      success(res) {
+        that.setData({
+          content: res.data.data.content,
+        })
+      },
+      complete() {
+        wx.hideLoading()
+      },
+    })
   },
 
   /**

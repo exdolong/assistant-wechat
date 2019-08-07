@@ -23,7 +23,7 @@
     <image src='/images/fc_homepage_bridalchamber.png'></image>
     <text>新房</text>
   </view>
-  <view class='box_col' data-page="../TabSearch/searchResult/searchResult" catchtap='jumpCalculatorToolTap'>
+  <view class='box_col' data-page="../TabSearch/searchResult/searchResult">
     <image src='/images/fc_homepage_secondary.png'></image>
     <text>二手房</text>
   </view>
@@ -48,12 +48,12 @@
     <image class='background' src="/images/fc_budget_estimation.png"></image>
     <text class="conmt-space">查看你的购房资格</text>
   </view>
-  <view class="item_class" data-link="https://mp.weixin.qq.com/mp/homepage?__biz=MzU0Mjg2NDc4OA==&hid=2&sn=89963360e32e0a490bdbff7450198e0a&scene=18" catchtap='jumpLinkTap'>
+  <view class="item_class" data-link="https://mp.weixin.qq.com/s/cpLSpGiBKFjigZ09umg0WA" catchtap='jumpLinkTap'>
     <text class="item_jsq">知识库</text>
     <image class='background' src="/images/fc_knowledge_base.png"></image>
     <text class="conmt-space">买房租房需要注意什么</text>
   </view>
-  <view class="item_class" data-link="https://mp.weixin.qq.com/mp/homepage?__biz=MzU0Mjg2NDc4OA==&hid=2&sn=89963360e32e0a490bdbff7450198e0a&scene=18" catchtap='jumpLinkTap'>
+  <view class="item_class" data-link="https://mp.weixin.qq.com/s/WoOGfFi5hMZxGEOIgrlt4g" catchtap='jumpLinkTap'>
     <text class="item_jsq">最新新闻</text>
     <image class='background' src="/images/fc_hmeo_new.png"></image>
     <text class="conmt-space">最新的房产资讯</text>

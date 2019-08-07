@@ -146,6 +146,11 @@ Page({
       string: this.data.telephone
     }]
 
+    let text = '';
+    obj.forEach((e) => {
+      text += `<b>${e.name}:</b> ${ (e.string instanceof Array) ? e.string.join(', ') : e.string}<br/>`
+    });
+
     wx.showModal({
       title: '提示',
       content: '确认提交吗？',
@@ -156,10 +161,21 @@ Page({
             method: 'post',
             data: {
               subject: '我要买房',
-              text: JSON.stringify(obj)
+              text: text
             },
             success: (res) => {
-              console.log(res);
+              wx.showToast({
+                title: '提交成功',
+                icon: 'success',
+                duration: 1000,
+                complete: () => {
+                  setTimeout(() => {
+                    wx.navigateBack({
+                      delta: 2
+                    })
+                  }, 1200)
+                }
+              })
             }
           })
         }
@@ -226,14 +242,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
   },
 
   /**
