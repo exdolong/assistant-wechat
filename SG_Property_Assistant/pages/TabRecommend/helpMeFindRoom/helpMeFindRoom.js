@@ -162,11 +162,22 @@ Page({
             url: util.configure.pathUrl + 'mail',
             method: 'post',
             data: {
-              subject: '我要买房, tel: ' + this.data.telephone,
+              subject: '我要买房',
               text: text
             },
             success: (res) => {
-              console.log(res);
+              wx.showToast({
+                title: '提交成功',
+                icon: 'success',
+                duration: 1000,
+                complete: () => {
+                  setTimeout(() => {
+                    wx.navigateBack({
+                      delta: 2
+                    })
+                  }, 1200)
+                }
+              })
             }
           })
         }
