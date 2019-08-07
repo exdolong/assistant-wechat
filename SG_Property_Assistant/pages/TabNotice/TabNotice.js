@@ -16,25 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    const that = this;
-    wx.showLoading({
-      title: '加载中...',
-    })
-    request({
-      url: util.configure.pathUrl + 'notifications',
-      data: {
-        pageNumber: 1,
-        pageSize: 20
-      },
-      success(res) {
-        that.setData({
-          content: res.data.data.content,
-        })
-      },
-      complete() {
-        wx.hideLoading()
-      },
-    })
+    
   },
 
   toNottiDetailsTap: function(event) {
@@ -78,6 +60,26 @@ Page({
 
       return
     }
+
+    const that = this;
+    wx.showLoading({
+      title: '加载中...',
+    })
+    request({
+      url: util.configure.pathUrl + 'notifications',
+      data: {
+        pageNumber: 1,
+        pageSize: 20
+      },
+      success(res) {
+        that.setData({
+          content: res.data.data.content,
+        })
+      },
+      complete() {
+        wx.hideLoading()
+      },
+    })
   },
 
   /**

@@ -31,7 +31,7 @@ Page({
   },
 
   jumpDetailsTap: function() {
-    this.jumpa();
+    // this.jumpa();
   },
   jumpa: function() {
     wx.navigateTo({
