@@ -41,7 +41,7 @@
     <view class="weui-cell__hd">
       <image class='list_image' src="/images/fc_feedback_problem.png"></image>
     </view>
-    <view class="weui-cell__bd">反馈问题</view>
+    <view class="weui-cell__bd">问题反馈</view>
     <view class="weui-cell__ft weui-cell__ft_in-access">{{listOperation[3][index]}}</view>
   </button>
 
