@@ -148,6 +148,11 @@ Page({
       string: this.data.telephone
     }]
 
+    let text = '';
+    obj.forEach((e) => {
+      text += `<b>${e.name}:</b> ${ (e.string instanceof Array) ? e.string.join(', ') : e.string}<br/>`
+    });
+
     wx.showModal({
       title: '提示',
       content: '确认提交吗？',
@@ -157,8 +162,8 @@ Page({
             url: util.configure.pathUrl + 'mail',
             method: 'post',
             data: {
-              subject: '我要买房',
-              text: JSON.stringify(obj)
+              subject: '我要买房, tel: ' + this.data.telephone,
+              text: text
             },
             success: (res) => {
               console.log(res);
@@ -228,7 +233,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**
