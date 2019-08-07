@@ -37,15 +37,12 @@ Page({
       x: 0,
       y: 0
     },
-    endPoint: {
-      x: 100,
-      y: 0
-    },
+    endPointX: 120,
     sliderPointX: 0,
     telephone: '',
     huadongLeft: 'horizontal',
     huadongRight: 'horizontal',
-    sliderWidth: 200,
+    sliderWidth: 280,
     strPoing: ''
   },
 
@@ -84,18 +81,19 @@ Page({
       //   })
       // }
       this.setData({
-        sliderPointX: e.detail.x + 50,
+        sliderPointX: e.detail.x + 80,
         minPrice: e.detail.x + 20,
-        sliderWidth: number
+        sliderWidth: this.data.endPointX - number
       })
-      console.log(this.data.sliderPointX);
+      console.log(this.data.sliderWidth);
     } else {
       if (e.detail.x < 20) {
         return;
       }
       this.setData({
         sliderWidth: number + (e.detail.x / 347) * 130,
-        maxPrice: number
+        maxPrice: number,
+        endPointX: number + (e.detail.x / 347) * 130
       })
     }
   },
