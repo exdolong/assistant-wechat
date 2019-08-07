@@ -23,7 +23,7 @@
     <image src='/images/fc_homepage_bridalchamber.png'></image>
     <text>新房</text>
   </view>
-  <view class='box_col' data-page="../TabSearch/searchResult/searchResult" catchtap='jumpCalculatorToolTap'>
+  <view class='box_col' data-page="../TabSearch/searchResult/searchResult">
     <image src='/images/fc_homepage_secondary.png'></image>
     <text>二手房</text>
   </view>
