@@ -45,14 +45,12 @@ Page({
     if (page == 'telephone') {
       util.telephone('13408065974');
     } else {
-      if (access_token) {
+      if (util.isLogin()) {
         wx.navigateTo({
           url: page,
         })
       } else {
-        wx.navigateTo({
-          url: `signInPage/signInPage`,
-        })
+        util.gotoLoginIfAnonymous();
       }
     }
   },

@@ -89,6 +89,19 @@ function telephone(string) {
   })
 }
 
+function isLogin() {
+  const access_token = wx.getStorageSync('access_token');
+  return access_token;
+}
+
+function gotoLoginIfAnonymous() {
+  if (!isLogin()) {
+    wx.navigateTo({
+      url: '/pages/TabMy/signInPage/signInPage',
+    })
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   conditionScreening: conditionScreening,
@@ -97,5 +110,7 @@ module.exports = {
   unique4: unique4,
   formatMapLngLatAndArray: formatMapLngLatAndArray,
   getAndMapLngLat: getAndMapLngLat,
-  telephone: telephone
+  telephone: telephone,
+  isLogin: isLogin,
+  gotoLoginIfAnonymous: gotoLoginIfAnonymous
 }

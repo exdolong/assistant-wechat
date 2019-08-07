@@ -37,6 +37,7 @@ Page({
         success(res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            util.gotoLoginIfAnonymous()
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
