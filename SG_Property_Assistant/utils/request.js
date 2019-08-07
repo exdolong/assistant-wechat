@@ -50,7 +50,7 @@ export default function(param) {
         if (res.statusCode == 401) {
           wx.clearStorage()
           wx.navigateTo({
-            url: '../TabMy/signInPage/signInPage',
+            url: '../../TabMy/signInPage/signInPage',
           })
           resolve(res)
           return;
