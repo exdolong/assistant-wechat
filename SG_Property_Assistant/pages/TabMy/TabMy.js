@@ -12,7 +12,7 @@ Page({
       ['/images/fc_focus_public.png', '/images/fc_service_telephone.png', '/images/fc_about_us.png'],
       ['关注公众号', '客服电话', '关于我们'],
       ['focusPublicNumberPage/focusPublicNumberPage', 'telephone', '../TabRecommend/webViewPage/webViewPage?link=https://mp.weixin.qq.com/s/3MXQEiWrQmz1kCEJWwM89Q'],
-      ['', '13408065974', '']
+      ['', '02885593498', '']
     ],
     common_operation_Array: [{
         common: ['/images/fc_mepage_focus.png', '订阅', 'myAttention/myAttention']
@@ -43,7 +43,7 @@ Page({
     const access_token = wx.getStorageSync('access_token');
 
     if (page == 'telephone') {
-      util.telephone('13408065974');
+      util.telephone('02885593498');
     } else {
       if (util.isLogin()) {
         wx.navigateTo({
