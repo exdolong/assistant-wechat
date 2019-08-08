@@ -30,9 +30,9 @@ Page({
   },
 
   myModifyTap: function(event) {
-    wx.navigateTo({
-      url: 'myInfoUpdate/myInfoUpdate',
-    })
+    // wx.navigateTo({
+    //   url: 'myInfoUpdate/myInfoUpdate',
+    // })
   },
 
   /**

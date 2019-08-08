@@ -12,10 +12,9 @@
     <view class='dl_content'>
       <text class="range_nbmer">{{minPrice}}~{{maxPrice}}万</text>
       <movable-area>
-        <movable-view x="{{startPoint.x}}" animation='true' direction="{{huadongLeft}}" data-dataNumber="left" bindchange='movableBindChange' class="movable_view">||</movable-view>
-
-        <movable-view x="{{sliderPointX}}" animation='true' direction="none" data-dataNumber="slider" class="slider" style="width:{{sliderWidth}}rpx; left:{{sliderPointX}}rpx"></movable-view>
-
+        <movable-view x="{{startPoint.x}}" animation='false' direction="{{huadongLeft}}" data-dataNumber="left" bindchange='movableBindChange' class="movable_view">||   </movable-view>
+        <div class="slider" style="position: absolute;width:{{sliderWidth}}px; left:{{sliderPointX}}px;"></div>
+        
         <movable-view x="120" animation='true' direction="{{huadongRight}}" data-dataNumber="right" bindchange='movableBindChange' class="movable_view">||</movable-view>
       </movable-area>
       <view class="huanwei">
