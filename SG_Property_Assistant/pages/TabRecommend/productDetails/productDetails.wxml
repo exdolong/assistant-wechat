@@ -2,14 +2,14 @@
 <view class="mr50 flex_col">
   <!--大图  hidden="{{!hasPanorama}}"-->
   <view class='vr_box'>
-    <swiper class='bigPic'>
+    <swiper class='bigPic' bindchange='currentBindchange'>
       <swiper-item wx:for="{{photos}}" wx:key="{{index}}" catchtap='jumpLinkTap' data-link='{{item.link}}'>
         <image hidden="{{!item.hasPanorama}}" class='mv_iocn' src='/images/mv_iocn.png'></image>
         <image src="{{item.path}}"></image>
       </swiper-item>
     </swiper>
     <view class='opt_bar'>
-      <text>1/{{photos.length}}</text>
+      <text>{{currentIndex}}/{{photos.length}}</text>
     </view>
   </view>
 
@@ -172,10 +172,8 @@
       </view>
 
       <view class="info_cont">
-        <text class="info_wenben">
-          {{intro}}
-          <text class="info_cont_more">全文</text>
-        </text>
+          <text class="info_wenben">{{intro}}</text>
+          <!-- <text class="info_cont_more">全文</text> -->
       </view>
 
     </view>
@@ -211,7 +209,7 @@
   </view>
 
   <!-- 位置及周边配套 -->
-  <view class="house_apartment">
+  <view class="house_apartment" catchtap='jumpProjectProfileTap'>
 
     <view class="title_div">
       <text class='title_bj'>位置及周边配套</text>
@@ -225,7 +223,8 @@
     </view>
 
     <!-- 地图 -->
-    <image class="map" src="{{markersMapUrl}}"></image>
+    <image wx:if="{{amenities.mrts.length}}" class="map" src="{{markersMapUrl}}"></image>
+    <map id="map" wx:if="{{!amenities.mrts.length}}" class="map" longitude="103.942031" latitude="1.381264" scale="11" show-location></map>
 
     <!---->
     <view class="north_line">

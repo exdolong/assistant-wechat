@@ -37,7 +37,7 @@ Page({
       x: 0,
       y: 0
     },
-    endPointX: 120,
+    endPointX: 0,
     sliderPointX: 0,
     telephone: '',
     huadongLeft: 'horizontal',
@@ -66,8 +66,9 @@ Page({
   },
 
   movableBindChange: function(e) {
-    let number = parseInt(e.detail.x * (500 / 347));
-    // console.log(e.detail.x);
+    let actualWitdh = this.data.width - (60 / 750 * this.data.width);
+    let number = parseInt(e.detail.x * (550 / actualWitdh));
+    console.log("X:" + e.detail.x);
     if (e.currentTarget.dataset.datanumber == 'left') {
       // if (this.data.minPrice > this.data.maxPrice) {
       //   console.log(e.detail.x);
@@ -81,11 +82,12 @@ Page({
       //   })
       // }
       this.setData({
-        sliderPointX: e.detail.x + 80,
+        sliderPointX: e.detail.x + (90 / 750 * this.data.width),
         minPrice: e.detail.x + 20,
-        sliderWidth: this.data.endPointX - number
+        sliderWidth: this.data.endPointX - e.detail.x - (30 / 750 * this.data.width)
       })
-      console.log(this.data.sliderWidth);
+      console.log("sliderWidth:" + this.data.sliderWidth);
+      console.log("sliderPointX:" + this.data.sliderPointX);
     } else {
       if (e.detail.x < 20) {
         return;
@@ -212,6 +214,16 @@ Page({
     this.getMoreAndurl(districts, 'districtsArray');
     this.getMoreAndurl(tags, 'tagsArray');
     this.getMoreAndurl(layouts, 'layoutsArray');
+    var systemInfo = wx.getSystemInfoSync();
+    let width = systemInfo.windowWidth;
+    let actualWitdh = width - (60 / 750 * width);
+    let number = parseInt(80 * (500 / actualWitdh));
+
+    this.setData({
+      endPointX: number,
+      height: systemInfo.windowHeight,
+      width,
+    })
   },
 
   // 获取数据
@@ -242,14 +254,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏

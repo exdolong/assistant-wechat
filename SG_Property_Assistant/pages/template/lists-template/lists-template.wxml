@@ -3,7 +3,7 @@
     <view class='media_main'>
       <text class="med_hud">{{saleStatus}}</text>
       <image hidden="{{!hasPanorama}}" class='mv_iocn' src='/images/mv_iocn.png'></image>
-      <image class='media_image' src='{{photoPath}}'></image>
+      <image class='media_image' src='{{photoPath ? photoPath :"/images/default.jpg"}}'></image>
     </view>
     <view class='item_list'>
       <text class='item_title'>{{title}}</text>

@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentIndex: 1,
     detailsData: null,
     projectId: null,
     fixedTop: 0,
@@ -20,6 +21,12 @@ Page({
   jumpLinkTap: function(e) {
     wx.navigateTo({
       url: `../webViewPage/webViewPage?link=${e.currentTarget.dataset.link}`,
+    })
+  },
+
+  currentBindchange: function(e) {
+    this.setData({
+      currentIndex: e.detail.current + 1
     })
   },
 

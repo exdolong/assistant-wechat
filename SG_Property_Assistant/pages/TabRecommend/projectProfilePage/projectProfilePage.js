@@ -9,12 +9,14 @@ Page({
   data: {
     html: ``,
     isfixed: 0,
-    fixedTop: 0,
+    notic: 0,
     projectMapUrl: '',
     trafficMapUrl: '',
     schoolMapUrl: '',
     medicalMapUrl: '',
-    shoppingMapUrl: ''
+    shoppingMapUrl: '',
+    scrollTop: 0, //滚动的值
+    winHeight: '100%'
   },
 
   /**
@@ -22,15 +24,50 @@ Page({
    */
   onLoad: function(options) {
     const object = JSON.parse(options.obj);
-    const projectMapUrl = `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${object.lng},${object.lat}&markers=${object.lng},${object.lat}&width=800&height=380&zoom=15&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
-
+    // 获取屏幕的高度
+    var sysInfo = wx.getSystemInfoSync();
     this.setData({
+      winHeight: sysInfo.windowHeight - (sysInfo.windowWidth * 90 / 750) + 'px',
+      winWidth: sysInfo.windowWidth,
       ...object,
-      projectMapUrl,
+      projectMapUrl: util.getMapLngLat(object.lng, object.lat),
       trafficMapUrl: util.getAndMapLngLat(object.amenities.mrts),
       schoolMapUrl: util.getAndMapLngLat(object.amenities.schools),
       medicalMapUrl: util.getAndMapLngLat(object.amenities.hospitals),
       shoppingMapUrl: util.getAndMapLngLat(object.amenities.malls),
+      bigArray: [
+        util.getMapLngLat(this.data.lng, this.data.lat, true),
+        'http://haiwaiyou.com/img/upload/10371.jpg',
+        util.getAndMapLngLat(object.amenities.mrts, true),
+        util.getAndMapLngLat(object.amenities.schools, true),
+        util.getAndMapLngLat(object.amenities.hospitals, true),
+        util.getAndMapLngLat(object.amenities.malls, true)
+      ]
+    })
+    this.data.bigArray = this.data.bigArray.filter(function(e) {
+      return e.replace(/(\r\n|\n|\r)/gm, "");
+    });
+  },
+
+  toViewClick: function(e) {
+    let str = e.target.dataset.hash;
+
+    this.setData({
+      scrollTop: this.data[str] - 40,
+      nowstatus: str
+    })
+  },
+
+  showBigPictureTap: function(event) {
+    let src = event.currentTarget.dataset.src
+    if (!this.data.bigArray[src]) {
+      return
+    }
+    wx.previewImage({
+      current: this.data.bigArray[src], // 当前显示图片的http链接
+      urls: [
+        ...this.data.bigArray
+      ]
     })
   },
 
@@ -38,13 +75,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+    let that = this;
     const query = wx.createSelectorQuery();
-    query.select('#notic').boundingClientRect().exec(res => { //获取元素距离页面顶部高度
-      this.setData({
-        fixedTop: res[0].top
+    const array = ['notic', 'schoolBox', 'medicalBox', 'shoppingBox'];
+    for (let index in array) {
+      //获取元素距离页面顶部高度
+      query.select(`#${array[index]}`).boundingClientRect().exec(res => {
+        that.setData({
+          [array[index]]: res[index].top
+        })
       })
-    })
-
+    }
   },
 
   showDetailsTap: function(e) {
@@ -64,6 +105,42 @@ Page({
       })
     }
 
+  },
+
+  onPageScroll: function(e) {
+    let isfixed = 0;
+    if (parseInt(e.detail.scrollTop) > this.data.notic) {
+      isfixed = 1;
+    } else {
+      console.log(isfixed);
+      isfixed = 0;
+    }
+
+    if (e.detail.scrollTop <= this.data.notic - 40) {
+      this.setData({
+        nowstatus: 'notic'
+      })
+    }
+    if (e.detail.scrollTop > this.data.schoolBox - 40) {
+      this.setData({
+        nowstatus: 'schoolBox'
+      })
+    }
+    if (e.detail.scrollTop > this.data.medicalBox - 40) {
+      this.setData({
+        nowstatus: 'medicalBox'
+      })
+    }
+
+    if (e.detail.scrollTop > this.data.shoppingBox - 40) {
+      this.setData({
+        nowstatus: 'shoppingBox'
+      })
+    }
+
+    this.setData({
+      isfixed
+    });
   },
 
   /**
@@ -106,17 +183,5 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-  onPageScroll: function(e) {
-    let isfixed = 0;
-    if (parseInt(e.scrollTop) > this.data.fixedTop) {
-      isfixed = 1;
-    } else {
-      isfixed = 0;
-    }
-
-    this.setData({
-      isfixed
-    });
   }
 })

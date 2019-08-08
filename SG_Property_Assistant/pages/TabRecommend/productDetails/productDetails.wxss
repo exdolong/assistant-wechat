@@ -92,6 +92,8 @@ page {
   display: block;
   font-size: 20px;
   font-weight: 800;
+  padding-right: 130rpx;
+  word-break:break-all;
 }
 
 .mod_sub_tit {
@@ -396,6 +398,8 @@ view.imges {
 
 .info_cont_more {
   color: #a55c1b;
+  font-size: 30rpx;
+  margin-left: 15rpx;
 }
 
 .info_wenben {

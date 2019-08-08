@@ -70,12 +70,33 @@ function formatMapLngLatAndArray(array) {
   return strMarkers;
 }
 
-function getAndMapLngLat(array) {
+function getAndMapLngLat(array, isBig) {
+  let width = 800;
+  let height = 380;
+  let zoom = 16;
+
   if (array.length === 0) {
     return '';
   }
-  console.log(formatMapLngLatAndArray(array));
-  return `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${array[0].lng},${array[0].lat}&markers=${formatMapLngLatAndArray(array)}&width=800&height=380&zoom=16&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
+  if (isBig) {
+    width = 1024;
+    height = 1024;
+    zoom = 13;
+  }
+  return `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${array[0].lng},${array[0].lat}&markers=${formatMapLngLatAndArray(array)}&width=${width}&height=${height}&zoom=${zoom}&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
+}
+
+function getMapLngLat(lng, lat, isBig) {
+  let width = 800;
+  let height = 380;
+  let zoom = 16;
+  if (isBig) {
+    width = 1024;
+    height = 1024;
+    zoom = 13;
+  }
+  return `http://api.map.baidu.com/staticimage/v2?ak=A9ce773e870aba291288131e5dd1f500&mcode=666666&center=${lng},${lat}&markers=${lng},${lat}&width=${width}&height=${height}&zoom=${zoom}&markerStyles=-1,http://api.map.baidu.com/images/marker_red.png,-1,2156,2156`;
+
 }
 
 function telephone(string) {
@@ -115,5 +136,6 @@ module.exports = {
   getAndMapLngLat: getAndMapLngLat,
   telephone: telephone,
   isLogin: isLogin,
-  gotoLoginIfAnonymous: gotoLoginIfAnonymous
+  gotoLoginIfAnonymous: gotoLoginIfAnonymous,
+  getMapLngLat: getMapLngLat
 }
