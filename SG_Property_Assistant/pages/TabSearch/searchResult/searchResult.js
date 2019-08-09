@@ -56,17 +56,51 @@ Page({
     paramLayout: [], // 户型参数
     paramPrice: [], // 价格参数
     paramMore: [],
-    historyArray: []
+    historyArray: [],
+    sortDirection: 'DESC',
+    sortBy: 'id'
   },
 
   /**
    * 排序点击事件
    */
   btnSort: function(event) {
+    const self = this
     wx.showActionSheet({
       itemList: ['最新发布', '总价从低到高', '总价从高到低', '单价从低到高', '单价从高到低'],
       itemColor: "#333",
-      success: function(res) {},
+      success: function(res) {
+        if (res.errMsg === 'showActionSheet:ok') {
+          if (res.tapIndex === 0) {
+            self.setData({
+              sortDirection: 'DESC',
+              sortBy: 'id'
+            })
+          } else if (res.tapIndex === 1) {
+            self.setData({
+              sortDirection: 'ASC',
+              sortBy: 'maxAmount'
+            })
+          } else if (res.tapIndex === 2) {
+            self.setData({
+              sortDirection: 'DESC',
+              sortBy: 'maxAmount'
+            })
+          } else if (res.tapIndex === 3) {
+            self.setData({
+              sortDirection: 'ASC',
+              sortBy: 'avgPsf'
+            })
+          } else if (res.tapIndex === 4) {
+            self.setData({
+              sortDirection: 'DESC',
+              sortBy: 'avgPsf'
+            })
+          }
+
+          self.confirmSubm()
+        }
+      },
       fail: function(res) {}
     });
   },
@@ -261,6 +295,8 @@ Page({
       maxAmount: maxAmount,
       minAvgPsf: minAvgPsf,
       maxAvgPsf: maxAvgPsf,
+      sortDirection: this.data.sortDirection,
+      sortBy: this.data.sortBy,
       districtIds: this.getIdFunc(this.data.paramDistricts), // 邮区
       layoutId: this.getIdFunc(this.data.paramLayout)[0], // 户型
       saleStatusId, // 销售状态
@@ -268,6 +304,11 @@ Page({
       topYear, // 交房时间
       tenureId, // 产权
       propertyTypeId // 房屋类型
+    })
+
+    this.setData({
+      sortDirection: 'DESC',
+      sortBy: 'id'
     })
   },
 
