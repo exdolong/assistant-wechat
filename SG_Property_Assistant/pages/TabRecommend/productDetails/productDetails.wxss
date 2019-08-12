@@ -372,6 +372,7 @@ view.imges {
   width: 10rpx;
   height: 10rpx;
   margin-left: 10rpx;
+  margin-top: -6rpx;
 }
 
 .button_text {

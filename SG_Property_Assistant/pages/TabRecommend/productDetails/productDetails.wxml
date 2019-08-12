@@ -289,10 +289,10 @@
       </text>
     </view>
 
-    <view class="custom_button custom_style">
+    <button class="custom_button custom_style" open-type="contact">
       <text class="button_text">在线咨询价格</text>
       <image class="more_butom" src='/images/more_jiatou.png'></image>
-    </view>
+    </button>
 
   </view>
 

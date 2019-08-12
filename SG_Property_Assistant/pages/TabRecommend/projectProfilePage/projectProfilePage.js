@@ -36,7 +36,7 @@ Page({
       medicalMapUrl: util.getAndMapLngLat(object.amenities.hospitals),
       shoppingMapUrl: util.getAndMapLngLat(object.amenities.malls),
       bigArray: [
-        util.getMapLngLat(this.data.lng, this.data.lat, true),
+        util.getMapLngLat(object.lng, object.lat, true),
         'http://haiwaiyou.com/img/upload/10371.jpg',
         util.getAndMapLngLat(object.amenities.mrts, true),
         util.getAndMapLngLat(object.amenities.schools, true),
