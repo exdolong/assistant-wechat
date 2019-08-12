@@ -42,7 +42,7 @@ Page({
     telephone: '',
     huadongLeft: 'horizontal',
     huadongRight: 'horizontal',
-    sliderWidth: 280,
+    sliderWidth: 120,
     strPoing: ''
   },
 
@@ -68,7 +68,7 @@ Page({
   movableBindChange: function(e) {
     let actualWitdh = this.data.width - (60 / 750 * this.data.width);
     let number = parseInt(e.detail.x * (550 / actualWitdh));
-    console.log("X:" + e.detail.x);
+    
     if (e.currentTarget.dataset.datanumber == 'left') {
       // if (this.data.minPrice > this.data.maxPrice) {
       //   console.log(e.detail.x);
@@ -81,10 +81,12 @@ Page({
       //     minPrice: e.detail.x + 20
       //   })
       // }
+      console.log("X:" + e.detail.x);
       this.setData({
-        sliderPointX: e.detail.x + (90 / 750 * this.data.width),
+        sliderPointX: e.detail.x,
+        // e.detail.x + (120 / 750 * this.data.width),
         minPrice: e.detail.x + 20,
-        sliderWidth: this.data.endPointX - e.detail.x - (30 / 750 * this.data.width)
+        sliderWidth: this.data.endPointX - e.detail.x
       })
       console.log("sliderWidth:" + this.data.sliderWidth);
       console.log("sliderPointX:" + this.data.sliderPointX);
@@ -93,9 +95,9 @@ Page({
         return;
       }
       this.setData({
-        sliderWidth: number + (e.detail.x / 347) * 130,
+        sliderWidth: e.detail.x - this.data.sliderPointX,
         maxPrice: number,
-        endPointX: number + (e.detail.x / 347) * 130
+        endPointX: e.detail.x
       })
     }
   },

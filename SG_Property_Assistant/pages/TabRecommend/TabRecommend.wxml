@@ -48,7 +48,7 @@
     <image class='background' src="/images/fc_budget_estimation.png"></image>
     <text class="conmt-space">查看你的购房资格</text>
   </view>
-  <view class="item_class" data-link="https://mp.weixin.qq.com/s/cpLSpGiBKFjigZ09umg0WA" catchtap='jumpLinkTap'>
+  <view class="item_class" data-link="https://mp.weixin.qq.com/s/nIZJWeQHEYDl-F_7CNcX5g" catchtap='jumpLinkTap'>
     <text class="item_jsq">知识库</text>
     <image class='background' src="/images/fc_knowledge_base.png"></image>
     <text class="conmt-space">买房租房需要注意什么</text>

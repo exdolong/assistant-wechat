@@ -18,7 +18,7 @@
 
      <text catchtap='showBigPictureTap' class="title_wenben">地图分布</text>
     <!-- 地图 -->
-    <image catchtap='showBigPictureTap' data-src="1" class="map" src="/images/map.jpg"></image>
+    <image catchtap='showBigPictureTap' data-src="1" class="map" src="/images/mrt.jpg"></image>
 
     <text class="title_wenben">新加坡地区分布</text>
     <image class="bitmap" src="/images/bitmap.jpg"></image>

@@ -3,7 +3,7 @@
 <!--搜索框  -->
 <view class='r_search_box'>
   <image src='/images/fc_homepage_search.png'></image>
-  <input placeholder='搜索楼盘/街道/开发商' placeholder-class='input_placeholder' class='search_input'></input>
+  <input placeholder='搜索楼盘/街道/开发商' placeholder-class='input_placeholder' class='search_input' bindconfirm="bindconfirmTap" value="{{keyword}}"></input>
 </view>
 
 <!-- 图标筛选 -->

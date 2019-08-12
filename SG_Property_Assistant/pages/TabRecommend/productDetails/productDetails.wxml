@@ -79,14 +79,14 @@
           <text>{{tenure}}</text>
         </view>
         <view class='list_right'>
-          <text class='c999'>单位数量：</text>
-          <text>44</text>
+          <text class='c999'>面积：</text>
+          <text>{{minSize}} - {{maxSize}}sqft</text>
         </view>
       </view>
-      <view class='list_box flex_row'>
+      <!-- <view class='list_box flex_row'>
         <text class='c999'>面积：</text>
         <text>{{minSize}} - {{maxSize}}sqft</text>
-      </view>
+      </view> -->
 
       <view class='list_box flex_row'>
         <text class='c999'>样板间开发日期：</text>
@@ -335,18 +335,18 @@
   <!-- 评论(120) -->
   <view class="house_apartment">
 
-    <view class="title_div">
+    <!-- <view class="title_div">
       <text class='title_bj'>评论</text>
-    </view>
+    </view> -->
 
-    <view class="comment">
+    <!-- <view class="comment">
 
     </view>
 
     <view class="custom_button custom_style">
       <text class="button_text">查看更多评论</text>
       <image class="more_butom" src='/images/more_jiatou.png'></image>
-    </view>
+    </view> -->
 
   </view>
 

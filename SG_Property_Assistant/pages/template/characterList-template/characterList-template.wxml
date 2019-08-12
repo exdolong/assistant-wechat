@@ -33,7 +33,7 @@
     <!--打电话按钮  -->
     <view class='contact'>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      <image catchtap='callPhoneTap' data-phonenum='13408065974' src='/images/fc_phonecall_button.png'></image>
+      <image catchtap='callPhoneTap' data-phonenum='02885593498' src='/images/fc_phonecall_button.png'></image>
     </view>
   </view>
 </template>

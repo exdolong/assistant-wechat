@@ -13,7 +13,7 @@
       <view class="weui-label">电话</view>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" placeholder-class='info_input_coloer' placeholder="13408065974" />
+      <input class="weui-input" placeholder-class='info_input_coloer' placeholder="02885593498" />
     </view>
   </view>
 </view>

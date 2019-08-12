@@ -10,8 +10,9 @@ const saleStatuses = 'dataDicts/saleStatuses' // 销售状态
 const tags = 'dataDicts/tags' // 房产tags
 const tenures = 'dataDicts/tenures' // 所有产权
 const types = 'dataDicts/types' // 房屋类型
-const unitPriceArr = ['不限', '1万/m*2以下', '1.0~2.0万/m*2', '2.0~3.0万/m*2', '3.0~4.0万/m*2', '4.0~5.0万/m*2', '5.0万/m*2以上'] // 单价 
-const totalPriceArr = ['不限', '100万新币以下', '100~125万新币', '125~150万新币', '150~200万新币', '200~250万新币'] // 总价 
+const unitPriceArr = [{value: '', label: '不限'}, { value: '0-10000', label: '1万/sqft以下'}, {value: '10000-20000', label: '1.0~2.0万/sqft'}, {value: '20000-30000', label: '2.0~3.0万/sqft'}, {value: '30000-40000', label: '3.0~4.0万/sqft'}, {value: '40000-50000', label: '4.0~5.0万/sqft'}, {value: '50000-9999999999999999999', label: '5.0万/sqft以上'}] // 单价 
+const totalPriceArr = [{ value: '', label: '不限' }, { value: '0-1000000', label: '100万新币以下' }, { value: '1000000-1250000', label: '100~125万新币' }, { value: '1250000-1500000', label: '125~150万新币' }, { value: '1500000-2000000', label: '150~200万新币' }, { value: '2000000-2500000', label: '200~250万新币'}] // 总价 
+const historyKey = 'historyKey' // 历史关键字
 
 // var regionDisplayFlae = false;
 Page({
@@ -54,19 +55,73 @@ Page({
     paramDistricts: [], // 邮区参数
     paramLayout: [], // 户型参数
     paramPrice: [], // 价格参数
-    paramMore: []
+    paramMore: [],
+    historyArray: [],
+    sortDirection: 'DESC',
+    sortBy: 'id'
   },
 
   /**
    * 排序点击事件
    */
   btnSort: function(event) {
+    const self = this
     wx.showActionSheet({
       itemList: ['最新发布', '总价从低到高', '总价从高到低', '单价从低到高', '单价从高到低'],
       itemColor: "#333",
-      success: function(res) {},
+      success: function(res) {
+        if (res.errMsg === 'showActionSheet:ok') {
+          if (res.tapIndex === 0) {
+            self.setData({
+              sortDirection: 'DESC',
+              sortBy: 'id'
+            })
+          } else if (res.tapIndex === 1) {
+            self.setData({
+              sortDirection: 'ASC',
+              sortBy: 'maxAmount'
+            })
+          } else if (res.tapIndex === 2) {
+            self.setData({
+              sortDirection: 'DESC',
+              sortBy: 'maxAmount'
+            })
+          } else if (res.tapIndex === 3) {
+            self.setData({
+              sortDirection: 'ASC',
+              sortBy: 'avgPsf'
+            })
+          } else if (res.tapIndex === 4) {
+            self.setData({
+              sortDirection: 'DESC',
+              sortBy: 'avgPsf'
+            })
+          }
+
+          self.confirmSubm()
+        }
+      },
       fail: function(res) {}
     });
+  },
+
+  bindconfirmTap: function (e) {
+    this.jumpSearchResultAndKaywrod(e.detail.value);
+  },
+
+  jumpSearchResultAndKaywrod: function (keyWrod) {
+    this.data.historyArray.push(keyWrod);
+    let tempArray = util.unique4(this.data.historyArray);
+
+    wx.setStorage({
+      key: historyKey,
+      data: tempArray
+    })
+    this.setData({
+      keyword: keyWrod
+    })
+
+    this.confirmSubm()
   },
 
   // 跳转到产品详情
@@ -193,13 +248,15 @@ Page({
   },
 
   // 添加基础数据
-  addObjectAndArray: function(array, idStartNumber) {
+  addObjectAndArray: function(array, type) {
     let tempArray = [];
     for (let index = 1; index < array.length; index++) {
+      const row = array[index]
       tempArray.push({
-        'name': array[index],
+        'name': row.label,
         'isSelection': false,
-        'id': idStartNumber + index
+        'id': row.value,
+        'type': type
       })
     }
     return tempArray;
@@ -215,10 +272,31 @@ Page({
     let saleStatusId = this.getIdFunc(this.data.moreArray[3].dataArray)[0];
     let topYear = this.getIdFunc(this.data.moreArray[4].dataArray, 'name')[0];
 
+    let minAmount, maxAmount, minAvgPsf, maxAvgPsf
+    if (this.data.paramPrice.length > 0 && this.data.paramPrice[0].id.split('-').length === 2) {
+      let minVal, maxVal
+      [minVal, maxVal] = this.data.paramPrice[0].id.split('-')
+      if (this.data.isTotalPrice) {
+        minAmount = minVal
+        maxAmount = maxVal 
+      }
+      
+      if (this.data.isUnitPrice) {
+        minAvgPsf = minVal
+        maxAvgPsf = maxVal
+      }
+    }
+    
     this.loadData({
       pageNumber: pageNumber,
       keyword: this.data.keyword,
       pageSize: pageSize,
+      minAmount: minAmount,
+      maxAmount: maxAmount,
+      minAvgPsf: minAvgPsf,
+      maxAvgPsf: maxAvgPsf,
+      sortDirection: this.data.sortDirection,
+      sortBy: this.data.sortBy,
       districtIds: this.getIdFunc(this.data.paramDistricts), // 邮区
       layoutId: this.getIdFunc(this.data.paramLayout)[0], // 户型
       saleStatusId, // 销售状态
@@ -226,6 +304,11 @@ Page({
       topYear, // 交房时间
       tenureId, // 产权
       propertyTypeId // 房屋类型
+    })
+
+    this.setData({
+      sortDirection: 'DESC',
+      sortBy: 'id'
     })
   },
 
@@ -352,20 +435,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.data.keyword = options.keyWord; // 获取关键字
+    const keyword = options.keyWord || ''; // 获取关键字
 
     const url = util.configure.pathUrl + 'projects';
-    const tempArray = this.addObjectAndArray(unitPriceArr, 9091);
+    const tempArray = this.addObjectAndArray(unitPriceArr, 'unit');
 
     this.setData({
+      keyword: keyword,
       unitPriceGroup: tempArray,
-      totalPriceGroup: this.addObjectAndArray(totalPriceArr, 20001),
+      totalPriceGroup: this.addObjectAndArray(totalPriceArr, 'total'),
       priceArray: tempArray
     })
     this.loadData({
       pageNumber: pageNumber,
       pageSize: pageSize,
-      keyword: options.keyWord
+      keyword: keyword
     })
     this.isRegionDisplay = false;
     // console.log(JSON.stringify(options));
@@ -382,7 +466,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    
   },
 
   /**

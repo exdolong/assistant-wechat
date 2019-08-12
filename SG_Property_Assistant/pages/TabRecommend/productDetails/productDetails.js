@@ -70,7 +70,7 @@ Page({
   },
 
   jumpSendMessageTap: function(e) {
-    util.telephone('13408065974');
+    util.telephone('02885593498');
   },
 
   // 跳转到产品详情
