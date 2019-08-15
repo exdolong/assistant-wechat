@@ -1,5 +1,5 @@
 <!--pages/TabRecommend/projectProfilePage/projectProfilePage.wxml-->
-<view wx:if="{{isfixed}}" class="btn">
+<view wx:if="{{isfixed && amenities.mrts.length}}" class="btn">
   <text bindtap="toViewClick" class='{{nowstatus == "notic" ? "on" : ""}}' data-hash="notic">交通</text>
   <text bindtap="toViewClick" class='{{nowstatus == "schoolBox" ? "on" : ""}}' data-hash="schoolBox">教育</text>
   <text bindtap="toViewClick" class='{{nowstatus == "medicalBox" ? "on" : ""}}' data-hash="medicalBox">医疗</text>
@@ -16,7 +16,7 @@
     <!-- 地图 -->
     <image catchtap='showBigPictureTap' data-src="0" class="map" src="{{projectMapUrl}}"></image>
 
-     <text catchtap='showBigPictureTap' class="title_wenben">地图分布</text>
+    <text catchtap='showBigPictureTap' class="title_wenben">地图分布</text>
     <!-- 地图 -->
     <image catchtap='showBigPictureTap' data-src="1" class="map" src="/images/mrt.jpg"></image>
 
@@ -25,7 +25,7 @@
   </view>
 
   <!-- 交通 -->
-  <view class="facilities_box" id="notic">
+  <view class="facilities_box" id="notic" wx:if="{{amenities.mrts.length}}">
     <view class="title_biaoti">
       <image class="icon_mi" src="/images/traffic.png"></image>
       <text class="text_bt">交通</text>
@@ -39,7 +39,7 @@
   </view>
 
   <!-- 教育 -->
-  <view class="facilities_box" id="schoolBox">
+  <view class="facilities_box" id="schoolBox" wx:if="{{amenities.schools.length}}">
     <view class="title_biaoti">
       <image class="icon_mi" src="/images/education.png"></image>
       <text class="text_bt">教育</text>
@@ -51,7 +51,7 @@
   </view>
 
   <!-- 医疗 -->
-  <view class="facilities_box" id="medicalBox">
+  <view class="facilities_box" id="medicalBox" wx:if="{{amenities.hospitals.length}}">
     <view class="title_biaoti">
       <image class="icon_mi" src="/images/medical_care.png"></image>
       <text class="text_bt">医疗</text>
@@ -63,7 +63,7 @@
   </view>
 
   <!--  -->
-  <view class="facilities_box" id="shoppingBox">
+  <view class="facilities_box" id="shoppingBox" wx:if="{{amenities.malls.length}}">
     <view class="title_biaoti">
       <image class="icon_mi" src="/images/shopping.png"></image>
       <text class="text_bt">购物</text>

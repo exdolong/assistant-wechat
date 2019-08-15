@@ -1,11 +1,16 @@
 <!--pages/TabRecommend/layoutHouseList/layoutHouseListPage.wxml-->
-<view class="apartment_item" wx:for="{{layouts}}" wx:key="{{index}}">
+<view class="apartment_item" wx:for="{{layouts}}" wx:key="{{index}}" wx:if="{{item.title}}">
   <view class="image_box">
-    <image class="image_left" src="{{item.path}}"></image>
+    <image class="image_left" src="{{item.path ? item.path : '/images/default.jpg'}}"></image>
   </view>
   <view class="text_sqm">
     <text class="title_bt">{{item.title}}<text class='tag_cyan'>{{item.saleStatus}}</text></text>
     <text class="sq_ft">{{item.size}}</text>
     <text class="price">{{item.amount}}</text>
   </view>
+</view>
+
+<view class="no_data" wx:if='{{!layouts.length}}'>
+  <image src="/images/no_data.png"></image>
+  <text class="no_text">暂无数据</text>
 </view>

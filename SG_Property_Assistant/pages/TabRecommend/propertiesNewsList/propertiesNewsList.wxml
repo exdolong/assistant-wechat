@@ -5,3 +5,8 @@
 
   <text class="news_time">{{item.dateTime}}</text>
 </view>
+
+<view class="no_data" wx:if='{{!news.length}}'>
+  <image src="/images/no_data.png"></image>
+  <text class="no_text">暂无数据</text>
+</view>

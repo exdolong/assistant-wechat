@@ -27,7 +27,8 @@ Page({
     // 获取屏幕的高度
     var sysInfo = wx.getSystemInfoSync();
     this.setData({
-      winHeight: sysInfo.windowHeight - (sysInfo.windowWidth * 90 / 750) + 'px',
+      // winHeight: sysInfo.windowHeight - (sysInfo.windowWidth * 90 / 750) + 'px',
+      winHeight: sysInfo.windowHeight,
       winWidth: sysInfo.windowWidth,
       ...object,
       projectMapUrl: util.getMapLngLat(object.lng, object.lat),
@@ -81,6 +82,9 @@ Page({
     for (let index in array) {
       //获取元素距离页面顶部高度
       query.select(`#${array[index]}`).boundingClientRect().exec(res => {
+        if(res){
+          return;
+        }
         that.setData({
           [array[index]]: res[index].top
         })
@@ -108,31 +112,32 @@ Page({
   },
 
   onPageScroll: function(e) {
+    console.log(e);
     let isfixed = 0;
-    if (parseInt(e.detail.scrollTop) > this.data.notic) {
+    if (parseInt(e.scrollTop) > this.data.notic) {
       isfixed = 1;
     } else {
       console.log(isfixed);
       isfixed = 0;
     }
 
-    if (e.detail.scrollTop <= this.data.notic - 40) {
+    if (e.scrollTop <= this.data.notic - 40) {
       this.setData({
         nowstatus: 'notic'
       })
     }
-    if (e.detail.scrollTop > this.data.schoolBox - 40) {
+    if (e.scrollTop > this.data.schoolBox - 40) {
       this.setData({
         nowstatus: 'schoolBox'
       })
     }
-    if (e.detail.scrollTop > this.data.medicalBox - 40) {
+    if (e.scrollTop > this.data.medicalBox - 40) {
       this.setData({
         nowstatus: 'medicalBox'
       })
     }
 
-    if (e.detail.scrollTop > this.data.shoppingBox - 40) {
+    if (e.scrollTop > this.data.shoppingBox - 40) {
       this.setData({
         nowstatus: 'shoppingBox'
       })

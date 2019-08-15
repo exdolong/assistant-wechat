@@ -19,9 +19,12 @@ Page({
   },
 
   jumpLinkTap: function(e) {
-    wx.navigateTo({
-      url: `../webViewPage/webViewPage?link=${e.currentTarget.dataset.link}`,
-    })
+    console.log(e.currentTarget.dataset);
+    if (e.currentTarget.dataset.link) {
+      wx.navigateTo({
+        url: `../webViewPage/webViewPage?link=${e.currentTarget.dataset.link}`,
+      })
+    }
   },
 
   currentBindchange: function(e) {
@@ -243,10 +246,13 @@ Page({
    */
   onShareAppMessage: function(res) {
     // 通过按钮触发
-    const data = res.target.dataset
+    let temppath = null
+    if (res.target) {
+      temppath = `/pages/program/index?id=${res.target.dataset.id}`;
+    }
     return {
       title: this.data.title,
-      path: '/pages/program/index?id=' + data.id,
+      path: temppath,
       imageUrl: this.data.photos[0].path,
       success: function(res) {
         // 转发成功

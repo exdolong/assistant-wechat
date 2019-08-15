@@ -2,13 +2,14 @@
 <view class="mr50 flex_col">
   <!--大图  hidden="{{!hasPanorama}}"-->
   <view class='vr_box'>
-    <swiper class='bigPic' bindchange='currentBindchange'>
+    <swiper wx:if='{{photos.length}}' class='bigPic' bindchange='currentBindchange'>
       <swiper-item wx:for="{{photos}}" wx:key="{{index}}" catchtap='jumpLinkTap' data-link='{{item.link}}'>
         <image hidden="{{!item.hasPanorama}}" class='mv_iocn' src='/images/mv_iocn.png'></image>
         <image src="{{item.path}}"></image>
       </swiper-item>
     </swiper>
-    <view class='opt_bar'>
+    <image wx:if='{{!photos.length}}' class='media_bigPic' src='/images/default.jpg'></image>
+    <view wx:if='{{photos.length}}' class='opt_bar'>
       <text>{{currentIndex}}/{{photos.length}}</text>
     </view>
   </view>
@@ -50,8 +51,8 @@
     </view>
     <view class='tag_group_lsit'>
       <view class='list_box flex_row'>
-        <text class='c999'>开发商：</text>
-        <text>{{developer}}</text>
+        <text style="display: block; white-space:nowrap;" class='c999'>开发商：</text>
+        <text style="white-space:nowrap; word-break: break-all; display: block;">{{developer}}</text>
       </view>
       <view class='list_box flex_row'>
         <view class='list_left'>
@@ -172,8 +173,8 @@
       </view>
 
       <view class="info_cont">
-          <text class="info_wenben">{{intro}}</text>
-          <!-- <text class="info_cont_more">全文</text> -->
+        <text class="info_wenben">{{intro}}</text>
+        <!-- <text class="info_cont_more">全文</text> -->
       </view>
 
     </view>
@@ -189,9 +190,9 @@
       <text class="look_all r" catchtap='jumpLayoutHouseTap'>查看全部</text>
     </view>
 
-    <view class="apartment_item" wx:for="{{layouts}}" wx:key="{{index}}">
+    <view class="apartment_item" wx:for="{{layouts}}" wx:key="key" wx:for-index="idx" wx:if="{{item.title && idx < 5}}">
       <view class="image_box">
-        <image class="image_left" src="{{item.path}}"></image>
+        <image class="image_left" src="{{item.path ? item.path : '/images/default.jpg'}}"></image>
       </view>
       <view class="text_sqm">
         <text class="title_bt">{{item.title}}<text class='tag_cyan'>{{item.saleStatus}}</text></text>
@@ -201,7 +202,7 @@
     </view>
 
 
-    <view class="custom_button custom_style" catchtap='jumpLayoutHouseTap'>
+    <view class="custom_button custom_style" wx:if='{{layouts.length}}' catchtap='jumpLayoutHouseTap'>
       <text class="button_text">查看全部房型</text>
       <image class="more_butom" src='/images/more_jiatou.png'></image>
     </view>
@@ -323,7 +324,7 @@
 
     <scroll-view scroll-x="true" scroll-with-animation='true' class="scroll_view">
       <view class="scroll_item" wx:for="{{similarProjectArray}}" wx:key="{{key}}" catchtap="jumpDetailsTap" data-postid="{{item.id}}">
-        <image class='media_image' src='{{item.photoPath}}'></image>
+        <image class='media_image' src='{{item.photoPath ? item.photoPath :"/images/default.jpg"}}'></image>
         <text class="itme_title">{{item.title}}</text>
         <text class="itme_adder">{{item.avgPsf}}</text>
         <text class="itme_parint">{{item.minAmount}}</text>
