@@ -59,6 +59,7 @@
       <view class='filter_item'>
         <view class='price'>
           <view class='flex_col'>
+            <text class='list' data-id="-1" bindtap="layoutSelect">不限</text>
             <text class="list {{item.isSelection ?'active':''}}" wx:for="{{layoutsArray}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="layoutSelect">{{item.name}}</text>
           </view>
           <text class='apartment_button' bindtap="confirmSubm">确定</text>

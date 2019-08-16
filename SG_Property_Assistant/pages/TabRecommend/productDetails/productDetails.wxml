@@ -52,7 +52,7 @@
     <view class='tag_group_lsit'>
       <view class='list_box flex_row'>
         <text style="display: block; white-space:nowrap;" class='c999'>开发商：</text>
-        <text style="white-space:nowrap; word-break: break-all; display: block;">{{developer}}</text>
+        <text style="word-wrap: break-word; word-break:break-all; display: block;">{{developer}}</text>
       </view>
       <view class='list_box flex_row'>
         <view class='list_left'>
@@ -371,7 +371,7 @@
     </view>
     <view class='messge_box flex_row'>
       <button class='seeHouse' open-type="contact">在线询问</button>
-      <text class='sendMessge' catchtap='jumpSendMessageTap'>打电话</text>
+      <text class='sendMessge' catchtap='jumpSendMessageTap'>联系我们</text>
     </view>
   </view>
 

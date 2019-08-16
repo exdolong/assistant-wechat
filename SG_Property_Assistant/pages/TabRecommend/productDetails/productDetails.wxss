@@ -93,7 +93,7 @@ page {
   font-size: 20px;
   font-weight: 800;
   padding-right: 130rpx;
-  word-break:break-all;
+  word-break: break-all;
 }
 
 .mod_sub_tit {
@@ -103,9 +103,11 @@ page {
 }
 
 .list_box {
-  font-size: 16px;
-  line-height: 36px;
-  height: 36px;
+  font-size: 32rpx;
+  line-height: 36rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  /* height: 36px; */
 }
 
 .list_box .list_left, .list_box .list_right {
@@ -119,7 +121,7 @@ page {
 }
 
 .consultation {
-  font-size: 15px;
+  font-size: 30rpx;
   color: #5680a6;
 }
 
@@ -135,7 +137,7 @@ page {
 }
 
 .characteristic text.xuque {
-  font-size: 12px;
+  font-size: 24rpx;
   color: #999;
   height: 24px;
   line-height: 24px;
@@ -250,7 +252,7 @@ page {
 }
 
 .phone_shoucOk {
-  color: #E7C690;
+  color: #e7c690;
   font-size: 13px;
 }
 
@@ -284,7 +286,7 @@ view.imges {
   padding-bottom: 70px;
 }
 
-.messge_box text,.messge_box button {
+.messge_box text, .messge_box button {
   width: 47%;
 }
 
@@ -360,6 +362,9 @@ view.imges {
   width: 100%;
   text-align: center;
   border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .mod_tit_complex {
@@ -372,7 +377,7 @@ view.imges {
   width: 10rpx;
   height: 10rpx;
   margin-left: 10rpx;
-  margin-top: -6rpx;
+  margin-top: 45rpx;
 }
 
 .button_text {
