@@ -46,6 +46,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.newLad();
+  },
+
+  newLad: function() {
+    wx.showNavigationBarLoading();
     const that = this;
     const url = util.configure.pathUrl + 'home';
     wx.request({
@@ -55,6 +60,9 @@ Page({
           carousel: res.data.data.carousel,
           projects: res.data.data.projects
         })
+      },
+      complete(){
+        wx.hideNavigationBarLoading();
       }
     })
   },
@@ -92,8 +100,8 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
-
+  onPullDownRefresh: function(e) {
+    this.newLad();
   },
 
   /**

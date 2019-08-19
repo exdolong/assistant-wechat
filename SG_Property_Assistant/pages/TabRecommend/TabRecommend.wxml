@@ -6,12 +6,13 @@
       <image src="{{item.imgPath}}"></image>
     </swiper-item>
   </swiper>
+  <!--首页搜索  -->
+  <view class='search_box' catchtap='jumpSearchPageTap'>
+    <image src='/images/fc_homepage_search.png'></image>
+    <text>搜索楼盘/街道/开发商</text>
+  </view>
 </view>
-<!--首页搜索  -->
-<view class='search_box' catchtap='jumpSearchPageTap'>
-  <image src='/images/fc_homepage_search.png'></image>
-  <text>搜索楼盘/街道/开发商</text>
-</view>
+
 <!--定位地址 catchtap='jumpCalculatorToolTap'  -->
 <view class='switch_city' data-page="mapFindRoom/mapFindRoom">
   <image src='/images/fc_homepage_positioning.png'></image>

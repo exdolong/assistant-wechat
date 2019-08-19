@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "威威找房助手"
+  "navigationBarTitleText": "威威找房助手",
+  "enablePullDownRefresh": true
 }
