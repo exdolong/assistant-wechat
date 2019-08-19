@@ -57,7 +57,8 @@
       <view class='list_box flex_row'>
         <view class='list_left'>
           <text class='c999'>楼层：</text>
-          <text>{{minFloors}}-{{maxFloors}}层</text>
+          <text wx:if="{{minFloors > 0 && maxFloors > 0}}">{{minFloors}}-{{maxFloors}}层</text>
+          <text wx:else>-</text>
         </view>
         <view class='list_right'>
           <text class='c999'>装修：</text>
