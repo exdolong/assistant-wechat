@@ -5,11 +5,39 @@
   width: 100vw;
 }
 
-.erWeiMaTap{
+.erWeiMaTap {
   width: 340rpx;
   height: 340rpx;
+  margin: 0px auto;
 }
 
-.iamge_div{
-  text-align: center
+.iamge_div {
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.guanzho, .baocuo {
+  font-size: 40rpx;
+  display: block;
+  text-align: center;
+}
+
+.baocuo {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.focusProcess{
+  padding: 30rpx;
+  padding-top: 60rpx;
+}
+
+
+.focusProcess text{
+  display: block;
+}
+
+.itle{
+  font-size: 34rpx;
+  color: #999;
 }

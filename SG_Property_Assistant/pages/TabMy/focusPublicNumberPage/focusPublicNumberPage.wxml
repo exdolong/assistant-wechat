@@ -3,7 +3,19 @@
 <!-- <canvas hidden="{{canvasHidden}}" canvas-id='testCanvas'class='imageCanvas' 
 style='width:{{canvasWidth}}px; height:{{canvasHeight}}px'  disable-scroll='true'>
 </canvas> -->
+<official-account bindload='bindload' binderror='binderror'></official-account>
+<view catchtap='erWeiMaTap' class="iamge_div">
+  <image class="erWeiMaTap" src="/images/erweima.jpg"></image>
+</view>
+<view>
+  <text class='guanzho'>关注威威找房公众号</text>
+  <text class='baocuo'>【点击保存二维码图片】</text>
+</view>
 
-  <view catchtap='erWeiMaTap' class="iamge_div">
-    <image class="erWeiMaTap" src="/images/erweima.jpg"></image>
-  </view>
+<view class="focusProcess">
+  <text>关注流程：</text>
+
+  <text class="itle">1.打开微信-->首页右上角点击➕按钮</text>
+  <text class="itle">2.扫一扫-->点击右上角“相册”按钮</text>
+  <text class="itle">3.选择二维码图片进行扫描关注</text>
+</view>
