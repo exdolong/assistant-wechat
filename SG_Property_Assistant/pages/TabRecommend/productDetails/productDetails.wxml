@@ -118,59 +118,49 @@
 
     <view class="content_div">
 
-      <view class='list_box flex_row'>
-        <view class='list_left'>
-          <text class='c999'>项目规模：  </text>
-          <text>{{facility.projectSize}}</text>
-        </view>
-        <view class='list_right'>
-          <text class='c999'>容积率：  </text>
-          <text>{{facility.plotRatio}}</text>
-        </view>
+      <view class='list_news'>
+        <text class='c999'>项目规模：  </text>
+        <text>{{facility.projectSize}}</text>
+      </view>
+      <view class='list_news'>
+        <text class='c999'>容积率：  </text>
+        <text>{{facility.plotRatio}}</text>
       </view>
 
-      <view class='list_box flex_row'>
-        <view class='list_left'>
-          <text class='c999'>邮区：  </text>
-          <text>{{districtName}}</text>
-        </view>
-        <view class='list_right'>
-          <text class='c999'>户数：  </text>
-          <text>{{facility.numOfHousehold}}</text>
-        </view>
+      <view class='list_news'>
+        <text class='c999'>邮区：  </text>
+        <text>{{districtName}}</text>
+      </view>
+      <view class='list_news'>
+        <text class='c999'>户数：  </text>
+        <text>{{facility.numOfHousehold}}</text>
       </view>
 
-      <view class='list_box flex_row'>
-        <view class='list_left'>
-          <text class='c999'>管理费：  </text>
-          <text>{{facility.managementFee}}</text>
-        </view>
-        <view class='list_right'>
-          <text class='c999'>游泳池：  </text>
-          <text>{{facility.swimmingPool}}</text>
-        </view>
+      <view class='list_news'>
+        <text class='c999'>管理费：  </text>
+        <text>{{facility.managementFee}}</text>
+      </view>
+      <view wx:if='{{facility.swimmingPool ==="有"}}' class='list_news'>
+        <text class='c999'>游泳池：  </text>
+        <text>{{facility.swimmingPool}}</text>
       </view>
 
-      <view class='list_box flex_row'>
-        <view class='list_left'>
-          <text class='c999'>网球场： </text>
-          <text>{{facility.tennisCourt}}</text>
-        </view>
-        <view class='list_right'>
-          <text class='c999'>篮球场：  </text>
-          <text>{{facility.basketballCourt}}</text>
-        </view>
+      <view wx:if='{{facility.tennisCourt==="有"}}' class='list_news'>
+        <text class='c999'>网球场： </text>
+        <text>{{facility.tennisCourt}}</text>
+      </view>
+      <view wx:if='{{facility.basketballCourt ==="有" }}' class='list_news'>
+        <text class='c999'>篮球场：  </text>
+        <text>{{facility.basketballCourt}}</text>
       </view>
 
-      <view class='list_box flex_row'>
-        <view class='list_left'>
-          <text class='c999'>健身房：  </text>
-          <text>{{facility.gym}}</text>
-        </view>
-        <view class='list_right'>
-          <text class='c999'>按摩浴缸：  </text>
-          <text>{{facility.jacuzzi}}</text>
-        </view>
+      <view wx:if='{{facility.gym ==="有"}}' class='list_news'>
+        <text class='c999'>健身房：  </text>
+        <text>{{facility.gym}}</text>
+      </view>
+      <view wx:if='{{facility.jacuzzi ==="有"}}' class='list_news'>
+        <text class='c999'>按摩浴缸：  </text>
+        <text>{{facility.jacuzzi}}</text>
       </view>
 
       <view class="info_cont">

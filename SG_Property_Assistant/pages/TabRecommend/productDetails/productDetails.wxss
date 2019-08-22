@@ -114,10 +114,15 @@ page {
   width: 50%;
 }
 
+.list_news {
+  width: 50%;
+}
+
 .list_box .list_right text {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 30rpx;
 }
 
 .consultation {
@@ -395,6 +400,9 @@ view.imges {
 
 .content_div {
   padding-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .detailed_text {
@@ -701,4 +709,8 @@ button, button::before, button::after {
 .media_bigPic {
   width: 100%;
   height: 560rpx;
+}
+
+.content_div text{
+  font-size: 32rpx;
 }
