@@ -126,6 +126,18 @@ function gotoLoginIfAnonymous() {
   }
 }
 
+function isEmpty(value) {
+  if (value == null || value == "" || value == "undefined" || value == undefined || value == "null") {
+    return true;
+  } else {
+    value = value.replace(/\s/g, "");
+    if (value == "") {
+      return true;
+    }
+    return false;
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   conditionScreening: conditionScreening,
@@ -137,5 +149,6 @@ module.exports = {
   telephone: telephone,
   isLogin: isLogin,
   gotoLoginIfAnonymous: gotoLoginIfAnonymous,
-  getMapLngLat: getMapLngLat
+  getMapLngLat: getMapLngLat,
+  isEmpty: isEmpty
 }

@@ -21,7 +21,7 @@
 	"miniprogramRoot": "/",
 	"qcloudRoot": "server/",
 	"compileType": "miniprogram",
-	"libVersion": "2.4.3",
+	"libVersion": "2.8.0",
 	"appid": "wx54e52d1477aaff6b",
 	"projectname": "SG_Property_Assistant",
 	"isGameTourist": false,

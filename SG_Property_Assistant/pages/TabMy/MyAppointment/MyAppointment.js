@@ -30,19 +30,13 @@ Page({
     })
   },
 
-  jumpDetailsTap: function() {
-    // this.jumpa();
-  },
-  jumpa: function() {
+  jumpDetailsTap: function (event) {
+    const id = event.currentTarget.dataset.postid;
     wx.navigateTo({
-      url: '../appointmentDetails/appointmentDetails',
+      url: `../../TabRecommend/productDetails/productDetails?id=${id}`,
     })
   },
-  jumpRoleDetailsTap: function(event) {
-    wx.navigateTo({
-      url: '../roleDetails/roleDetails',
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

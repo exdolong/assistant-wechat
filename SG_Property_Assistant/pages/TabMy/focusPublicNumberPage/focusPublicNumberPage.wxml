@@ -8,7 +8,7 @@ style='width:{{canvasWidth}}px; height:{{canvasHeight}}px'  disable-scroll='true
   <image class="erWeiMaTap" src="/images/erweima.jpg"></image>
 </view>
 <view>
-  <text class='guanzho'>关注威威找房公众号</text>
+  <text class='guanzho'>关注威威留洋公众号</text>
   <text class='baocuo'>【点击保存二维码图片】</text>
 </view>
 

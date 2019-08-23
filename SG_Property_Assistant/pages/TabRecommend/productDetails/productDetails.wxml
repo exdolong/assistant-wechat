@@ -122,7 +122,7 @@
         <text class='c999'>项目规模：  </text>
         <text>{{facility.projectSize}}</text>
       </view>
-      <view class='list_news'>
+      <view wx:if='{{facility.plotRatio ==="0"}}' class='list_news'>
         <text class='c999'>容积率：  </text>
         <text>{{facility.plotRatio}}</text>
       </view>
@@ -136,7 +136,7 @@
         <text>{{facility.numOfHousehold}}</text>
       </view>
 
-      <view class='list_news'>
+      <view wx:if='{{facility.managementFee !=="新币0.0-0.0/月"}}' class='list_news'>
         <text class='c999'>管理费：  </text>
         <text>{{facility.managementFee}}</text>
       </view>

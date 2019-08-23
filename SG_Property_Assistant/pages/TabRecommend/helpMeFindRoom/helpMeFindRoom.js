@@ -68,7 +68,7 @@ Page({
   movableBindChange: function(e) {
     let actualWitdh = this.data.width - (60 / 750 * this.data.width);
     let number = parseInt(e.detail.x * (550 / actualWitdh));
-    
+
     if (e.currentTarget.dataset.datanumber == 'left') {
       // if (this.data.minPrice > this.data.maxPrice) {
       //   console.log(e.detail.x);
@@ -128,8 +128,28 @@ Page({
 
     }
   },
+  validatePhoneNumber: function(str) {
+    const reg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/
+    return reg.test(str)
+  },
 
   submitAction: function() {
+    if (util.isEmpty(this.data.telephone)) {
+      wx.showToast({
+        image: '/images/gantaohao.png',
+        title: '手机号不能为空~',
+      })
+      return;
+    }
+
+    if (!this.validatePhoneNumber(this.data.telephone)) {
+      wx.showToast({
+        image:'/images/gantaohao.png',
+        title: '手机号码错误',
+      })
+      return;
+    }
+
     const obj = [{
       name: '您的首付预算',
       string: `${this.data.minPrice}~${this.data.maxPrice}万`

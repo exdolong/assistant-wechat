@@ -12,7 +12,7 @@
     <view class='dl_content'>
       <text class="range_nbmer">{{minPrice}}~{{maxPrice}}万</text>
       <movable-area>
-        <movable-view x="{{startPoint.x}}" animation='false' direction="{{huadongLeft}}" data-dataNumber="left" bindchange='movableBindChange' class="movable_view">||   </movable-view>
+        <movable-view x="{{startPoint.x}}" animation='false' direction="{{huadongLeft}}" data-dataNumber="left" bindchange='movableBindChange' class="movable_view">||</movable-view>
         <div class="slider" style="position: absolute;width:{{sliderWidth}}px; left:{{sliderPointX}}px;"></div>
         
         <movable-view x="120" animation='true' direction="{{huadongRight}}" data-dataNumber="right" bindchange='movableBindChange' class="movable_view">||</movable-view>
@@ -73,7 +73,7 @@
   <view class='dl_item'>
     <text class='dl_title'>您的联系方式？</text>
     <view class='dl_content'>
-      <input class='smsCode' value="{{telephone}}" bindinput='bindinputValue' placeholder-class='input_faz B2B2B2' placeholder='请输入手机号码'></input>
+      <input class='smsCode' value="{{telephone}}" bindinput='bindinputValue' placeholder-class='input_faz B2B2B2' type='number' placeholder='请输入手机号码'></input>
     </view>
   </view>
   <!--单个条件  E-->
